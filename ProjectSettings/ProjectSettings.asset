@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 20
-  productGUID: 00000000000000000000000000000000
+  productGUID: fd639168b57d6264fbbe9263d2daa474
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -321,11 +321,17 @@ PlayerSettings:
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality:
   - m_BuildTarget: Standalone
-    m_EncodingQuality: 1
+    m_EncodingQuality: 2
   - m_BuildTarget: XboxOne
     m_EncodingQuality: 1
   - m_BuildTarget: PS4
     m_EncodingQuality: 1
+  - m_BuildTarget: Android
+    m_EncodingQuality: 2
+  - m_BuildTarget: Lumin
+    m_EncodingQuality: 2
+  - m_BuildTarget: Windows Store Apps
+    m_EncodingQuality: 2
   m_BuildTargetGroupLightmapSettings: []
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
