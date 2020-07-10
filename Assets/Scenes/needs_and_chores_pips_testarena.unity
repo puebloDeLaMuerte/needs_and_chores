@@ -213,6 +213,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &352317636
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352317638}
+  - component: {fileID: 352317637}
+  m_Layer: 0
+  m_Name: StaticLightingSky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &352317637
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352317636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Profile: {fileID: 0}
+  m_StaticLightingSkyUniqueID: 0
+  m_SkySettings: {fileID: 0}
+  m_SkySettingsFromProfile: {fileID: 0}
+--- !u!4 &352317638
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352317636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701131429
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +565,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303354618103235
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +696,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303354674744028
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +859,7 @@ Transform:
   - {fileID: 5209303355715102767}
   - {fileID: 5209303355850315871}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5209303355042498780
 GameObject:
@@ -884,11 +933,48 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 10
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
-  oversatisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 3
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355284301455}
+    instantChangeAmount: 10
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356449506849}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356321442670}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303355182091663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1104,7 @@ MonoBehaviour:
     changeAmountPerHour: -2
     durationInHours: 0
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303355209434058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1197,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303355284301449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1254,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303355572009474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerGui: {fileID: 5209303356352012783}
   startTimeHours: 12
-  timeScale: 40
+  timeScale: 80
 --- !u!4 &5209303355716481549
 Transform:
   m_ObjectHideFlags: 0
@@ -1264,7 +1353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5209303355716481551
 GameObject:
@@ -1322,6 +1411,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303355735664197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1561,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!4 &5209303356086023772
 Transform:
   m_ObjectHideFlags: 0
@@ -1510,6 +1601,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356086023775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1658,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356090478199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,6 +1775,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356105017058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1863,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!114 &5209303356281618476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1889,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356281618478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1960,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356290941315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,6 +2034,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356352012777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2169,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!222 &5209303356364836712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2184,6 +2283,7 @@ MonoBehaviour:
   satisfiedEffects: []
   oversatisfiedEffects: []
   urgencyOverrides: []
+  NeemotionName: 
 --- !u!1 &5209303356449506851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2315,7 @@ Transform:
   - {fileID: 6732947269425615533}
   - {fileID: 6732947269054198150}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6732947267635157720
 MonoBehaviour:

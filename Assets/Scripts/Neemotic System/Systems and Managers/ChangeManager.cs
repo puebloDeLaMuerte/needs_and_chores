@@ -51,6 +51,13 @@ namespace YBC.Neemotix
 		}
 
 
+		public void addEffectToQueue(Effect effect)
+		{
+			effectsQueue.Add(effect);
+			Debug.Log("ChangeManager: Fx added to Queue: " + effect.neemotionAffected.NeemotionName );
+		}
+
+
 		/// <summary>
 		/// Updates current status for entire Neemotion[] needs. Performs their immediate Status-Effects.
 		/// </summary>
@@ -79,6 +86,7 @@ namespace YBC.Neemotix
 		/// <param name="fx">the Effect to execute</param>
 		private void PerformImmediateEffect(Effect fx)
 		{
+			//TODO maybe the generalChangeFactor doesn't apply here, because of the difference in nature between timebasedFXs(values below one) and immediateFXs (values >1)
 			fx.neemotionAffected.SetCurrentValue(fx.neemotionAffected.currentValue += (fx.instantChangeAmount * generalChangeFactor));
 		}
 
@@ -96,7 +104,7 @@ namespace YBC.Neemotix
 				float oldval = fx.neemotionAffected.currentValue;
 				float changeAmount = (effectHourlyAmount * YBCTimer.GetDeltaHours() * generalChangeFactor);
 				fx.neemotionAffected.SetCurrentValue( oldval += changeAmount );
-				fx.durationInHours -= YBCTimer.GetDeltaHours();
+				fx.IncrementAppliedHours(YBCTimer.GetDeltaHours());
 			}
 		}
 
@@ -120,7 +128,7 @@ namespace YBC.Neemotix
 		{
 			foreach ( Effect fx in effectsQueue )
 			{
-
+				PerformTimeBasedEffect(fx);
 			}
 		}
 
@@ -159,6 +167,13 @@ namespace YBC.Neemotix
 
 		private void CheckForExpiredEffects()
 		{
+			foreach ( Effect fx in effectsQueue )
+			{
+				if ( fx.IsDue() )
+				{
+					effectsQueue.Remove(fx);
+				}
+			}
 		}
 
 	} 

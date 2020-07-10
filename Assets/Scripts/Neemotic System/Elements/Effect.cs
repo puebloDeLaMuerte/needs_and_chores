@@ -40,5 +40,14 @@ namespace YBC.Neemotix
 				return false;
 			}
 		}
+
+		/// <summary>
+		/// Determines wether the durationInHours is greater than zero
+		/// </summary>
+		/// <returns></returns>
+		public bool hasDuration()
+		{
+			return durationInHours > 0;
+		}
 	}
 }

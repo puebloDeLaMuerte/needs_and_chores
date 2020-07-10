@@ -10,10 +10,9 @@ namespace YBC.Utils
 		public Text timerGui;
 		public float startTimeHours = 0;
 
-		
+		[OnValueChanged("TimeScaleEditorCallback")]
 		public int timeScale = 40;
-		[Button]
-		private void ApplyTimeScale()
+		private void TimeScaleEditorCallback()
 		{
 			SetTimeScales(timeScale);
 		}

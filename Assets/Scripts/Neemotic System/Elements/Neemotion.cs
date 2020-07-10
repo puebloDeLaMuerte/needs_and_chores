@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,22 +34,27 @@ namespace YBC.Neemotix
 		private NeemotionStatus status;
 		public string statusString;
 
+		[BoxGroup("urgend")]
 		public Effect[] urgendZoneEffects;
+		[BoxGroup("unsatisfied")]
 		public Effect[] unsatisfiedEffects;
+		[BoxGroup("satisfied")]
 		public Effect[] satisfiedEffects;
+		[BoxGroup("oversatisfied")]
 		public Effect[] oversatisfiedEffects;
 
 		[Space]
 
 		public Override[] urgencyOverrides;
 
-		private string NeemotionName;
+		public string NeemotionName;
 
 
 		private void Awake()
 		{
 			this.NeemotionName = gameObject.name;
 			SetCurrentValue(startValue);
+			EvaluateStatus();
 			this.guiSlider.value = currentValue;
 			this.guiSlider.maxValue = neemotionMaxValue;
 			this.guiSlider.minValue = neemotionMinValue;
@@ -104,7 +110,7 @@ namespace YBC.Neemotix
 
 
 		/// <summary>
-		/// Perform a Change of Status. Update Slider Color.
+		/// Set status according to currentValue. Update Slider Color.
 		/// </summary>
 		/// <param name="newstat">The new Status to be switched to</param>
 		/// 
@@ -113,9 +119,9 @@ namespace YBC.Neemotix
 			this.status = newstat;
 			this.statusString = status.ToString();
 
-			Debug.Log(NeemotionName + " Status Change to: " + newstat);
+			Debug.Log("Status Change: " + NeemotionName + " --> " + newstat);
 
-			// Perform immediate Effects and update Slider Color.
+			// update Slider Color.
 			switch ( newstat )
 			{
 				case NeemotionStatus.Undefined:
@@ -140,7 +146,6 @@ namespace YBC.Neemotix
 				default:
 					break;
 			}
-
 		}
 
 
