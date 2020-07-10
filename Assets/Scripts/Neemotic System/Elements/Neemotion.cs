@@ -104,7 +104,7 @@ namespace YBC.Neemotix
 
 
 		/// <summary>
-		/// Perform a Change of Status. Update Slider Color and Perform Immediate Status-Effects.
+		/// Perform a Change of Status. Update Slider Color.
 		/// </summary>
 		/// <param name="newstat">The new Status to be switched to</param>
 		/// 
@@ -123,19 +123,19 @@ namespace YBC.Neemotix
 					break;
 				case NeemotionStatus.Urgent:
 					guiSlider.GetComponentInChildren<Image>().color = urgendColor;
-					PerformImmediateStatusEffets(urgendZoneEffects);
+					//PerformImmediateStatusEffets(urgendZoneEffects);
 					break;
 				case NeemotionStatus.Unsatisfied:
 					guiSlider.GetComponentInChildren<Image>().color = unsatisfiedColor;
-					PerformImmediateStatusEffets(unsatisfiedEffects);
+					//PerformImmediateStatusEffets(unsatisfiedEffects);
 					break;
 				case NeemotionStatus.Satisfied:
 					guiSlider.GetComponentInChildren<Image>().color = satisfiedColor;
-					PerformImmediateStatusEffets(satisfiedEffects);
+					//PerformImmediateStatusEffets(satisfiedEffects);
 					break;
 				case NeemotionStatus.Oversatisfied:
 					guiSlider.GetComponentInChildren<Image>().color = oversatisfiedColor;
-					PerformImmediateStatusEffets(oversatisfiedEffects);
+					//PerformImmediateStatusEffets(oversatisfiedEffects);
 					break;
 				default:
 					break;
@@ -145,16 +145,13 @@ namespace YBC.Neemotix
 
 
 		/// <summary>
-		/// Performs all Status Effects from the given Array once (Doesn't evaluate, call EvaluateStatus() before, if yo're not shure.)
+		/// Performs all Status Effects associated with it's current status (Doesn't evaluate, call EvaluateStatus() before, if yo're not shure.)
 		/// Does only perform Effects that have non-zero instantChangeAmount. Only this instantChangeAmount will be performed. Any other values will be ignored.
 		/// </summary>
-		/// <param name="fxs">The Effects to be parsed/performed</param>
-		private void PerformImmediateStatusEffets(Effect[] fxs)
+		
+		private void PerformImmediateStatusEffets()
 		{
-			foreach ( Effect fx in fxs )
-			{
-				fx.neemotionAffected.SetCurrentValue(fx.neemotionAffected.currentValue += fx.instantChangeAmount);
-			}
+			Debug.LogError("Thou shalt not Perform Effects directly within a Neemotion!");
 		}
 
 

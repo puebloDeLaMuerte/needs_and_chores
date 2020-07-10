@@ -18,7 +18,7 @@ namespace YBC.Neemotix
 		private Neemotion[] needs;
 		private Neemotion[] emotions;
 
-		private Effect[] effectsQueue;
+		private List<Effect> effectsQueue = new List<Effect>();
 
 		// Start is called before the first frame update
 		void Start()
@@ -39,20 +39,20 @@ namespace YBC.Neemotix
 		void Update()
 		{
 
-			// Activate/Deactivate Status-Effects and Overrides
+			// Activate/Deactivate Status-Effects and Overrides, Perform immediate Effects.
 			EvaluateNeedsStatus();
 
 			// Apply all sheduled Changes and Overrides
 			ApplyEffects();
 
 			// Find and eliminate Expired Effects
-			CheckExpiredEffects();
+			CheckForExpiredEffects();
 
 		}
- 
+
 
 		/// <summary>
-		/// Makes all the needs in Neemotion[] needs; evaluate their current status.
+		/// Updates current status for entire Neemotion[] needs. Performs their immediate Status-Effects.
 		/// </summary>
 		private void EvaluateNeedsStatus()
 		{
@@ -62,11 +62,44 @@ namespace YBC.Neemotix
 
 				if ( haschanged )
 				{
-					//need.PerformImmediateStatusEffects();
+					Effect[] fxs = need.getCurrentStatusFXs();
+
+					foreach ( Effect fx in fxs )
+					{
+						PerformImmediateEffect(fx);
+					}
 				}
 			}
 		}
 		
+		/// <summary>
+		/// Apply one immediate Effect to the neemotion it carries in its neemotionAffected field. Sets its value.
+		/// Does Not perform TimeBasedEffects.
+		/// </summary>
+		/// <param name="fx">the Effect to execute</param>
+		private void PerformImmediateEffect(Effect fx)
+		{
+			fx.neemotionAffected.SetCurrentValue(fx.neemotionAffected.currentValue += (fx.instantChangeAmount * generalChangeFactor));
+		}
+
+		/// <summary>
+		/// Applys time-based  Effect to the neemotion it carries in its neemotionAffected field.
+		/// Sets its value and decrements its duration-counter by YBCTimer.GetDeltaHours().
+		/// Does Not perform Immediate Effects.
+		/// </summary>
+		/// <param name="fx">the Effect to execute</param>
+		private void PerformTimeBasedEffect(Effect fx)
+		{
+			float effectHourlyAmount = fx.changeAmountPerHour;
+			if( effectHourlyAmount != 0)
+			{
+				float oldval = fx.neemotionAffected.currentValue;
+				float changeAmount = (effectHourlyAmount * YBCTimer.GetDeltaHours() * generalChangeFactor);
+				fx.neemotionAffected.SetCurrentValue( oldval += changeAmount );
+				fx.durationInHours -= YBCTimer.GetDeltaHours();
+			}
+		}
+
 
 		/// <summary>
 		/// The main Evaluation loop that adapts the values of needs and emotins.
@@ -74,29 +107,38 @@ namespace YBC.Neemotix
 		/// </summary>
 		private void ApplyEffects()
 		{
-			ApplyTimeBasedChanges();
-			ApplyStatusEffects();
-			ApplyExternalEffects();
+			PerformTimeBasedChanges();
+			PerformStatusEffects();
+			PerformExternalEffects();
 		}
 
 
 		/// <summary>
 		/// 
 		/// </summary>
-		private void ApplyExternalEffects()
+		private void PerformExternalEffects()
 		{
+			foreach ( Effect fx in effectsQueue )
+			{
+
+			}
 		}
 
 
 		/// <summary>
 		/// Apply all non-immediate (Time-Based) StatusEffect updates in all needs in the needs[]
 		/// </summary>
-		private void ApplyStatusEffects()
+		private void PerformStatusEffects()
 		{ 
-			foreach (var need in needs )
+			foreach (Neemotion need in needs )
 			{
 				Effect[] statusFXs = need.getCurrentStatusFXs();
-				
+
+				foreach ( Effect fx in statusFXs )
+				{
+					PerformTimeBasedEffect(fx);
+				}
+
 			}
 		}
 
@@ -104,7 +146,7 @@ namespace YBC.Neemotix
 		/// <summary>
 		/// Apply only the Time-Based Changes to every Neemotion in needs[]. No Status Effects are performed here. No Interaction-Based Effects.
 		/// </summary>
-		private void ApplyTimeBasedChanges()
+		private void PerformTimeBasedChanges()
 		{
 			foreach ( var need in needs )
 			{
@@ -115,7 +157,7 @@ namespace YBC.Neemotix
 		}
 
 
-		private void CheckExpiredEffects()
+		private void CheckForExpiredEffects()
 		{
 		}
 
