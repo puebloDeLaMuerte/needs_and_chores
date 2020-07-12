@@ -560,10 +560,50 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 9
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
-  oversatisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356149578870}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
   urgencyOverrides: []
   NeemotionName: 
 --- !u!1 &5209303354618103235
@@ -691,9 +731,41 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 10
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 2
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: 2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
   oversatisfiedEffects: []
   urgencyOverrides: []
   NeemotionName: 
@@ -1406,10 +1478,54 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 9
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
-  oversatisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356321442670}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356090478197}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356321442670}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.8
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355284301455}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
   urgencyOverrides: []
   NeemotionName: 
 --- !u!1 &5209303355735664197
@@ -1770,9 +1886,41 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 10
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: 0
+    changeAmountPerHour: 2
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356149578870}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356149578870}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356086023773}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
   oversatisfiedEffects: []
   urgencyOverrides: []
   NeemotionName: 
@@ -1858,9 +2006,45 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 10
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356321442670}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356281618476}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.3
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356321442670}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.2
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
   oversatisfiedEffects: []
   urgencyOverrides: []
   NeemotionName: 
@@ -2164,10 +2348,50 @@ MonoBehaviour:
   unsatisfiedZoneMax: 5
   satisfiedZoneMax: 9
   statusString: 
-  urgendZoneEffects: []
-  unsatisfiedEffects: []
-  satisfiedEffects: []
-  oversatisfiedEffects: []
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356321442670}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355982477287}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356090478197}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 5209303356449506849}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303355284301455}
+    instantChangeAmount: 0
+    changeAmountPerHour: 2
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 5209303355232402830}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 5209303356290941313}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
   urgencyOverrides: []
   NeemotionName: 
 --- !u!222 &5209303356364836712
