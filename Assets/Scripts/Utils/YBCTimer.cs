@@ -7,32 +7,22 @@ namespace YBC.Utils
 {
 	class YBCTimer : MonoBehaviour
 	{
-		public Text timerGui;
+		public Text timerGuiText;
 		public float startTimeHours = 0;
 
-		[OnValueChanged("TimeScaleEditorCallback")]
 		public int timeScale = 40;
-		private void TimeScaleEditorCallback()
-		{
-			SetTimeScales(timeScale);
-		}
 
-		public void Awake()
+		public static void SetTimeScale( float scale )
 		{
-			SetTimeScales(timeScale);
-		}
-
-		public static void SetTimeScales( float scale )
-		{
-			UnityEngine.Time.timeScale = scale;
+			//UnityEngine.Time.timeScale = scale;
 			//UnityEngine.Time.fixedDeltaTime = scale;
 
-			Debug.Log("The Time-Scale is: " + UnityEngine.Time.timeScale + ". FixedDeltaTime is " + UnityEngine.Time.fixedDeltaTime);
+			Debug.Log("The Time-Scale is: " );
 		}
 
 		private float getYBCTime()
 		{
-			return Time.time + ( startTimeHours * 3600f );
+			return (Time.time * timeScale) + ( startTimeHours * 3600f );
 		}
 
 		public String GetTimeAsString()
@@ -44,15 +34,15 @@ namespace YBC.Utils
 			return h.ToString("00") + ":" + m.ToString("00") + ":" + s.ToString("00");
 		}
 
-		public static float GetDeltaHours()
+		public float GetDeltaHours()
 		{
-			float delta = (Time.deltaTime / 3600f);
+			float delta = (Time.deltaTime * timeScale / 3600f);
 			return delta;
 		}
 
 		public void Update()
 		{
-			timerGui.text = GetTimeAsString();
+			timerGuiText.text = GetTimeAsString();
 		}
 	}
 }

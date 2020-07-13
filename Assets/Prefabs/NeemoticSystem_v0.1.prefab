@@ -1,0 +1,1505 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6490616534986686648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616534986686649}
+  m_Layer: 0
+  m_Name: NeemoticSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616534986686649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616534986686648}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 428.34924, y: 275.79584, z: 547.9328}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6490616536027129125}
+  - {fileID: 6490616536233734693}
+  - {fileID: 6490616536098636373}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6490616535044431817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535044431818}
+  - component: {fileID: 6490616535044431819}
+  m_Layer: 0
+  m_Name: "K\xF6rperhygiene"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535044431818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535044431817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535044431819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535044431817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 10
+  changeAmountPerHour: -0.2
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 9
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536868415100}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616535126200534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535126200535}
+  - component: {fileID: 6490616535126200536}
+  m_Layer: 0
+  m_Name: Excrempty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535126200535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535126200534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535126200536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535126200534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 10
+  changeAmountPerHour: -0.1
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 10
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 2
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: 2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616535456054403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535456054404}
+  - component: {fileID: 6490616535456054405}
+  m_Layer: 0
+  m_Name: Wachheit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535456054404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535456054403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535456054405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535456054403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616535642171266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535642171267}
+  - component: {fileID: 6490616535642171268}
+  m_Layer: 0
+  m_Name: Schmerz
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535642171267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535642171266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535642171268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535642171266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616535685158155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535685158156}
+  - component: {fileID: 6490616535685158157}
+  m_Layer: 0
+  m_Name: "S\xE4ttigung"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535685158156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535685158155}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535685158157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535685158155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 7.05
+  currentValue: 10
+  changeAmountPerHour: -0.5
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 7
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536740420134}
+    instantChangeAmount: 0
+    changeAmountPerHour: 3
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 4
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536740420134}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: -3
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535692597127}
+    instantChangeAmount: -3
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535126200536}
+    instantChangeAmount: 0
+    changeAmountPerHour: -2
+    durationInHours: 0
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616535692597125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535692597126}
+  - component: {fileID: 6490616535692597127}
+  m_Layer: 0
+  m_Name: Ausgeruhtheit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535692597126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535692597125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535692597127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535692597125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 1
+  changeAmountPerHour: -0.5
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 10
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 3
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535456054405}
+    instantChangeAmount: 10
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536438840363}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616535828517590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535828517591}
+  m_Layer: 0
+  m_Name: Needs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535828517591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535828517590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6490616535685158156}
+  - {fileID: 6490616535692597126}
+  - {fileID: 6490616535126200535}
+  - {fileID: 6490616535044431818}
+  - {fileID: 6490616536782937321}
+  - {fileID: 6490616536868415099}
+  - {fileID: 6490616536525658299}
+  - {fileID: 6490616536209112112}
+  m_Father: {fileID: 6490616536233734693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6490616535962299883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616535962299884}
+  - component: {fileID: 6490616535962299885}
+  m_Layer: 0
+  m_Name: Stress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616535962299884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535962299883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616535962299885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616535962299883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536027129124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536027129125}
+  - component: {fileID: 6490616536027129126}
+  m_Layer: 0
+  m_Name: ChangeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536027129125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536027129124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616534986686649}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536027129126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536027129124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862fc78406fa81947a69af764b2f0b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needsCollectionObject: {fileID: 6490616535828517590}
+  emotionsCollectionObjects: {fileID: 6490616536372633608}
+  generalChangeFactor: 1
+--- !u!1 &6490616536098636372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536098636373}
+  m_Layer: 0
+  m_Name: Overrides
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536098636373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536098636372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616534986686649}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6490616536209112143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536209112112}
+  - component: {fileID: 6490616536209112113}
+  m_Layer: 0
+  m_Name: Unterhaltung
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536209112112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536209112143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536209112113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536209112143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 10
+  changeAmountPerHour: -0.1
+  urgendZoneMax: 3
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 9
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536793822335}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.8
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535456054405}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536233734692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536233734693}
+  m_Layer: 0
+  m_Name: Neemotions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536233734693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536233734692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6490616535828517591}
+  - {fileID: 6490616536372633609}
+  m_Father: {fileID: 6490616534986686649}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6490616536372633608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536372633609}
+  m_Layer: 0
+  m_Name: Emotions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536372633609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536372633608}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6490616536731097994}
+  - {fileID: 6490616536562200931}
+  - {fileID: 6490616536740420133}
+  - {fileID: 6490616536793822334}
+  - {fileID: 6490616536797752406}
+  - {fileID: 6490616535962299884}
+  - {fileID: 6490616535456054404}
+  - {fileID: 6490616536438840362}
+  - {fileID: 6490616535642171267}
+  m_Father: {fileID: 6490616536233734693}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6490616536438840361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536438840362}
+  - component: {fileID: 6490616536438840363}
+  m_Layer: 0
+  m_Name: Gesundheit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536438840362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536438840361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536438840363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536438840361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536525658298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536525658299}
+  - component: {fileID: 6490616536525658300}
+  m_Layer: 0
+  m_Name: Kreativer Ausdruck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536525658299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536525658298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536525658300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536525658298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 10
+  changeAmountPerHour: -0.1
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 9
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536793822335}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536438840363}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535456054405}
+    instantChangeAmount: 0
+    changeAmountPerHour: 2
+    durationInHours: 0
+  oversatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616535642171268}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536562200930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536562200931}
+  - component: {fileID: 6490616536562200932}
+  m_Layer: 0
+  m_Name: Trauer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536562200931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536562200930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536562200932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536562200930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536731097993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536731097994}
+  - component: {fileID: 6490616536731097995}
+  m_Layer: 0
+  m_Name: Freude
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536731097994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536731097993}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536731097995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536731097993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536740420132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536740420133}
+  - component: {fileID: 6490616536740420134}
+  m_Layer: 0
+  m_Name: Angst
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536740420133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536740420132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536740420134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536740420132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536782937320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536782937321}
+  - component: {fileID: 6490616536782937322}
+  m_Layer: 0
+  m_Name: Sauberkeit & Ordnung
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536782937321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536782937320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536782937322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536782937320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 10
+  changeAmountPerHour: -0.1
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 10
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: 0
+    changeAmountPerHour: 2
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536868415100}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536868415100}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.5
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536797752407}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536793822333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536793822334}
+  - component: {fileID: 6490616536793822335}
+  m_Layer: 0
+  m_Name: Wut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536793822334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536793822333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536793822335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536793822333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536797752405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536797752406}
+  - component: {fileID: 6490616536797752407}
+  m_Layer: 0
+  m_Name: Ekel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536797752406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536797752405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616536372633609}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536797752407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536797752405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 5
+  currentValue: 5
+  changeAmountPerHour: 0
+  urgendZoneMax: 0
+  unsatisfiedZoneMax: 0
+  satisfiedZoneMax: 0
+  statusString: 
+  urgendZoneEffects: []
+  unsatisfiedEffects: []
+  satisfiedEffects: []
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 
+--- !u!1 &6490616536868415098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490616536868415099}
+  - component: {fileID: 6490616536868415100}
+  m_Layer: 0
+  m_Name: Anerkennung
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490616536868415099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536868415098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6490616535828517591}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6490616536868415100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490616536868415098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiSlider: {fileID: 0}
+  startValue: 10
+  currentValue: 10
+  changeAmountPerHour: -0.1
+  urgendZoneMax: 2
+  unsatisfiedZoneMax: 5
+  satisfiedZoneMax: 10
+  statusString: 
+  urgendZoneEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536740420134}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  unsatisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.3
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616536562200932}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.2
+    durationInHours: 0
+  satisfiedEffects:
+  - neemotionAffected: {fileID: 6490616536731097995}
+    instantChangeAmount: 2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 6490616535962299885}
+    instantChangeAmount: -1
+    changeAmountPerHour: 0
+    durationInHours: 0
+  oversatisfiedEffects: []
+  urgencyOverrides: []
+  NeemotionName: 

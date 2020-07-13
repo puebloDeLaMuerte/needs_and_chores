@@ -6,10 +6,15 @@ using YBC.Utils;
 
 namespace YBC.Neemotix
 {
-	public class ChangeManager : NeemotixBase
+	class ChangeManager : NeemotixBase
 	{
 		public GameObject needsCollectionObject;
 		public GameObject emotionsCollectionObjects;
+
+		[Space]
+
+		public InteractablesManager interactablesManager;
+		public YBCTimer ybcTimer;
 
 		[Space]
 
@@ -19,6 +24,14 @@ namespace YBC.Neemotix
 		private Neemotion[] emotions;
 
 		private List<Effect> effectsQueue = new List<Effect>();
+
+
+		private void Awake()
+		{
+			PushEffectToQueue m = new PushEffectToQueue(addEffectToQueue);
+			interactablesManager.setPushToEffectsQueueMethod(m);
+		}
+
 
 		// Start is called before the first frame update
 		void Start()
@@ -34,6 +47,7 @@ namespace YBC.Neemotix
 			Debug.Log(message);
 
 		}
+
 
 		// Update is called once per frame
 		void Update()
@@ -51,6 +65,12 @@ namespace YBC.Neemotix
 		}
 
 
+		public delegate void PushEffectToQueue( Effect effect );
+
+		/// <summary>
+		/// Push an Effect to the EffectsQueue
+		/// </summary>
+		/// <param name="effect">the Effect to push to EffectsQueue</param>
 		public void addEffectToQueue(Effect effect)
 		{
 			effectsQueue.Add(effect);
@@ -102,9 +122,9 @@ namespace YBC.Neemotix
 			if( effectHourlyAmount != 0)
 			{
 				float oldval = fx.neemotionAffected.currentValue;
-				float changeAmount = (effectHourlyAmount * YBCTimer.GetDeltaHours() * generalChangeFactor);
+				float changeAmount = (effectHourlyAmount * ybcTimer.GetDeltaHours() * generalChangeFactor);
 				fx.neemotionAffected.SetCurrentValue( oldval += changeAmount );
-				fx.IncrementAppliedHours(YBCTimer.GetDeltaHours());
+				fx.IncrementAppliedHours(ybcTimer.GetDeltaHours());
 			}
 		}
 
@@ -129,6 +149,7 @@ namespace YBC.Neemotix
 			foreach ( Effect fx in effectsQueue )
 			{
 				PerformTimeBasedEffect(fx);
+				PerformImmediateEffect(fx);
 			}
 		}
 
@@ -158,7 +179,7 @@ namespace YBC.Neemotix
 		{
 			foreach ( var need in needs )
 			{
-				float thisChangeAmount = need.changeAmountPerHour * generalChangeFactor * YBCTimer.GetDeltaHours();
+				float thisChangeAmount = need.changeAmountPerHour * generalChangeFactor * ybcTimer.GetDeltaHours();
 				float tempval = need.currentValue + thisChangeAmount;
 				need.SetCurrentValue(tempval);
 			}
@@ -167,12 +188,38 @@ namespace YBC.Neemotix
 
 		private void CheckForExpiredEffects()
 		{
+			List<Effect> toBeRemoved = null;
+
+			// check effects and mark for removal
 			foreach ( Effect fx in effectsQueue )
 			{
-				if ( fx.IsDue() )
+				if ( fx.IsDue() || fx.IsRevoked() )
 				{
-					effectsQueue.Remove(fx);
+					toBeRemoved = createRemoveList(toBeRemoved);
+					toBeRemoved.Add(fx);
 				}
+			}
+
+			// remove and reset if necessary
+			if ( toBeRemoved != null )
+			{
+				foreach ( Effect e in toBeRemoved )
+				{
+					effectsQueue.Remove(e);
+					e.Reset();
+					Debug.Log("removing: " + e.neemotionAffected + " from Queue");
+				}
+			}
+		}
+
+		private List<Effect> createRemoveList( List<Effect> thelist )
+		{ 
+			if ( thelist != null )
+			{
+				return thelist;
+			} else
+			{
+				return new List<Effect>();
 			}
 		}
 
