@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &53426286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490616535126200536, guid: 24a0f3df19805b94195f4f7aed7896e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056540231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &129431883
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -249,6 +261,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3181389251922424903, guid: 17f90c6bf5ae35d40ba66cd4744cda5e, type: 3}
+--- !u!114 &566254272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490616536209112113, guid: 24a0f3df19805b94195f4f7aed7896e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056540231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &587899285
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -642,6 +666,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUI Container
       objectReference: {fileID: 0}
+    - target: {fileID: 2782459993846132828, guid: 469fe053dbf88684d8d909966bbcab4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469fe053dbf88684d8d909966bbcab4c, type: 3}
 --- !u!114 &655685426 stripped
@@ -961,10 +990,25 @@ PrefabInstance:
       propertyPath: timerGui
       value: 
       objectReference: {fileID: 655685426}
+    - target: {fileID: 2264395038945048713, guid: b57ed02372c8b174bafaa0cc2275c3a9,
+        type: 3}
+      propertyPath: timerGuiText
+      value: 
+      objectReference: {fileID: 655685426}
+    - target: {fileID: 2264395038945048713, guid: b57ed02372c8b174bafaa0cc2275c3a9,
+        type: 3}
+      propertyPath: timeScale
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2264395038945048714, guid: b57ed02372c8b174bafaa0cc2275c3a9,
         type: 3}
       propertyPath: m_Name
       value: YBCTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264395038945048714, guid: b57ed02372c8b174bafaa0cc2275c3a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b57ed02372c8b174bafaa0cc2275c3a9, type: 3}
@@ -1062,6 +1106,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cebef3559f94a6440ac9c1782954dc32, type: 3}
+--- !u!114 &994925512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2264395038945048713, guid: b57ed02372c8b174bafaa0cc2275c3a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 890377879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd3f1857565faa45bc4c09533146d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003719644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,11 +1224,21 @@ PrefabInstance:
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685431}
+    - target: {fileID: 6490616535044431819, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616535126200536, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685432}
+    - target: {fileID: 6490616535126200536, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616535456054405, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
@@ -1193,6 +1259,11 @@ PrefabInstance:
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685433}
+    - target: {fileID: 6490616535692597127, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616535962299885, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
@@ -1203,11 +1274,21 @@ PrefabInstance:
       propertyPath: interactablesManager
       value: 
       objectReference: {fileID: 1234022785}
+    - target: {fileID: 6490616536027129126, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: ybcTimer
+      value: 
+      objectReference: {fileID: 994925512}
     - target: {fileID: 6490616536209112113, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685427}
+    - target: {fileID: 6490616536209112113, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616536438840363, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
@@ -1218,6 +1299,11 @@ PrefabInstance:
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685428}
+    - target: {fileID: 6490616536525658300, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616536562200932, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
@@ -1228,6 +1314,21 @@ PrefabInstance:
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685443}
+    - target: {fileID: 6490616536731097995, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: unsatisfiedZoneMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490616536731097995, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: satisfiedZoneMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490616536731097995, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: urgendZoneMax
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616536740420134, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
@@ -1238,6 +1339,11 @@ PrefabInstance:
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685430}
+    - target: {fileID: 6490616536782937322, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6490616536793822335, guid: 24a0f3df19805b94195f4f7aed7896e4,
         type: 3}
       propertyPath: guiSlider
@@ -1253,6 +1359,11 @@ PrefabInstance:
       propertyPath: guiSlider
       value: 
       objectReference: {fileID: 655685429}
+    - target: {fileID: 6490616536868415100, guid: 24a0f3df19805b94195f4f7aed7896e4,
+        type: 3}
+      propertyPath: startValue
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24a0f3df19805b94195f4f7aed7896e4, type: 3}
 --- !u!64 &1090831091
@@ -1929,6 +2040,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547824016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490616535692597127, guid: 24a0f3df19805b94195f4f7aed7896e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056540231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1556032458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490616536782937322, guid: 24a0f3df19805b94195f4f7aed7896e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056540231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1568124412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490616535685158157, guid: 24a0f3df19805b94195f4f7aed7896e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056540231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593191825
 GameObject:
   m_ObjectHideFlags: 1
@@ -2159,7 +2306,18 @@ MonoBehaviour:
   impactSounds: []
   OnPickupEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903477817}
+        m_MethodName: OnInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pickupRepeatMode: 0
   OnPutBackEvent:
     m_PersistentCalls:
@@ -2309,7 +2467,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea4032843e987b4d9b028369470bda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: []
+  effects:
+  - neemotionAffected: {fileID: 1568124412}
+    instantChangeAmount: 4
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 53426286}
+    instantChangeAmount: 0
+    changeAmountPerHour: -3
+    durationInHours: 0.5
+  - neemotionAffected: {fileID: 1556032458}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
+    durationInHours: 0
 --- !u!64 &1933572384
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2728,7 +2898,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea4032843e987b4d9b028369470bda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: []
+  effects:
+  - neemotionAffected: {fileID: 566254272}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 1547824016}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.2
+    durationInHours: 0
 --- !u!4 &4356724008207866
 Transform:
   m_ObjectHideFlags: 0
@@ -2931,13 +3109,35 @@ MonoBehaviour:
       m_Calls: []
   DockFinishedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960673290650121}
+        m_MethodName: OnInteractionStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UnDockStartedEvent:
     m_PersistentCalls:
       m_Calls: []
   UnDockFinishedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960673290650121}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   drawDockGizmos: 1
 --- !u!1 &253556029372931097
 GameObject:
@@ -4167,7 +4367,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea4032843e987b4d9b028369470bda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects: []
+  effects:
+  - neemotionAffected: {fileID: 566254272}
+    instantChangeAmount: 0.5
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 1547824016}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1
+    durationInHours: 0
 --- !u!33 &5760938471127313590
 MeshFilter:
   m_ObjectHideFlags: 0
