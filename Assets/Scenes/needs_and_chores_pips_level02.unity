@@ -2318,7 +2318,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pickupRepeatMode: 0
+  pickupRepeatMode: 1
   OnPutBackEvent:
     m_PersistentCalls:
       m_Calls: []
