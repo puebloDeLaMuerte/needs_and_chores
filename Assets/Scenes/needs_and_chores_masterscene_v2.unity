@@ -3661,6 +3661,7 @@ Transform:
   - {fileID: 4670671242831378}
   - {fileID: 1903477816}
   - {fileID: 1862369261900601319}
+  - {fileID: 6441024106826825399}
   m_Father: {fileID: 1003719645}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5955,7 +5956,7 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 2010404032}
     instantChangeAmount: 0
-    changeAmountPerHour: 1
+    changeAmountPerHour: 2
     durationInHours: 0
 --- !u!4 &1507521219 stripped
 Transform:
@@ -6194,9 +6195,9 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: A piece of cake
+  interactionString: Eat cake
   putBackString: <DEFAULT PUT BACK STRING>
-  postExaminationInteractionString: 
+  postExaminationInteractionString: Eat more cake
   autoGeneratePutBackObject: 0
   examinationOffsetUp: 0
   examinationOffsetForward: -0.2
@@ -6379,10 +6380,10 @@ MonoBehaviour:
     durationInHours: 0
   - neemotionAffected: {fileID: 442530126}
     instantChangeAmount: 0
-    changeAmountPerHour: -3
+    changeAmountPerHour: -2
     durationInHours: 2
   - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -2
+    instantChangeAmount: -1.5
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!1 &1918521129
@@ -6595,11 +6596,466 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].changeAmountPerHour
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[4].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[4].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].instantChangeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].instantChangeAmount
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].instantChangeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[1].instantChangeAmount
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[2].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[2].changeAmountPerHour
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[3].changeAmountPerHour
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedZoneMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[0].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241779967050, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].changeAmountPerHour
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedZoneMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: oversatisfiedEffects.Array.data[0].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].instantChangeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242633929386, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].neemotionAffected
+      value: 
+      objectReference: {fileID: 1943101893}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].neemotionAffected
+      value: 
+      objectReference: {fileID: 1943101893}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].neemotionAffected
+      value: 
+      objectReference: {fileID: 1943101893}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].instantChangeAmount
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].instantChangeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[1].instantChangeAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[2].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[2].neemotionAffected
+      value: 
+      objectReference: {fileID: 1943101893}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[2].instantChangeAmount
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedZoneMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242862496232, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242914310065, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].changeAmountPerHour
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[2].instantChangeAmount
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].instantChangeAmount
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242935549849, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].changeAmountPerHour
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].changeAmountPerHour
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243108302371, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357243173132008, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: interactablesManager
       value: 
       objectReference: {fileID: 1221764970}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].changeAmountPerHour
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[0].changeAmountPerHour
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].changeAmountPerHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[0].instantChangeAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5324259741808522146, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_Name
@@ -6918,10 +7374,22 @@ PrefabInstance:
     - target: {fileID: 8975158772105108375, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: timeScale
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ecd41836bc18524d8a8d66e6144f16e, type: 3}
+--- !u!114 &1943101893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4175357242914310065, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1943101892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1958088589
 GameObject:
   m_ObjectHideFlags: 0
@@ -7363,7 +7831,7 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 2010404032}
     instantChangeAmount: 0
-    changeAmountPerHour: 1
+    changeAmountPerHour: 1.3
     durationInHours: 0
   - neemotionAffected: {fileID: 1235051867}
     instantChangeAmount: 0.25
@@ -7629,6 +8097,7 @@ GameObject:
   - component: {fileID: 528001356}
   - component: {fileID: 488544239280599170}
   - component: {fileID: 488544239280599169}
+  - component: {fileID: 488544239280599171}
   m_Layer: 0
   m_Name: Waschbeckenschrank
   m_TagString: Untagged
@@ -7693,6 +8162,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3027358, y: 0.24390578, z: 0.14773858}
   m_Center: {x: -0.0064308643, y: 0.87272704, z: 0.22355562}
+--- !u!114 &488544239280599171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488544239280599168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea4032843e987b4d9b028369470bda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - neemotionAffected: {fileID: 1653526343}
+    instantChangeAmount: 1
+    changeAmountPerHour: 0
+    durationInHours: 0
 --- !u!4 &543450653213970139
 Transform:
   m_ObjectHideFlags: 0
@@ -7715,7 +8201,6 @@ Transform:
   - {fileID: 2303162832652420208}
   - {fileID: 8403775}
   - {fileID: 6445775198394431662}
-  - {fileID: 6441024106826825399}
   m_Father: {fileID: 1003719645}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8426,8 +8911,8 @@ MonoBehaviour:
     instantChangeAmount: 10
     changeAmountPerHour: 0
     durationInHours: 0
-  - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -1
+  - neemotionAffected: {fileID: 1653526343}
+    instantChangeAmount: -0.5
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!23 &2199765461764643713
@@ -9368,7 +9853,7 @@ MonoBehaviour:
     durationInHours: 0
   - neemotionAffected: {fileID: 1235051867}
     instantChangeAmount: 0
-    changeAmountPerHour: 1
+    changeAmountPerHour: 1.5
     durationInHours: 0
 --- !u!4 &5687842789513961646
 Transform:
@@ -9523,14 +10008,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488544239280599168}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.2649827, y: 0, z: 6.016076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 553070956}
   - {fileID: 1383222517}
-  m_Father: {fileID: 543450653213970139}
-  m_RootOrder: 11
+  m_Father: {fileID: 1221764971}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6445775198394431662
 Transform:
@@ -9614,7 +10099,7 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: Wash
+  interactionString: Wash Dishes
   canInteractWithWhileHoldingObject: 1
   myDockTransform: {fileID: 3057852}
   myFocusTransform: {fileID: 1839841578}
@@ -10287,7 +10772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - neemotionAffected: {fileID: 528949886}
-    instantChangeAmount: 1
+    instantChangeAmount: 0.5
     changeAmountPerHour: 0
     durationInHours: 0
   - neemotionAffected: {fileID: 979759389}
