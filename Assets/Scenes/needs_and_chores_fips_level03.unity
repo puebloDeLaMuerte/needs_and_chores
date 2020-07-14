@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3057851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3057852}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3057852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057851}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08555889, y: -0.009512544, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1862369261900601319}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8403775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e61dce67300fd5441878e8e01f04f9cd,
@@ -1763,7 +1793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549477039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.048, y: -0.019, z: 0}
+  m_LocalPosition: {x: 0.048, y: -0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450653592874942}
@@ -3286,7 +3316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018227174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.368, y: -0.066, z: 0}
+  m_LocalPosition: {x: -0.368, y: -0.111, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450653592874942}
@@ -5865,6 +5895,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1839841577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839841578}
+  m_Layer: 0
+  m_Name: Focus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1839841578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839841577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08555889, y: -0.029, z: 0.035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1862369261900601319}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1841465312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4436134608711204, guid: 61ee32032a51f264ab192daff55116f3,
@@ -6542,7 +6602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091593460}
   m_LocalRotation: {x: -0, y: 0.04225392, z: -0, w: 0.99910694}
-  m_LocalPosition: {x: -0.72509277, y: 0.04713638, z: -0.11616249}
+  m_LocalPosition: {x: -0.605, y: 0.121, z: -0.126}
   m_LocalScale: {x: 0.909091, y: 0.9090909, z: 0.909091}
   m_Children: []
   m_Father: {fileID: 1494933479}
@@ -7332,9 +7392,9 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: An alarm clock
+  interactionString: Set alarm clock
   putBackString: Put back alarm clock
-  postExaminationInteractionString: 
+  postExaminationInteractionString: It's a set alarm clock
   autoGeneratePutBackObject: 1
   examinationOffsetUp: 0
   examinationOffsetForward: -0.35
@@ -7342,7 +7402,7 @@ MonoBehaviour:
   tossStrength: 1
   tossOffsetUp: 0.1
   tossOffsetForward: 0.1
-  rotationLockType: 0
+  rotationLockType: 1
   enableSounds: 1
   pickupSounds: []
   putBackSounds: []
@@ -7512,7 +7572,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 73af73d884d8d494b8bb0291a8f6afd0, type: 3}
+  - {fileID: 2100000, guid: 2eaa70b316570004dac32172ecb25466, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7543,7 +7603,9 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.6216345, y: 0.8313502, z: 9.6002035}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3057852}
+  - {fileID: 1839841578}
   m_Father: {fileID: 543450653213970139}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8638,6 +8700,7 @@ GameObject:
   - component: {fileID: 8850319385671106029}
   - component: {fileID: 2199765461764643713}
   - component: {fileID: 528001364}
+  - component: {fileID: 6691709227301900734}
   m_Layer: 0
   m_Name: Spuelbecken
   m_TagString: Untagged
@@ -8645,6 +8708,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!114 &6691709227301900734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691709227301900733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d3c2b11560be94fb657f989ded4ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnMouseOver: 1
+  highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
+  interactionDistance: 2
+  playSecondarySoundOnInteract: 0
+  showWithText: 0
+  audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
+  soundPlaybackBehaviour: 0
+  soundToPlayOnInteract: {fileID: 0}
+  interactionString: Wash
+  canInteractWithWhileHoldingObject: 1
+  myDockTransform: {fileID: 3057852}
+  myFocusTransform: {fileID: 1839841578}
+  dockedViewLimits: {x: 45, y: 45}
+  smoothDock: 1
+  dockHintText: Sit
+  unDockHintText: Get up
+  playDockSounds: 1
+  dockingSound: {fileID: 0}
+  unDockingSound: {fileID: 0}
+  DockStartedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DockFinishedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  UnDockStartedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  UnDockFinishedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  drawDockGizmos: 1
 --- !u!1 &6750895617538873410
 GameObject:
   m_ObjectHideFlags: 0
@@ -9338,8 +9445,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.75}
-  m_Center: {x: 0, y: 0, z: 0.1}
+  m_Size: {x: 0.26599327, y: 0.2579068, z: 0.2119926}
+  m_Center: {x: -0.032996643, y: -0.0065608323, z: -0.16900386}
 --- !u!65 &8952400827890003519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9364,8 +9471,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.60437983, y: 1.0135803, z: 0.13354897}
-  m_Center: {x: 0.30218974, y: 0.05259943, z: 0.046774484}
+  m_Size: {x: 0.60437983, y: 1.0135803, z: 0.05639198}
+  m_Center: {x: 0.30218974, y: 0.05259943, z: 0.0081959795}
 --- !u!23 &8971560797071222709
 MeshRenderer:
   m_ObjectHideFlags: 0
