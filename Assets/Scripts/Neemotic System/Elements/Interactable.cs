@@ -44,10 +44,10 @@ namespace YBC.Neemotix
 		{
 			foreach ( Effect e in effects )
 			{
-				if( e.durationInHours == 0)
-				{
+				//if( e.durationInHours == 0)
+				//{
 					e.Revoke();
-				}
+				//}
 			}
 			Debug.Log("You finished interacting with " + myInteractableObjectName  + ". Was it good?");
 

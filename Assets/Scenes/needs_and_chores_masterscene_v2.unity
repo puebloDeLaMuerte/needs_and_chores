@@ -362,6 +362,36 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0.25
   m_ShadowAngle: 0
+--- !u!1 &137133996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137133997}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &137133997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137133996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.432, y: 0, z: -0.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4446320032446268468}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148763445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +2293,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce19b2cb11f3c34ca5689f4682aebe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &639849331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639849332}
+  m_Layer: 0
+  m_Name: Focus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &639849332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639849331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.105, y: 0, z: -0.022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4446320032446268468}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &647485783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6132,7 +6192,7 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: 20b7d1cd6c75056478f53bb13f81f7e8, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
@@ -6294,7 +6354,11 @@ MonoBehaviour:
   - neemotionAffected: {fileID: 2010404032}
     instantChangeAmount: 0
     changeAmountPerHour: 2
-    durationInHours: 0
+    durationInHours: 1
+  - neemotionAffected: {fileID: 235399167}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.5
+    durationInHours: 1
 --- !u!4 &1507521219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8107217616688080334, guid: 67e07b210f439f346a2bf0b6a626753e,
@@ -6713,7 +6777,8 @@ MonoBehaviour:
   tossOffsetForward: 0.1
   rotationLockType: 0
   enableSounds: 1
-  pickupSounds: []
+  pickupSounds:
+  - {fileID: 8300000, guid: fc17229ad61764b4f87e92a4386a44b3, type: 3}
   putBackSounds: []
   impactSounds: []
   OnPickupEvent:
@@ -6881,7 +6946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - neemotionAffected: {fileID: 1187612898}
-    instantChangeAmount: 4
+    instantChangeAmount: 3
     changeAmountPerHour: 0
     durationInHours: 0
   - neemotionAffected: {fileID: 442530126}
@@ -6889,7 +6954,7 @@ MonoBehaviour:
     changeAmountPerHour: -2
     durationInHours: 2
   - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -1.5
+    instantChangeAmount: -1
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!1 &1918521129
@@ -7102,6 +7167,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4175357241596989259, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[1].instantChangeAmount
@@ -7217,6 +7287,11 @@ PrefabInstance:
       propertyPath: satisfiedZoneMax
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
@@ -7257,25 +7332,40 @@ PrefabInstance:
       propertyPath: oversatisfiedEffects.Array.data[0].instantChangeAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357241779967050, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: startValue
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+    - target: {fileID: 4175357241779967050, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
-      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
-      value: 0.2
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241779967050, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isItBad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
-      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
+      propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
       propertyPath: urgendZoneEffects.Array.data[2].changeAmountPerHour
-      value: -0.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7297,20 +7387,30 @@ PrefabInstance:
       propertyPath: oversatisfiedEffects.Array.data[0].instantChangeAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357242239200261, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
-      value: 0.8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[1].changeAmountPerHour
-      value: 0.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[2].instantChangeAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7322,10 +7422,55 @@ PrefabInstance:
       propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].neemotionAffected
+      value: 
+      objectReference: {fileID: 528949886}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].instantChangeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[2].changeAmountPerHour
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: urgendZoneEffects.Array.data[3].changeAmountPerHour
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242493284325, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242493284325, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: startValue
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357242633929386, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: startValue
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242633929386, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242633929386, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isItBad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7432,9 +7577,29 @@ PrefabInstance:
       propertyPath: satisfiedZoneMax
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357242649832306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357242862496232, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: startValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242862496232, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242862496232, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isItBad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242872047685, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242914310065, guid: 2ecd41836bc18524d8a8d66e6144f16e,
@@ -7442,10 +7607,20 @@ PrefabInstance:
       propertyPath: startValue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357242914310065, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242914310065, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isItBad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7482,10 +7657,25 @@ PrefabInstance:
       propertyPath: satisfiedEffects.Array.data[0].instantChangeAmount
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357242920742692, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357242935549849, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: startValue
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242935549849, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242935549849, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isItBad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7517,10 +7707,25 @@ PrefabInstance:
       propertyPath: unsatisfiedEffects.Array.data[1].changeAmountPerHour
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4175357243007260082, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4175357243108302371, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: startValue
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243108302371, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243108302371, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: isItBad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357243173132008, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7561,6 +7766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: satisfiedEffects.Array.data[0].instantChangeAmount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: changeAmountPerHour
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5324259741808522146, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7685,17 +7895,17 @@ PrefabInstance:
     - target: {fileID: 8276533674596932952, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8276533674596932952, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8276533674596932952, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276533674748091610, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7725,6 +7935,11 @@ PrefabInstance:
     - target: {fileID: 8276533675118270181, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276533675230622179, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8276533675315815215, guid: 2ecd41836bc18524d8a8d66e6144f16e,
@@ -7880,7 +8095,7 @@ PrefabInstance:
     - target: {fileID: 8975158772105108375, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: timeScale
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ecd41836bc18524d8a8d66e6144f16e, type: 3}
@@ -8275,9 +8490,12 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: 857ddc8c8e18bd345b0e8304cc68f6db, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DockFinishedEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2097445124}
@@ -8291,12 +8509,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  DockFinishedEvent:
-    m_PersistentCalls:
-      m_Calls: []
   UnDockStartedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2097445124}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UnDockFinishedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8329,11 +8555,15 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 295626916}
     instantChangeAmount: 0
-    changeAmountPerHour: 4
+    changeAmountPerHour: 6
     durationInHours: 0
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
-    changeAmountPerHour: -0.5
+    changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 528949886}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
     durationInHours: 0
 --- !u!82 &2097445125
 AudioSource:
@@ -8777,8 +9007,8 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 8300000, guid: d234e1db67b2b7e44a42dbdaabc8419e, type: 3}
-  unDockingSound: {fileID: 8300000, guid: e831eb9c5b23a744e8de5350c2469115, type: 3}
+  dockingSound: {fileID: 8300000, guid: 19ca7da499a066547b44c8cb69e17240, type: 3}
+  unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8966,9 +9196,12 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: 9c39cb009e8c67b4aa001c7835fb2014, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DockFinishedEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 488544239280599171}
@@ -8982,12 +9215,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  DockFinishedEvent:
-    m_PersistentCalls:
-      m_Calls: []
   UnDockStartedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 488544239280599171}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UnDockFinishedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9021,7 +9262,11 @@ MonoBehaviour:
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
     changeAmountPerHour: 8
-    durationInHours: 0.5
+    durationInHours: 0.2
+  - neemotionAffected: {fileID: 295626916}
+    instantChangeAmount: -1
+    changeAmountPerHour: 8
+    durationInHours: 0.2
 --- !u!82 &488544239280599172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9234,11 +9479,11 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 1
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: Work
+  interactionString: Be creative  (it's a Mac!)
   canInteractWithWhileHoldingObject: 1
   myDockTransform: {fileID: 1018227175}
   myFocusTransform: {fileID: 549477040}
-  dockedViewLimits: {x: 45, y: 45}
+  dockedViewLimits: {x: 15, y: 10}
   smoothDock: 1
   dockHintText: Sit
   unDockHintText: Get up
@@ -9264,7 +9509,18 @@ MonoBehaviour:
         m_CallState: 2
   UnDockStartedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 919132149136438536}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UnDockFinishedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9312,7 +9568,15 @@ MonoBehaviour:
   - neemotionAffected: {fileID: 235399167}
     instantChangeAmount: 0
     changeAmountPerHour: 3
-    durationInHours: 3
+    durationInHours: 1
+  - neemotionAffected: {fileID: 2010404032}
+    instantChangeAmount: 0
+    changeAmountPerHour: 1.5
+    durationInHours: 1
+  - neemotionAffected: {fileID: 1235051867}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
+    durationInHours: 1
 --- !u!82 &919132149136438537
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9894,7 +10158,7 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: 39517baf2a7eb584ca673aabd6ee4f8a, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
@@ -9946,11 +10210,19 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 442530126}
     instantChangeAmount: 0
-    changeAmountPerHour: 12
+    changeAmountPerHour: 25
     durationInHours: 0.5
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
     changeAmountPerHour: -2
+    durationInHours: 1
+  - neemotionAffected: {fileID: 467881046}
+    instantChangeAmount: 0
+    changeAmountPerHour: 0.2
+    durationInHours: 0
+  - neemotionAffected: {fileID: 295626916}
+    instantChangeAmount: -2
+    changeAmountPerHour: 0
     durationInHours: 0
 --- !u!82 &1905299230181280187
 AudioSource:
@@ -10289,7 +10561,7 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: 98dc24d9bb930bb4f8a0bc735567fedf, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
@@ -10344,7 +10616,7 @@ MonoBehaviour:
     changeAmountPerHour: 7
     durationInHours: 2
   - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -1
+    instantChangeAmount: -1.5
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!82 &2905634192900755870
@@ -10725,7 +10997,7 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: 5499634c93dbb6f4391240912fe5f24b, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
@@ -10746,7 +11018,18 @@ MonoBehaviour:
         m_CallState: 2
   UnDockStartedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4134566021974987883}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UnDockFinishedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10766,8 +11049,8 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 1235051867}
     instantChangeAmount: 0
-    changeAmountPerHour: 4.5
-    durationInHours: 0
+    changeAmountPerHour: 5
+    durationInHours: 6
   - neemotionAffected: {fileID: 442530126}
     instantChangeAmount: 0
     changeAmountPerHour: 0
@@ -10775,9 +11058,9 @@ MonoBehaviour:
   - neemotionAffected: {fileID: 1123795324}
     instantChangeAmount: 0
     changeAmountPerHour: -2
-    durationInHours: 0
-  - neemotionAffected: {fileID: 1187612898}
-    instantChangeAmount: 0
+    durationInHours: 0.8
+  - neemotionAffected: {fileID: 295626916}
+    instantChangeAmount: -0.8
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!82 &4134566021974987884
@@ -10919,7 +11202,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.25014094, z: -0, w: 0.96820945}
   m_LocalPosition: {x: -0.74649686, y: 1.0726901, z: 9.727731}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 137133997}
+  - {fileID: 639849332}
   m_Father: {fileID: 1221764971}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11125,8 +11410,8 @@ MonoBehaviour:
   dockHintText: Lay
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 8300000, guid: d234e1db67b2b7e44a42dbdaabc8419e, type: 3}
-  unDockingSound: {fileID: 8300000, guid: e831eb9c5b23a744e8de5350c2469115, type: 3}
+  dockingSound: {fileID: 8300000, guid: 5499634c93dbb6f4391240912fe5f24b, type: 3}
+  unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11181,7 +11466,7 @@ MonoBehaviour:
     durationInHours: 0
   - neemotionAffected: {fileID: 1235051867}
     instantChangeAmount: 0
-    changeAmountPerHour: 3
+    changeAmountPerHour: 4
     durationInHours: 0
 --- !u!82 &5675265138995832971
 AudioSource:
@@ -11195,7 +11480,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5499634c93dbb6f4391240912fe5f24b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.758
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11533,7 +11818,7 @@ MonoBehaviour:
   dockHintText: Sit
   unDockHintText: Get up
   playDockSounds: 1
-  dockingSound: {fileID: 0}
+  dockingSound: {fileID: 8300000, guid: d0e93925ed40c5e4faf5a48580783286, type: 3}
   unDockingSound: {fileID: 0}
   DockStartedEvent:
     m_PersistentCalls:
@@ -11554,7 +11839,18 @@ MonoBehaviour:
         m_CallState: 2
   UnDockStartedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6691709227301900735}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UnDockFinishedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11574,16 +11870,20 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 295626916}
     instantChangeAmount: 0
-    changeAmountPerHour: 3
-    durationInHours: 1
+    changeAmountPerHour: 6
+    durationInHours: 0.5
   - neemotionAffected: {fileID: 467881046}
     instantChangeAmount: 0
     changeAmountPerHour: 0.5
-    durationInHours: 1
+    durationInHours: 0.5
   - neemotionAffected: {fileID: 528949886}
     instantChangeAmount: 0
-    changeAmountPerHour: -0.8
-    durationInHours: 1
+    changeAmountPerHour: -1
+    durationInHours: 0.5
+  - neemotionAffected: {fileID: 295626916}
+    instantChangeAmount: -0.8
+    changeAmountPerHour: 0
+    durationInHours: 0
 --- !u!82 &6691709227301900736
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12110,16 +12410,15 @@ GameObject:
   - component: {fileID: 832159986331829753}
   - component: {fileID: 3303910769944924313}
   - component: {fileID: 528001362}
-  - component: {fileID: 8305645241723422339}
   - component: {fileID: 8305645241723422338}
-  - component: {fileID: 8305645241723422337}
   - component: {fileID: 8305645241723422340}
+  - component: {fileID: 8305645241723422337}
   m_Layer: 0
   m_Name: Telefon_Hoerer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &8305645241723422337
 MonoBehaviour:
@@ -12130,7 +12429,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8305645241723422336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84704c29960748b4b8a656ccb957e2c2, type: 3}
+  m_Script: {fileID: 11500000, guid: f6d3c2b11560be94fb657f989ded4ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
@@ -12141,26 +12440,21 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: Pick up receiver
-  putBackString: Hang up receiver
-  postExaminationInteractionString: 
-  autoGeneratePutBackObject: 1
-  examinationOffsetUp: 0
-  examinationOffsetForward: -0.3
-  pickupRotationOffset: {x: 0, y: 0, z: 0}
-  tossStrength: 1
-  tossOffsetUp: 0.1
-  tossOffsetForward: 0.1
-  rotationLockType: 0
-  enableSounds: 1
-  pickupSounds: []
-  putBackSounds: []
-  impactSounds: []
-  OnPickupEvent:
+  interactionString: Socialize!
+  canInteractWithWhileHoldingObject: 1
+  myDockTransform: {fileID: 137133997}
+  myFocusTransform: {fileID: 639849332}
+  dockedViewLimits: {x: 360, y: 180}
+  smoothDock: 1
+  dockHintText: Socialize
+  unDockHintText: Hang up
+  playDockSounds: 1
+  dockingSound: {fileID: 8300000, guid: 36a220940610c0f489383f6a217fffb8, type: 3}
+  unDockingSound: {fileID: 0}
+  DockStartedEvent:
     m_PersistentCalls:
       m_Calls: []
-  pickupRepeatMode: 1
-  OnPutBackEvent:
+  DockFinishedEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8305645241723422340}
@@ -12174,7 +12468,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  putbackRepeatMode: 1
+  UnDockStartedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8305645241723422340}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  UnDockFinishedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  drawDockGizmos: 1
 --- !u!82 &8305645241723422338
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12271,22 +12582,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!54 &8305645241723422339
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8305645241723422336}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8305645241723422340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12303,11 +12598,11 @@ MonoBehaviour:
   - neemotionAffected: {fileID: 528949886}
     instantChangeAmount: 0
     changeAmountPerHour: 2
-    durationInHours: 0
+    durationInHours: 0.5
   - neemotionAffected: {fileID: 979759389}
     instantChangeAmount: 0
-    changeAmountPerHour: 4
-    durationInHours: 0
+    changeAmountPerHour: 6
+    durationInHours: 0.5
 --- !u!4 &8551627930692776349
 Transform:
   m_ObjectHideFlags: 0
