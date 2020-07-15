@@ -21,6 +21,10 @@ namespace YBC.Neemotix
 		[Space]
 		[Space]
 
+		public bool isEmotion = false;
+		public bool isItBad = false;
+
+
 		[Range(0f, 10f)]
 		public float urgendZoneMax = neemotionMaxValue / 4f;
 		[Range(0f, 10f)]
@@ -58,19 +62,59 @@ namespace YBC.Neemotix
 			this.guiSlider.value = currentValue;
 			this.guiSlider.maxValue = neemotionMaxValue;
 			this.guiSlider.minValue = neemotionMinValue;
+
+			sliderGradient = new Gradient();
+
+			
 		}
 
 		private void Start()
 		{
+			Color leftColor, rightColor;
+
+			if( isItBad )
+			{
+				leftColor = satisfiedColor;
+				rightColor = urgendColor;
+			} else
+			{
+				leftColor = urgendColor;
+				rightColor = satisfiedColor;
+			}
+
+			// Populate the color keys at the relative time 0 and 1 (0 and 100%)
+			sliderColorKey = new GradientColorKey[2];
+			sliderColorKey[0].color = leftColor;
+			sliderColorKey[0].time = 0.0f;
+			sliderColorKey[1].color = rightColor;
+			sliderColorKey[1].time = 1.0f;
+
+			GradientAlphaKey[] alphaKey = new GradientAlphaKey[2];
+			alphaKey[0].alpha = 1.0f;
+			alphaKey[0].time = 0.0f;
+			alphaKey[1].alpha = 1.0f;
+			alphaKey[1].time = 1.0f;
+
+			sliderGradient.SetKeys(sliderColorKey, alphaKey);
 		}
 
 		private void Update()
 		{
 			guiSlider.value = currentValue;
+
+			if( isEmotion )
+			{
+				LerpSliderColor();
+			}
 		}
 
 
-		//TODO: Maybe call this from here in the changestatus method instead of ChangeManager.evaluateStatus()??
+		private void LerpSliderColor()
+		{
+			float sliderVal = currentValue / neemotionMaxValue;
+			guiSlider.GetComponentInChildren<Image>().color = sliderGradient.Evaluate( sliderVal);
+		}
+
 
 		/// <summary>
 		/// Evaluate current Status according to currentValue of this Neemotion. Calls ChangeStatus() to actually change it
@@ -78,6 +122,8 @@ namespace YBC.Neemotix
 		/// <returns>true if status has changed, false if it didn't</returns>
 		public bool EvaluateStatus()
 		{
+			if ( isEmotion ) return false; // Don't do any Status-Stuff if you're just an Emotion. Your Slider will lerp it's color according to value in that case!
+
 			NeemotionStatus tempstat = NeemotionStatus.Undefined;
 
 			if ( currentValue <= urgendZoneMax )
