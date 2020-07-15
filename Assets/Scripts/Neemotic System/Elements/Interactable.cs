@@ -47,6 +47,7 @@ namespace YBC.Neemotix
 				//if( e.durationInHours == 0)
 				//{
 					e.Revoke();
+					e.Reset();
 				//}
 			}
 			Debug.Log("You finished interacting with " + myInteractableObjectName  + ". Was it good?");

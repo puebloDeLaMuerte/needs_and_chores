@@ -6703,6 +6703,18 @@ Transform:
   m_Father: {fileID: 2097445121}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835552597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4175357241779967050, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1943101892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1839841577
 GameObject:
   m_ObjectHideFlags: 0
@@ -6739,6 +6751,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2136625233}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1898232316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4175357242493284325, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1943101892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd59360efacf5e4493fc46301b5a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1903477809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 716a51d4553f0374caa47de6f1f10bd8,
@@ -7294,6 +7318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
+      propertyPath: satisfiedEffects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
       propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
       value: 1
       objectReference: {fileID: 0}
@@ -7336,6 +7365,26 @@ PrefabInstance:
         type: 3}
       propertyPath: changeAmountPerHour
       value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[4].neemotionAffected
+      value: 
+      objectReference: {fileID: 1898232316}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[4].instantChangeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].neemotionAffected
+      value: 
+      objectReference: {fileID: 1835552597}
+    - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].instantChangeAmount
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4175357241779967050, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
