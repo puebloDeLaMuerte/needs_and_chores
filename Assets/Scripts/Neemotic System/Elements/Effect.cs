@@ -18,13 +18,15 @@ namespace YBC.Neemotix
 
 		public float TotalHoursApplied { get => totalHoursApplied; }
 
+
 		/// <summary>
 		/// Resets totalHoursApplied and revoked values so this Effect can be re-used in the future.
+		/// Everything that has to be done to make this re-useable needs to be done in here!
 		/// </summary>
 		public void Reset()
 		{
-			this.totalHoursApplied = 0f;
-			this.revoked = false;
+			totalHoursApplied = 0f;
+			revoked = false;
 		}
 
 
@@ -34,8 +36,9 @@ namespace YBC.Neemotix
 		public void Revoke()
 		{
 			Debug.Log("Revoking " + neemotionAffected);
-			this.revoked = true;
+			revoked = true;
 		}
+
 
 		/// <summary>
 		/// Increment the counter by h=hours
@@ -46,10 +49,12 @@ namespace YBC.Neemotix
 			totalHoursApplied += h;
 		}
 
+
 		/// <summary>
-		/// Has this Effect been applied for its durationInHours or is it an immediate Effect??
+		/// Has this Effect been applied for its durationInHours or is it an immediate Effect?
 		/// </summary>
-		/// <returns>true if totalHoursApplied >= durationInHours</returns>
+		/// <returns>true if it has a duration and totalHoursApplied >= durationInHours.
+		/// Also true if it has no duration and no changePerHour value (probably an immediate FX then!)</returns>
 		public bool IsDue()
 		{
 			if ( durationInHours != 0)
@@ -82,6 +87,8 @@ namespace YBC.Neemotix
 		{
 			return revoked;
 		}
+
+
 		/// <summary>
 		/// Determines wether the durationInHours is greater than zero
 		/// </summary>

@@ -54,6 +54,9 @@ namespace YBC.Neemotix
 		public string NeemotionName;
 
 
+		/// <summary>
+		/// Initialize Gui-Slider color Stuff. Set Nemotion Name. Initialize CurrentValue and Status.
+		/// </summary>
 		private void Awake()
 		{
 			this.NeemotionName = gameObject.name;
@@ -64,10 +67,13 @@ namespace YBC.Neemotix
 			this.guiSlider.minValue = neemotionMinValue;
 
 			sliderGradient = new Gradient();
-
-			
 		}
 
+
+
+		/// <summary>
+		/// Initialize Gui-Slider Color Stuff (Probably not the best place to do it here as a Spagetti).
+		/// </summary>
 		private void Start()
 		{
 			Color leftColor, rightColor;
@@ -98,6 +104,10 @@ namespace YBC.Neemotix
 			sliderGradient.SetKeys(sliderColorKey, alphaKey);
 		}
 
+
+		/// <summary>
+		/// Updates the Gui-Slider Color.
+		/// </summary>
 		private void Update()
 		{
 			guiSlider.value = currentValue;
@@ -109,11 +119,13 @@ namespace YBC.Neemotix
 		}
 
 
+
 		private void LerpSliderColor()
 		{
 			float sliderVal = currentValue / neemotionMaxValue;
 			guiSlider.GetComponentInChildren<Image>().color = sliderGradient.Evaluate( sliderVal);
 		}
+
 
 
 		/// <summary>
@@ -153,6 +165,7 @@ namespace YBC.Neemotix
 				return true;
 			} else return false;
 		}
+
 
 
 		/// <summary>
@@ -195,6 +208,7 @@ namespace YBC.Neemotix
 		}
 
 
+
 		/// <summary>
 		/// Performs all Status Effects associated with it's current status (Doesn't evaluate, call EvaluateStatus() before, if yo're not shure.)
 		/// Does only perform Effects that have non-zero instantChangeAmount. Only this instantChangeAmount will be performed. Any other values will be ignored.
@@ -204,6 +218,7 @@ namespace YBC.Neemotix
 		{
 			Debug.LogError("Thou shalt not Perform Effects directly within a Neemotion!");
 		}
+
 
 
 		/// <summary>
@@ -217,6 +232,7 @@ namespace YBC.Neemotix
 
 			currentValue = newVal;
 		}
+
 
 
 		/// <summary>

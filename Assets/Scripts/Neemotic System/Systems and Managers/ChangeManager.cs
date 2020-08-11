@@ -60,7 +60,7 @@ namespace YBC.Neemotix
 			ApplyEffects();
 
 			// Find and eliminate Expired Effects
-			CheckForExpiredEffects();
+			CheckAndRemoveExpiredEffects();
 
 		}
 
@@ -186,7 +186,10 @@ namespace YBC.Neemotix
 		}
 
 
-		private void CheckForExpiredEffects()
+		/// <summary>
+		/// Loops through the effectsQueue and removes Effects that are IsDue() or IsRevoked.
+		/// </summary>
+		private void CheckAndRemoveExpiredEffects()
 		{
 			List<Effect> toBeRemoved = null;
 
@@ -212,6 +215,11 @@ namespace YBC.Neemotix
 			}
 		}
 
+		/// <summary>
+		/// Convenience Method. Creates a new List if the given list is empty.
+		/// </summary>
+		/// <param name="thelist">the list to use or be created</param>
+		/// <returns>A new List<Effect> if the input list was null. Returns the original List if it's not null</Effect></returns>
 		private List<Effect> createRemoveList( List<Effect> thelist )
 		{ 
 			if ( thelist != null )
