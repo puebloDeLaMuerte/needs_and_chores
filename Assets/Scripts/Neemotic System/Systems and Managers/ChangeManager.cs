@@ -73,6 +73,7 @@ namespace YBC.Neemotix
 		/// <param name="effect">the Effect to push to EffectsQueue</param>
 		public void addEffectToQueue(Effect effect)
 		{
+			effect.Reset();
 			effectsQueue.Add(effect);
 			Debug.Log("ChangeManager: Fx added to Queue: " + effect.neemotionAffected.NeemotionName );
 		}
@@ -209,7 +210,7 @@ namespace YBC.Neemotix
 				foreach ( Effect e in toBeRemoved )
 				{
 					effectsQueue.Remove(e);
-					e.Reset();
+					//e.Reset();
 					Debug.Log("removing: " + e.neemotionAffected + " from Queue");
 				}
 			}
