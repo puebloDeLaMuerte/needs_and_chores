@@ -36,7 +36,7 @@ namespace YBC.Neemotix
 			{
 				pushEffects(e);
 			}
-			Debug.Log("You started interacting with " + myInteractableObjectName + ". Enjoy!");
+			Debug.Log("Interaction Start: " + myInteractableObjectName);
 		}
 
 
@@ -44,13 +44,9 @@ namespace YBC.Neemotix
 		{
 			foreach ( Effect e in effects )
 			{
-				//if( e.durationInHours == 0)
-				//{
-					e.Revoke();
-					//e.Reset();
-				//}
+				e.Revoke();
 			}
-			Debug.Log("You finished interacting with " + myInteractableObjectName  + ". Was it good?");
+			Debug.Log("Interaction End: " + myInteractableObjectName);
 
 		}
 
