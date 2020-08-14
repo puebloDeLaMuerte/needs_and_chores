@@ -54,8 +54,24 @@ namespace YBC.Neemotix
 		public string NeemotionName;
 
 
+
+		private List<KeyValuePair<String, float>> myInfluencers = new List<KeyValuePair<string, float>>();
+
+		public void AddInfluencer(String name, float value)
+		{
+			myInfluencers.Add(new KeyValuePair<String, float>(name, value));
+		}
+
+		public void ListInfluences()
+		{
+			foreach ( KeyValuePair<String,float> item in myInfluencers )
+			{
+				Debug.Log(NeemotionName + ":  " + item.Key + ":  " + item.Value);
+			}
+		}
+
 		/// <summary>
-		/// Initialize Gui-Slider color Stuff. Set Nemotion Name. Initialize CurrentValue and Status.
+		/// Initialize Gui-Slider color Stuff. Set Nemotion Name. Initialize CurrentValue and Status. Set IssuerName to the Effects
 		/// </summary>
 		private void Awake()
 		{
@@ -67,6 +83,68 @@ namespace YBC.Neemotix
 			this.guiSlider.minValue = neemotionMinValue;
 
 			sliderGradient = new Gradient();
+
+			SetIssuerToEffects();
+		}
+
+		/// <summary>
+		/// Sets the name of this Neemotion as the IssuerAdress of it's Effects.
+		/// </summary>
+		private void SetIssuerToEffects()
+		{
+			foreach ( Effect effect in urgendZoneEffects )
+			{
+				effect.SetIssuerName(NeemotionName + ":urgent");
+
+				if( effect.changeAmountPerHour != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.changeAmountPerHour );
+				}
+				else if ( effect.instantChangeAmount != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.instantChangeAmount);
+				}
+
+			}
+			foreach ( Effect effect in unsatisfiedEffects )
+			{
+				effect.SetIssuerName(NeemotionName + ":unsatisfied");
+
+				if ( effect.changeAmountPerHour != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.changeAmountPerHour);
+				}
+				else if ( effect.instantChangeAmount != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.instantChangeAmount);
+				}
+			}
+			foreach ( Effect effect in satisfiedEffects )
+			{
+				effect.SetIssuerName(NeemotionName + ":satisfied");
+
+				if ( effect.changeAmountPerHour != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.changeAmountPerHour);
+				}
+				else if ( effect.instantChangeAmount != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.instantChangeAmount);
+				}
+			}
+			foreach ( Effect effect in oversatisfiedEffects )
+			{
+				effect.SetIssuerName(NeemotionName + ":oversatisfied");
+
+				if ( effect.changeAmountPerHour != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.changeAmountPerHour);
+				}
+				else if ( effect.instantChangeAmount != 0 )
+				{
+					effect.neemotionAffected.AddInfluencer(effect.GetIssuerName(), effect.instantChangeAmount);
+				}
+			}
 		}
 
 
