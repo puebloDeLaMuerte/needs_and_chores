@@ -6443,11 +6443,11 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 2010404032}
     instantChangeAmount: 0
-    changeAmountPerHour: 2
+    changeAmountPerHour: 4
     durationInHours: 1
   - neemotionAffected: {fileID: 235399167}
     instantChangeAmount: 0
-    changeAmountPerHour: 0.5
+    changeAmountPerHour: 1
     durationInHours: 1
 --- !u!4 &1507521219 stripped
 Transform:
@@ -7109,15 +7109,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - neemotionAffected: {fileID: 1187612898}
-    instantChangeAmount: 3
+    instantChangeAmount: 2
     changeAmountPerHour: 0
     durationInHours: 0
   - neemotionAffected: {fileID: 442530126}
     instantChangeAmount: 0
-    changeAmountPerHour: -2
+    changeAmountPerHour: -1.5
     durationInHours: 2
   - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -1
+    instantChangeAmount: -0.8
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!1 &1918521129
@@ -7338,6 +7338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
+      propertyPath: satisfiedEffects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
       propertyPath: urgendZoneEffects.Array.data[1].instantChangeAmount
       value: 0
       objectReference: {fileID: 0}
@@ -7455,6 +7460,16 @@ PrefabInstance:
         type: 3}
       propertyPath: changeAmountPerHour
       value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].neemotionAffected
+      value: 
+      objectReference: {fileID: 522753751}
+    - target: {fileID: 4175357241741174467, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].instantChangeAmount
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4175357241763292233, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7588,6 +7603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
+      propertyPath: satisfiedEffects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
       propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour
       value: 4
       objectReference: {fileID: 0}
@@ -7634,7 +7654,17 @@ PrefabInstance:
     - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: changeAmountPerHour
-      value: -0.15
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].neemotionAffected
+      value: 
+      objectReference: {fileID: 1835552597}
+    - target: {fileID: 4175357242337747734, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: satisfiedEffects.Array.data[3].instantChangeAmount
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4175357242493284325, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -7981,6 +8011,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7487011823809921574, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -181.76
+      objectReference: {fileID: 0}
     - target: {fileID: 8182137640914768978, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8036,6 +8071,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8276533673895106731, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_Text
+      value: Hygiene
+      objectReference: {fileID: 0}
     - target: {fileID: 8276533673951557612, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -8111,6 +8151,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8276533674754029083, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_Text
+      value: "Kreativit\xE4t"
+      objectReference: {fileID: 0}
     - target: {fileID: 8276533675093193415, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_Text
@@ -8151,6 +8196,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8276533675359580214, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Ordnung
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 8276533675391435096, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -8225,6 +8277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276533675690470949, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276533675720490649, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
@@ -8676,7 +8733,7 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: Clean Flat
+  interactionString: Tidy Flat
   canInteractWithWhileHoldingObject: 1
   myDockTransform: {fileID: 1716175737}
   myFocusTransform: {fileID: 568834878}
@@ -8752,15 +8809,19 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 295626916}
     instantChangeAmount: 0
-    changeAmountPerHour: 6
+    changeAmountPerHour: 7
     durationInHours: 0
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
-    changeAmountPerHour: -1
+    changeAmountPerHour: -0.8
     durationInHours: 0
   - neemotionAffected: {fileID: 528949886}
     instantChangeAmount: 0
     changeAmountPerHour: -1
+    durationInHours: 0
+  - neemotionAffected: {fileID: 1235051867}
+    instantChangeAmount: 0
+    changeAmountPerHour: -0.7
     durationInHours: 0
 --- !u!82 &2097445125
 AudioSource:
@@ -9466,16 +9527,12 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
-    changeAmountPerHour: 8
-    durationInHours: 0.2
+    changeAmountPerHour: 10
+    durationInHours: 0.1
   - neemotionAffected: {fileID: 295626916}
     instantChangeAmount: 0
-    changeAmountPerHour: 8
-    durationInHours: 0.2
-  - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -1
-    changeAmountPerHour: 0
-    durationInHours: 0
+    changeAmountPerHour: -5
+    durationInHours: 0.1
 --- !u!82 &488544239280599172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10434,14 +10491,18 @@ MonoBehaviour:
     durationInHours: 0.5
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
-    changeAmountPerHour: -2
+    changeAmountPerHour: -1.5
     durationInHours: 1
   - neemotionAffected: {fileID: 467881046}
     instantChangeAmount: 0
     changeAmountPerHour: 0.2
     durationInHours: 0
   - neemotionAffected: {fileID: 295626916}
-    instantChangeAmount: -2
+    instantChangeAmount: -1.2
+    changeAmountPerHour: 0
+    durationInHours: 0
+  - neemotionAffected: {fileID: 522753751}
+    instantChangeAmount: -1
     changeAmountPerHour: 0
     durationInHours: 0
 --- !u!82 &1905299230181280187
@@ -10841,7 +10902,7 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 1653526343}
     instantChangeAmount: 0
-    changeAmountPerHour: 7
+    changeAmountPerHour: 8
     durationInHours: 2
   - neemotionAffected: {fileID: 295626916}
     instantChangeAmount: -1.5
@@ -11285,11 +11346,11 @@ MonoBehaviour:
   effects:
   - neemotionAffected: {fileID: 1235051867}
     instantChangeAmount: 0
-    changeAmountPerHour: 5
+    changeAmountPerHour: 6
     durationInHours: 6
-  - neemotionAffected: {fileID: 442530126}
+  - neemotionAffected: {fileID: 522753751}
     instantChangeAmount: 0
-    changeAmountPerHour: 0
+    changeAmountPerHour: -1
     durationInHours: 0
   - neemotionAffected: {fileID: 1123795324}
     instantChangeAmount: 0
@@ -11641,7 +11702,7 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: Chillax on Couch
+  interactionString: Relax on Couch
   canInteractWithWhileHoldingObject: 1
   myDockTransform: {fileID: 1598152197}
   myFocusTransform: {fileID: 1241144532}
@@ -11708,8 +11769,8 @@ MonoBehaviour:
     durationInHours: 0
   - neemotionAffected: {fileID: 1235051867}
     instantChangeAmount: 0
-    changeAmountPerHour: 4
-    durationInHours: 0
+    changeAmountPerHour: 5
+    durationInHours: 1.5
 --- !u!82 &5675265138995832971
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12130,6 +12191,10 @@ MonoBehaviour:
     instantChangeAmount: -0.8
     changeAmountPerHour: 0
     durationInHours: 0
+  - neemotionAffected: {fileID: 1653526343}
+    instantChangeAmount: 0
+    changeAmountPerHour: 5
+    durationInHours: 0.1
 --- !u!82 &6691709227301900736
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12856,6 +12921,14 @@ MonoBehaviour:
   - neemotionAffected: {fileID: 979759389}
     instantChangeAmount: 0
     changeAmountPerHour: 6
+    durationInHours: 0.5
+  - neemotionAffected: {fileID: 522753751}
+    instantChangeAmount: 0
+    changeAmountPerHour: -2
+    durationInHours: 1
+  - neemotionAffected: {fileID: 1835552597}
+    instantChangeAmount: 0
+    changeAmountPerHour: -1
     durationInHours: 0.5
 --- !u!4 &8551627930692776349
 Transform:
