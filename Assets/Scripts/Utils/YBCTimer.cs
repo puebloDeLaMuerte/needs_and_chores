@@ -20,10 +20,12 @@ namespace YBC.Utils
 			Debug.Log("The Time-Scale is: " );
 		}
 
+
 		private float getYBCTime()
 		{
 			return (Time.time * timeScale) + ( startTimeHours * 3600f );
 		}
+
 
 		public String GetTimeAsString()
 		{
@@ -36,11 +38,13 @@ namespace YBC.Utils
 			return "Tag " + d + "\n" + h.ToString("00") + ":" + m.ToString("00");
 		}
 
+
 		public float GetDeltaHours()
 		{
 			float delta = (Time.deltaTime * timeScale / 3600f);
 			return delta;
 		}
+
 
 		public void Update()
 		{
