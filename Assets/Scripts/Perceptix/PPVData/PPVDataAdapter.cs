@@ -16,5 +16,10 @@ namespace YBC.Perceptix.PPVData
 		public SplitToningPPV splitToningPPV;
 		public VignettePPV vignettePPV;
 		public SmhPPV smhPPV;
+
+		public PPVbase[] GetAllVolumeData()
+		{
+			
+		}
 	}
 }

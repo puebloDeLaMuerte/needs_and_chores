@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Perceptix;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YBC.Perceptix.PPVData.PPVolumes;
@@ -55,10 +56,11 @@ namespace YBC.Perceptix.PPVData
 				{
 					(5f, 0f), (10f, 0.6f)
 				},
+				
 
 				postExposure = new (float, float)[1]
 				{
-					(-1f, -2f)  // not shure what you mean here, schouldn't this be the default value?
+					(-1f, -2f)
 				}
 			},
 
