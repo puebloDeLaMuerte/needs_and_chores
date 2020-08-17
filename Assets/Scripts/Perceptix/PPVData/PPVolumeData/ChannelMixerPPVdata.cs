@@ -3,8 +3,8 @@ using System.Collections;
 
 namespace YBC.Perceptix.PPVData
 {
-	public class DepthOfFieldPPVdata : PPVdata
+	public class ChannelMixerPPVdata : PPVdata
 	{
-		public (float, float)[] focusDistance;
+		public (float, float)[] postExposure;
 	}
 }

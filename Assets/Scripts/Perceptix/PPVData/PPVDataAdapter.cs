@@ -8,7 +8,7 @@ namespace YBC.Perceptix.PPVData
 	{
 		public BloomPPVdata bloomPPVdata;
 		public ChromaticAberrationPPVdata chromaticAberrationPPVdata;
-		public ColorAdjustmentsPPVdata ColorAdjustmentsPPVdata;
+		public ColorAdjustmentsPPVdata colorAdjustmentsPPVdata;
 		public DepthOfFieldPPVdata depthOfFieldPPVdata;
 		public FilmGrainPPVdata filmGrainPPVdata;
 		public LensDistortionPPVdata lensDistortionPPVdata;
@@ -16,6 +16,6 @@ namespace YBC.Perceptix.PPVData
 		public SplitToningPPVdata splitToningPPVdata;
 		public VignettePPVdata vignettePPVdata;
 		public SmhPPVdata smhPPVdata;
-
+		public ChannelMixerPPVdata channelMixerPPVdata;
 	}
 }

@@ -30,6 +30,7 @@ public class NeemotixValuesAdapter : MonoBehaviour
 	}
 
 
+
 	/// <summary>
 	/// Looks up the Neemotion by the given String (beware! String-compare! bad performance!)
 	/// </summary>
