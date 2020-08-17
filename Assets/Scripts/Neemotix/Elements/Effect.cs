@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace YBC.Neemotix
 {
@@ -6,6 +7,7 @@ namespace YBC.Neemotix
 	public class Effect
 	{
 		public Neemotion neemotionAffected;
+		private string issuerName;
 		
 		public float instantChangeAmount = -0f;
 
@@ -15,6 +17,22 @@ namespace YBC.Neemotix
 		public float durationInHours = 0f;
 		private float totalHoursApplied;
 		private bool revoked = false;
+
+		/// <summary>
+		/// The value to determine who issues this effect (who is it's 'parent' so to speak);
+		/// </summary>
+		/// <param name="s">a string describing the issuer. Should be the Name of that Object</param>
+		public void SetIssuerName(string s)
+		{
+			this.issuerName = s;
+		}
+		/// <summary>
+		/// The value to determine who issues this effect (who is it's 'parent' so to speak);
+		/// </summary>
+		public String GetIssuerName()
+		{
+			return issuerName;
+		}
 
 		public float TotalHoursApplied { get => totalHoursApplied; }
 
@@ -88,12 +106,17 @@ namespace YBC.Neemotix
 			return revoked;
 		}
 
+		internal string getIssuerName()
+		{
+			throw new NotImplementedException();
+		}
+
 
 		/// <summary>
 		/// Determines wether the durationInHours is greater than zero
 		/// </summary>
 		/// <returns></returns>
-		public bool hasDuration()
+		public bool HasDuration()
 		{
 			return durationInHours > 0;
 		}

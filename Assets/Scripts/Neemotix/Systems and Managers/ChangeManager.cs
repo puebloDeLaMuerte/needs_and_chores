@@ -29,7 +29,8 @@ namespace YBC.Neemotix
 		private void Awake()
 		{
 			PushEffectToQueue m = new PushEffectToQueue(addEffectToQueue);
-			interactablesManager.setPushToEffectsQueueMethod(m);
+			RegisterEffectsForDebuging l = new RegisterEffectsForDebuging(RegisterEffect);
+			interactablesManager.setCallbackMethods(m,l);
 		}
 
 
@@ -45,7 +46,6 @@ namespace YBC.Neemotix
 			message += emotions.Length;
 			message += " emotions.";
 			Debug.Log(message);
-
 		}
 
 
@@ -62,11 +62,15 @@ namespace YBC.Neemotix
 			// Find and eliminate Expired Effects
 			CheckAndRemoveExpiredEffects();
 
+			if( Input.GetKeyDown(KeyCode.P) )
+			{
+				ListInfluences();
+			}
 		}
 
 
-		public delegate void PushEffectToQueue( Effect effect );
 
+		public delegate void PushEffectToQueue( Effect effect );
 		/// <summary>
 		/// Push an Effect to the EffectsQueue
 		/// </summary>
@@ -76,6 +80,63 @@ namespace YBC.Neemotix
 			effect.Reset();
 			effectsQueue.Add(effect);
 			Debug.Log("ChangeManager: Fx added to Queue: " + effect.neemotionAffected.NeemotionName );
+		}
+
+
+		public delegate void RegisterEffectsForDebuging( Effect effect );
+		/// <summary>
+		/// Debug-Method: Adds an Effect to the total influence list of that neemotion.
+		/// </summary>
+		/// <param name="effect"></param>
+		public void RegisterEffect( Effect effect )
+		{
+			foreach ( Neemotion neemo in needs )
+			{
+				if( neemo == effect.neemotionAffected )
+				{
+					if ( effect.instantChangeAmount != 0f )
+					{
+						neemo.AddInfluencer(effect.GetIssuerName() + ":immediate", effect.instantChangeAmount);
+					}
+					else if ( effect.changeAmountPerHour != 0f)
+					{
+						neemo.AddInfluencer(effect.GetIssuerName() + ":timebased", effect.changeAmountPerHour);
+					}
+				}
+			}
+			foreach ( Neemotion neemo in emotions )
+			{
+				if ( neemo == effect.neemotionAffected )
+				{
+					if ( effect.instantChangeAmount != 0f )
+					{
+						neemo.AddInfluencer(effect.GetIssuerName() + ":immediate", effect.instantChangeAmount);
+					}
+					else if ( effect.changeAmountPerHour != 0f )
+					{
+						neemo.AddInfluencer(effect.GetIssuerName() + ":timebased", effect.changeAmountPerHour);
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Print all registered Effect-Influences to Console
+		/// </summary>
+		public void ListInfluences()
+		{
+			Debug.Log("");
+			Debug.Log("#### Needs Influences");
+			foreach ( Neemotion n in needs )
+			{
+				n.ListInfluences();
+			}
+			Debug.Log("");
+			Debug.Log("#### Emotions Influences");
+			foreach ( Neemotion n in emotions )
+			{
+				n.ListInfluences();
+			}
 		}
 
 
@@ -231,6 +292,5 @@ namespace YBC.Neemotix
 				return new List<Effect>();
 			}
 		}
-
 	} 
 }
