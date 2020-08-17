@@ -17,9 +17,5 @@ namespace YBC.Perceptix.PPVData
 		public VignettePPV vignettePPV;
 		public SmhPPV smhPPV;
 
-		public PPVbase[] GetAllVolumeData()
-		{
-			
-		}
 	}
 }
