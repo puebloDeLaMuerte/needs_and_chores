@@ -11,7 +11,7 @@ namespace YBC.Neemotix
 
 		private Interactable[] knownInteractables;
 		private ChangeManager.PushEffectToQueue pushMethod;
-		private ChangeManager.RegisterEffectsForDebuging registerEffectforDebugMethod;
+		private ChangeManager.DebugRegisterEffects registerEffectforDebugMethod;
 
 		/// <summary>
 		/// Initiates the 'knownInteractables' Array.
@@ -38,7 +38,7 @@ namespace YBC.Neemotix
 		/// The Method to list the Effects for Debuging is also set here.
 		/// </summary>
 		/// <param name="pushMethod"></param>
-		public void setCallbackMethods(ChangeManager.PushEffectToQueue pushMethod, ChangeManager.RegisterEffectsForDebuging listMethod )
+		public void setCallbackMethods(ChangeManager.PushEffectToQueue pushMethod, ChangeManager.DebugRegisterEffects listMethod )
 		{
 			this.pushMethod = pushMethod;
 			this.registerEffectforDebugMethod = listMethod;

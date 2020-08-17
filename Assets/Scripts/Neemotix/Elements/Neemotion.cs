@@ -22,7 +22,7 @@ namespace YBC.Neemotix
 		[Space]
 
 		public bool isEmotion = false;
-		public bool isItBad = false;
+		public bool isItBad = false; //this one only temporary. Use only in the debug-gui!
 
 
 		[Range(0f, 10f)]

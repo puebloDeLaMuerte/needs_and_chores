@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace YBC.Perceptix.PPVData.PPVolumes
+namespace YBC.Perceptix.PPVData
 {
-	public class ColorAdjustmentsPPV : PPVbase
+	public class ColorAdjustmentsPPVdata : PPVdata
 	{
 		public (float, float)[] postExposure;
 	}

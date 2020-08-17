@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
-using YBC.Perceptix.PPVData.PPVolumes;
+using YBC.Perceptix.PPVData;
 
 namespace YBC.Perceptix.PPVData
 {
 	public class PPVDataAdapter
 	{
-		public BloomPPV bloomPPV;
-		public ChromaticAberrationPPV chromaticAberrationPPV;
-		public ColorAdjustmentsPPV ColorAdjustmentsPPV;
-		public DepthOfFieldPPV depthOfFieldPPV;
-		public FilmGrainPPV filmGrainPPV;
-		public LensDistortionPPV lensDistortionPPV;
-		public MotionBlurPPV motionBlurPPV;
-		public SplitToningPPV splitToningPPV;
-		public VignettePPV vignettePPV;
-		public SmhPPV smhPPV;
+		public BloomPPVdata bloomPPVdata;
+		public ChromaticAberrationPPVdata chromaticAberrationPPVdata;
+		public ColorAdjustmentsPPVdata ColorAdjustmentsPPVdata;
+		public DepthOfFieldPPVdata depthOfFieldPPVdata;
+		public FilmGrainPPVdata filmGrainPPVdata;
+		public LensDistortionPPVdata lensDistortionPPVdata;
+		public MotionBlurPPVdata motionBlurPPVdata;
+		public SplitToningPPVdata splitToningPPVdata;
+		public VignettePPVdata vignettePPVdata;
+		public SmhPPVdata smhPPVdata;
 
 	}
 }

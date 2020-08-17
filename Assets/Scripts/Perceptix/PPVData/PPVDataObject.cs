@@ -1,8 +1,7 @@
-﻿using Assets.Scripts.Perceptix;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YBC.Perceptix.PPVData.PPVolumes;
+using YBC.Perceptix.PPVData;
 
 namespace YBC.Perceptix.PPVData
 {
@@ -14,7 +13,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter freudeAdapter = new PPVDataAdapter()
 		{
-			bloomPPV = new BloomPPV()
+			bloomPPVdata = new BloomPPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -22,7 +21,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			chromaticAberrationPPV = new ChromaticAberrationPPV()
+			chromaticAberrationPPVdata = new ChromaticAberrationPPVdata()
 			{
 				weight = new (float, float)[1]
 				{
@@ -30,7 +29,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			ColorAdjustmentsPPV = new ColorAdjustmentsPPV()
+			ColorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
 			{
 				weight = new (float, float)[1]
 				{
@@ -50,7 +49,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter angstAdapter = new PPVDataAdapter()
 		{
-			ColorAdjustmentsPPV = new ColorAdjustmentsPPV()
+			ColorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -64,7 +63,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			vignettePPV = new VignettePPV()
+			vignettePPVdata = new VignettePPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -72,7 +71,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			smhPPV = new SmhPPV()
+			smhPPVdata = new SmhPPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -80,7 +79,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			motionBlurPPV = new MotionBlurPPV()
+			motionBlurPPVdata = new MotionBlurPPVdata()
 			{
 				weight = new (float, float)[2]
 				{
