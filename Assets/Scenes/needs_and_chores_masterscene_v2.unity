@@ -3593,7 +3593,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2fa0184a9bc290a49b247a6424d8fffc,
         type: 3}
       propertyPath: m_Name
-      value: BookOpen
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2fa0184a9bc290a49b247a6424d8fffc,
         type: 3}
@@ -6467,7 +6467,6 @@ GameObject:
   - component: {fileID: 1508538098}
   - component: {fileID: 1508538097}
   - component: {fileID: 1508538096}
-  - component: {fileID: 1508538099}
   m_Layer: 0
   m_Name: Besen (1)
   m_TagString: Untagged
@@ -6552,50 +6551,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508538094}
   m_Mesh: {fileID: 388308778757223206, guid: fb4580384a706884c82f2482604bc83d, type: 3}
---- !u!114 &1508538099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508538094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d3c2b11560be94fb657f989ded4ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightOnMouseOver: 1
-  highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
-  interactionDistance: 2
-  playSecondarySoundOnInteract: 0
-  showWithText: 0
-  audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
-  soundPlaybackBehaviour: 0
-  soundToPlayOnInteract: {fileID: 0}
-  interactionString: Clean Flat
-  canInteractWithWhileHoldingObject: 1
-  myDockTransform: {fileID: 1716175737}
-  myFocusTransform: {fileID: 568834878}
-  dockedViewLimits: {x: 0, y: 0}
-  smoothDock: 1
-  dockHintText: Sit
-  unDockHintText: Get up
-  playDockSounds: 1
-  dockingSound: {fileID: 0}
-  unDockingSound: {fileID: 0}
-  DockStartedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  DockFinishedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  UnDockStartedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  UnDockFinishedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  drawDockGizmos: 1
 --- !u!1 &1538094964
 GameObject:
   m_ObjectHideFlags: 0
@@ -7996,6 +7951,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: YBCLogic
       objectReference: {fileID: 0}
+    - target: {fileID: 7487011822185035351, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7487011822202116306, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -9029,7 +8989,7 @@ GameObject:
   - component: {fileID: 114621448924066680}
   - component: {fileID: 1960673290650122}
   m_Layer: 0
-  m_Name: demoArmChair
+  m_Name: Armchair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9425,7 +9385,7 @@ GameObject:
   - component: {fileID: 488544239280599171}
   - component: {fileID: 488544239280599172}
   m_Layer: 0
-  m_Name: Waschbeckenschrank
+  m_Name: Waschbecken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12731,7 +12691,7 @@ GameObject:
   - component: {fileID: 8305645241723422340}
   - component: {fileID: 8305645241723422337}
   m_Layer: 0
-  m_Name: Telefon_Hoerer
+  m_Name: Telefon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
