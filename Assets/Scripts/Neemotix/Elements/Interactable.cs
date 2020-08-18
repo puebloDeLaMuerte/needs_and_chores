@@ -18,7 +18,20 @@ namespace YBC.Neemotix
 		{
 			myInteractableObjectName = transform.name;
 			myInteractableCollectionTransform = transform.parent.transform;
+
+			SetIssuerToEffects();
 		}
+
+
+		private void SetIssuerToEffects()
+		{
+			foreach ( Effect effect in effects )
+			{
+				effect.SetIssuerName(myInteractableObjectName);
+			}
+		}
+
+
 		public void OnInteract()
 		{
 			foreach ( Effect e in effects )
@@ -26,7 +39,7 @@ namespace YBC.Neemotix
 				pushEffects(e);
 			}
 
-			Debug.Log("You have just intercted, doesn't it feel good!");
+			Debug.Log("Interaction: " + myInteractableObjectName);
 		}
 
 
@@ -49,6 +62,7 @@ namespace YBC.Neemotix
 			Debug.Log("Interaction End: " + myInteractableObjectName);
 
 		}
+
 
 		public string GetInteractableObjectName()
 		{

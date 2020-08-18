@@ -27,11 +27,13 @@ namespace YBC.Utils
 
 		public String GetTimeAsString()
 		{
+			decimal d = Math.Floor( (Decimal)getYBCTime() / 86400 % 24);
 			decimal h = Math.Floor( (Decimal)getYBCTime() / 3600 % 24 );
 			decimal m = Math.Floor( (Decimal)getYBCTime() / 60 % 60 );
 			decimal s = Math.Floor( (Decimal)getYBCTime() % 60 );
 
-			return h.ToString("00") + ":" + m.ToString("00") + ":" + s.ToString("00");
+			//return h.ToString("00") + ":" + m.ToString("00") + ":" + s.ToString("00");
+			return "Tag " + d + "\n" + h.ToString("00") + ":" + m.ToString("00");
 		}
 
 		public float GetDeltaHours()
