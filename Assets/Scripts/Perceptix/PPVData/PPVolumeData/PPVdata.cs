@@ -8,5 +8,7 @@ namespace YBC.Perceptix.PPVData
 	public class PPVdata
 	{
 		public (float, float)[] weight;
+		public (float, float)[] postExposure;
+		public (float, float)[] focusDistance;
 	}
 }

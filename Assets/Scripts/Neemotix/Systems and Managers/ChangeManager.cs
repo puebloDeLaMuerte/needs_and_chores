@@ -33,12 +33,7 @@ namespace YBC.Neemotix
 			PushEffectToQueue m = new PushEffectToQueue(addEffectToQueue);
 			DebugRegisterEffects l = new DebugRegisterEffects(DebugRegisterEffect);
 			interactablesManager.setCallbackMethods(m,l);
-		}
 
-
-		// Start is called before the first frame update
-		void Start()
-		{
 			needs = needsCollectionObject.GetComponentsInChildren<Neemotion>();
 			emotions = emotionsCollectionObject.GetComponentsInChildren<Neemotion>();
 
@@ -48,6 +43,13 @@ namespace YBC.Neemotix
 			message += emotions.Length;
 			message += " emotions.";
 			Debug.Log(message);
+		}
+
+
+		// Start is called before the first frame update
+		void Start()
+		{
+		
 		}
 
 
