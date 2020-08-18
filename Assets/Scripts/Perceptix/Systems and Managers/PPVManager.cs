@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 using YBC.Neemotix;
 using YBC.Perceptix.PPVData;
 
@@ -25,10 +26,12 @@ namespace YBC.Perceptix
 		public Volume colorAdjustmentsPPV;
 		private List<(float, float)> colorAdjustmentWeightValues;
 		private List<(float, float)> postExposureValues;
+		ColorAdjustments colorAdjustments;
 
 		public Volume depthOfFieldPPV;
 		private List<(float, float)> depthOfFieldWeightValues;
 		private List<(float, float)> focusDistanceValues;
+		DepthOfField depthOfField;
 
 		public Volume filmGrainPPV;
 		private List<(float, float)> filmGrainWeightValues;
@@ -58,6 +61,22 @@ namespace YBC.Perceptix
 		{
 			CheckPublicFields();
 			ppvDataObject = new PPVDataObject();
+
+			//colorAdjustments = colorAdjustmentsPPV.GetComponent<ColorAdjustments>();
+			//depthOfField = depthOfFieldPPV.GetComponent<DepthOfField>();
+
+			ColorAdjustments tmpCA;
+			if ( colorAdjustmentsPPV.profile.TryGet<ColorAdjustments>(out tmpCA) )
+			{
+				colorAdjustments = tmpCA;
+			}
+
+
+			DepthOfField tmpDOF;
+			if ( depthOfFieldPPV.profile.TryGet<DepthOfField>(out tmpDOF) )
+			{
+				depthOfField = tmpDOF;
+			}
 		}
 
 
@@ -91,7 +110,7 @@ namespace YBC.Perceptix
 		{
 			ResetAllValues();
 			ReadValues();
-			//AdjustPPVs();
+			AdjustPPVs();
 		}
 
 
@@ -285,22 +304,40 @@ namespace YBC.Perceptix
 		/// </summary>
 		private void AdjustPPVs()
 		{
-
 			
-
-
-
-
-
-			AdjustBloom();
+			bloomPPV.weight = InterpolateValues(bloomWeightValues);
+			chromaticAberrationPPV.weight = InterpolateValues(chromaticAberrationWeightValues);
+			colorAdjustmentsPPV.weight = InterpolateValues(colorAdjustmentWeightValues);
+			colorAdjustments.postExposure.SetValue(new FloatParameter( InterpolateValues(postExposureValues) ) );
+			depthOfFieldPPV.weight = InterpolateValues(depthOfFieldWeightValues);
+			depthOfField.focusDistance.SetValue(new FloatParameter(InterpolateValues(focusDistanceValues)));
+			filmGrainPPV.weight = InterpolateValues(filmGrainWeightValues);
+			lensDistortionPPV.weight = InterpolateValues(lensDistortionWeightValues);
+			motionBlurPPV.weight = InterpolateValues(motionBlurWeightValues);
+			splitToningPPV.weight = InterpolateValues(splitToningWeightValues);
+			vignettePPV.weight = InterpolateValues(vignetteWeightValues);
+			smhPPV.weight = InterpolateValues(smhhWeightValues);
+			channelMixerPPV.weight = InterpolateValues(channelMixerWeightValues);
 		}
 
-		/// <summary>
-		/// Get all Neemotions affecting Bloom, Lerp and combine Values.
-		/// </summary>
-		private void AdjustBloom()
+
+		private float InterpolateValues(List<(float,float)> values)
 		{
-			//ppvDataObject.
+			float valuesTotal = 0f;
+			float intensitiesTotal = 0f;
+
+			foreach ( (float,float) pair in values )
+			{
+				valuesTotal += pair.Item1 * pair.Item2;
+				intensitiesTotal += pair.Item1;
+			}
+			if ( intensitiesTotal == 0f)
+			{
+				return 0f;
+			} else
+			{
+				return valuesTotal / intensitiesTotal;
+			}
 		}
 	} 
 }
