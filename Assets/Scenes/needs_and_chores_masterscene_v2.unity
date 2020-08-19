@@ -161,6 +161,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 615287894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &21753478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4175357243502908358, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1943101892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &111791981
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,7 +6697,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: b0990f685e15a3a4490589a84e342428, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!4 &1610584862
 Transform:
   m_ObjectHideFlags: 0
@@ -7906,6 +7912,11 @@ PrefabInstance:
       propertyPath: interactablesManager
       value: 
       objectReference: {fileID: 1221764970}
+    - target: {fileID: 4175357243173132008, guid: 2ecd41836bc18524d8a8d66e6144f16e,
+        type: 3}
+      propertyPath: emotionsCollectionObject
+      value: 
+      objectReference: {fileID: 21753478}
     - target: {fileID: 4175357243356155903, guid: 2ecd41836bc18524d8a8d66e6144f16e,
         type: 3}
       propertyPath: urgendZoneEffects.Array.data[0].changeAmountPerHour

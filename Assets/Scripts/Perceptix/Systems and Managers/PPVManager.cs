@@ -316,10 +316,12 @@ namespace YBC.Perceptix
 				valuesTotal += pair.Item1 * pair.Item2;
 				intensitiesTotal += pair.Item1;
 			}
+
 			if ( intensitiesTotal == 0f)
 			{
 				return 0f;
-			} else
+			}
+			else
 			{
 				return valuesTotal / intensitiesTotal;
 			}
