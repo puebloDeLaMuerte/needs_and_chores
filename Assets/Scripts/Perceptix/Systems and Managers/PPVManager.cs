@@ -56,7 +56,9 @@ namespace YBC.Perceptix
 
 
 
-
+		/// <summary>
+		/// Check if all PPVs are assigned in editor. Find the Overrides in Volumes which change values in Overrides. Instanciate the Data Object.
+		/// </summary>
 		private void Awake()
 		{
 			CheckPublicFields();
@@ -113,7 +115,9 @@ namespace YBC.Perceptix
 			AdjustPPVs();
 		}
 
-
+		/// <summary>
+		/// Put new empty Lists in place for a new frame to be calculated.
+		/// </summary>
 		private void ResetAllValues()
 		{
 			bloomWeightValues = new List<(float, float)>();
@@ -208,36 +212,13 @@ namespace YBC.Perceptix
 		/// <param name="data">the PPVdata Object to read</param>
 		/// <param name="weights">the interrims-List to write to</param>
 		/// <param name="currentvalue">the currentValue for the neemotion currently evaluated</param>
-		private void ReadPPVDataObject( PPVdata data, List<(float,float)> weights, float currentvalue )
+		private void ReadPPVDataObject( PPVData.PPVData data, List<(float,float)> weights, float currentvalue )
 		{
 			if ( data != null )
 			{
 				if ( data.weight != null )
 				{
 					MapValue(data.weight, currentvalue, out float lerpedValue);
-
-					/* ---> Old Code here
-					// if val < first
-					if( currentvalue <= data.weight[0].Item1 )
-					{
-
-					}
-					// if val > last
-					else if ( currentvalue >= data.weight[data.weight.Length-1].Item1 )
-					{
-
-					}
-					// else, loop to find the spot
-					else for ( int i = 0; i < data.weight.Length-1; i++ )
-					{
-						if( currentvalue <= data.weight[i+1].Item1 )
-							{
-								LerpTuples(currentvalue, data.weight[i], data.weight[i + 1]);
-								break;
-							}
-					}
-					*/
-
 					weights.Add( (currentvalue,lerpedValue) );
 				}
 				if( data.postExposure != null )
@@ -320,7 +301,11 @@ namespace YBC.Perceptix
 			channelMixerPPV.weight = InterpolateValues(channelMixerWeightValues);
 		}
 
-
+		/// <summary>
+		/// Find the weighted average for the different influences on a specific PPVsetting-
+		/// </summary>
+		/// <param name="values">List of (float,float). Item1: the desired value for the PPVsetting. Item2: The weight/intensity of that value</param>
+		/// <returns>float: the weighted average of all entries in the input list</returns>
 		private float InterpolateValues(List<(float,float)> values)
 		{
 			float valuesTotal = 0f;
