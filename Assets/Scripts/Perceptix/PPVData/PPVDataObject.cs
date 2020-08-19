@@ -1,20 +1,45 @@
-﻿using Assets.Scripts.Perceptix;
+﻿using YBC.Perceptix;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YBC.Perceptix.PPVData.PPVolumes;
+using YBC.Perceptix.PPVData;
 
 namespace YBC.Perceptix.PPVData
 {
 	public class PPVDataObject : ScriptableObject
 	{
 
+		public PPVDataAdapter GetAdapterByNeemotion(PerceptibleNeemotions n)
+		{
+			switch ( n )
+			{
+				case PerceptibleNeemotions.Freude:
+					return freudeAdapter;
+				case PerceptibleNeemotions.Trauer:
+					return trauerAdapter;
+				case PerceptibleNeemotions.Angst:
+					return angstAdapter;
+				case PerceptibleNeemotions.Wut:
+					return wutAdapter;
+				case PerceptibleNeemotions.Ekel:
+					return ekelAdapter;
+				case PerceptibleNeemotions.Stress:
+					return stressAdapter;
+				case PerceptibleNeemotions.Gesundheit:
+					return gesundheitAdapter;
+				case PerceptibleNeemotions.Schmerz:
+					return schmerzAdapter;
+				default:
+					return null;
+			}
+		}
+
 
 		// F R E U D E
 
 		public PPVDataAdapter freudeAdapter = new PPVDataAdapter()
 		{
-			bloomPPVdata = new BloomPPVdata()
+			bloomPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -22,7 +47,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			chromaticAberrationPPVdata = new ChromaticAberrationPPVdata()
+			chromaticAberrationPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[1]
 				{
@@ -30,9 +55,9 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			colorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
+			colorAdjustmentsPPVdata = new PPVdata()
 			{
-				weight = new (float, float)[1]
+				weight = new (float, float)[2]
 				{
 					(0f, 0f), (10f, 0.6f)
 				},
@@ -50,7 +75,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter trauerAdapter = new PPVDataAdapter()
 		{
-			channelMixerPPVdata = new ChannelMixerPPVdata()
+			channelMixerPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -65,7 +90,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter angstAdapter = new PPVDataAdapter()
 		{
-			ColorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
+			colorAdjustmentsPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -79,7 +104,7 @@ namespace YBC.Perceptix.PPVData
 				}
 			},
 
-			vignettePPVdata = new VignettePPVdata()
+			vignettePPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -88,7 +113,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			motionBlurPPVdata = new MotionBlurPPVdata()
+			motionBlurPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -103,7 +128,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter schmerzAdapter = new PPVDataAdapter()
 		{
-			chromaticAberrationPPVdata = new ChromaticAberrationPPVdata()
+			chromaticAberrationPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -112,7 +137,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			ColorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
+			colorAdjustmentsPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -127,7 +152,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			vignettePPVdata = new VignettePPVdata()
+			vignettePPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -136,7 +161,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			depthOfFieldPPVdata = new DepthOfFieldPPVdata()
+			depthOfFieldPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -151,7 +176,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			lensDistortionPPVdata = new LensDistortionPPVdata()
+			lensDistortionPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -159,7 +184,7 @@ namespace YBC.Perceptix.PPVData
 				},
 			},
 
-			smhPPVdata = new SmhPPVdata()
+			smhPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -168,7 +193,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 			
-			motionBlurPPVdata = new MotionBlurPPVdata()
+			motionBlurPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -183,7 +208,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter wutAdapter = new PPVDataAdapter()
 		{
-			ColorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
+			colorAdjustmentsPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -198,7 +223,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			vignettePPVdata = new VignettePPVdata()
+			vignettePPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -207,7 +232,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			smhPPVdata = new SmhPPVdata()
+			smhPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -216,7 +241,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			filmGrainPPVdata = new FilmGrainPPVdata()
+			filmGrainPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -232,7 +257,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter ekelAdapter = new PPVDataAdapter()
 		{
-			splitToningPPVdata = new SplitToningPPVdata()
+			splitToningPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -241,7 +266,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			filmGrainPPVdata = new FilmGrainPPVdata()
+			filmGrainPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -257,7 +282,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter stressAdapter = new PPVDataAdapter()
 		{
-			motionBlurPPVdata = new MotionBlurPPVdata()
+			motionBlurPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -272,7 +297,7 @@ namespace YBC.Perceptix.PPVData
 
 		public PPVDataAdapter gesundheitAdapter = new PPVDataAdapter()
 		{
-			bloomPPVdata = new BloomPPVdata()
+			bloomPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -281,7 +306,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			ColorAdjustmentsPPVdata = new ColorAdjustmentsPPVdata()
+			colorAdjustmentsPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -296,7 +321,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			vignettePPVdata = new VignettePPVdata()
+			vignettePPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -305,7 +330,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			depthOfFieldPPVdata = new DepthOfFieldPPVdata()
+			depthOfFieldPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{
@@ -320,7 +345,7 @@ namespace YBC.Perceptix.PPVData
 			},
 
 
-			lensDistortionPPVdata = new LensDistortionPPVdata()
+			lensDistortionPPVdata = new PPVdata()
 			{
 				weight = new (float, float)[2]
 				{

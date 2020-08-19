@@ -9,7 +9,7 @@ namespace YBC.Neemotix
 	class ChangeManager : NeemotixBase
 	{
 		public GameObject needsCollectionObject;
-		public GameObject emotionsCollectionObjects;
+		public GameObject emotionsCollectionObject;
 
 		[Space]
 
@@ -20,7 +20,9 @@ namespace YBC.Neemotix
 
 		public float generalChangeFactor = 1f;
 
+		[Obsolete("No List of needs is needed, because all Effects know their Neemotions, and the list is never used by ChangeManager despite the debug methods (which are themselves deprecated)")]
 		private Neemotion[] needs;
+		[Obsolete("No List of emotions is needed, because all Effects know their Neemotions, and the list is never used by ChangeManager despite the debug methods (which are themselves deprecated)")]
 		private Neemotion[] emotions;
 
 		private List<Effect> effectsQueue = new List<Effect>();
@@ -29,16 +31,11 @@ namespace YBC.Neemotix
 		private void Awake()
 		{
 			PushEffectToQueue m = new PushEffectToQueue(addEffectToQueue);
-			RegisterEffectsForDebuging l = new RegisterEffectsForDebuging(RegisterEffect);
+			DebugRegisterEffects l = new DebugRegisterEffects(DebugRegisterEffect);
 			interactablesManager.setCallbackMethods(m,l);
-		}
 
-
-		// Start is called before the first frame update
-		void Start()
-		{
 			needs = needsCollectionObject.GetComponentsInChildren<Neemotion>();
-			emotions = emotionsCollectionObjects.GetComponentsInChildren<Neemotion>();
+			emotions = emotionsCollectionObject.GetComponentsInChildren<Neemotion>();
 
 			string message = "ChangeManager has loaded ";
 			message += needs.Length;
@@ -46,6 +43,13 @@ namespace YBC.Neemotix
 			message += emotions.Length;
 			message += " emotions.";
 			Debug.Log(message);
+		}
+
+
+		// Start is called before the first frame update
+		void Start()
+		{
+		
 		}
 
 
@@ -64,7 +68,7 @@ namespace YBC.Neemotix
 
 			if( Input.GetKeyDown(KeyCode.P) )
 			{
-				ListInfluences();
+				DebugListInfluences();
 			}
 		}
 
@@ -83,12 +87,12 @@ namespace YBC.Neemotix
 		}
 
 
-		public delegate void RegisterEffectsForDebuging( Effect effect );
+		public delegate void DebugRegisterEffects( Effect effect );
 		/// <summary>
 		/// Debug-Method: Adds an Effect to the total influence list of that neemotion.
 		/// </summary>
 		/// <param name="effect"></param>
-		public void RegisterEffect( Effect effect )
+		public void DebugRegisterEffect( Effect effect )
 		{
 			foreach ( Neemotion neemo in needs )
 			{
@@ -123,7 +127,7 @@ namespace YBC.Neemotix
 		/// <summary>
 		/// Print all registered Effect-Influences to Console
 		/// </summary>
-		public void ListInfluences()
+		public void DebugListInfluences()
 		{
 			Debug.Log("");
 			Debug.Log("#### Needs Influences");
