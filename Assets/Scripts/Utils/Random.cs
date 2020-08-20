@@ -60,7 +60,13 @@ namespace YBC.Utils
 		/// <returns>random int</returns>
 		public int RollZero( int to )
 		{
-			return r.Next( 0, to );
+			if( to <=0 )
+			{
+				return 0;
+			} else
+			{
+				return r.Next( 0, to );
+			}
 		}
 
 	}

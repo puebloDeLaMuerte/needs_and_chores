@@ -22,14 +22,16 @@ namespace YBC.Narratix.InnerVoice
 			}
 		}
 
-		public float GetTotalWeight()
+		public float GetAverageWeight()
 		{
+			if ( this.Count <= 0 ) return 0;
+
 			float u = 0f;
 			foreach ( VoiceItem item in this )
 			{
 				u += item.Weight;
 			}
-			return u;
+			return u / this.Count;
 		}
 
 
@@ -40,13 +42,16 @@ namespace YBC.Narratix.InnerVoice
 				this.Remove( lastPlayed );
 			}
 
+			if ( this.Count == 0 ) return null;
+			
 			VoiceItem next = null;
 
 			int size = this.Count;
 
 			YouBeRandom r = new YouBeRandom();
 
-			next = this.ToArray()[r.RollZero( size )];
+			int nextOrdinal = r.RollZero( size - 1 );
+			next = this.ToArray()[nextOrdinal];
 			lastPlayed = next;
 
 			return next.Clip;
