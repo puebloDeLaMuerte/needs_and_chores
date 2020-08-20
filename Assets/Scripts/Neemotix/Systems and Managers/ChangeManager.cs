@@ -83,7 +83,7 @@ namespace YBC.Neemotix
 		{
 			effect.Reset();
 			effectsQueue.Add(effect);
-			Debug.Log("ChangeManager: Fx added to Queue: " + effect.neemotionAffected.NeemotionName );
+			Debug.Log("ChangeManager: Fx added to Queue: " + effect.neemotionAffected.neemotionName );
 		}
 
 

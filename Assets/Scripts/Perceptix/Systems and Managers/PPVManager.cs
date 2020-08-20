@@ -12,7 +12,7 @@ namespace YBC.Perceptix
 	public class PPVManager : MonoBehaviour
 	{
 
-		public NeemotixValuesAdapter neemotixAdapter;
+		public NeemotixAdapter neemotixAdapter;
 		private PPVDataObject ppvDataObject;
 
 		[Space]
@@ -146,35 +146,35 @@ namespace YBC.Perceptix
 			
 			//TODO: find a way to loop through these!!!
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName( "Freude" );
+			currentValue = neemotixAdapter.GetNeemotionStateByName( "Freude" ).Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Freude);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Trauer");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Trauer").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Trauer);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Angst");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Angst").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Angst);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Wut");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Wut").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Wut);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Ekel");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Ekel").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Ekel);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Stress");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Stress").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Stress);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Gesundheit");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Gesundheit").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Gesundheit);
 			ReadDataAdapter(adapter, currentValue);
 
-			currentValue = neemotixAdapter.GetNeemotionValueByName("Schmerz");
+			currentValue = neemotixAdapter.GetNeemotionStateByName("Schmerz").Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Schmerz);
 			ReadDataAdapter(adapter, currentValue);
 		}
