@@ -58,7 +58,8 @@ namespace YBC.Neemotix
 		{
 
 			// Activate/Deactivate Status-Effects and Overrides, Perform immediate Effects.
-			EvaluateNeedsStatus();
+			EvaluateNeemotionStatus( needs );
+			EvaluateNeemotionStatus( emotions );
 
 			// Apply all sheduled Changes and Overrides
 			ApplyEffects();
@@ -147,9 +148,9 @@ namespace YBC.Neemotix
 		/// <summary>
 		/// Updates current status for entire Neemotion[] needs. Performs their immediate Status-Effects.
 		/// </summary>
-		private void EvaluateNeedsStatus()
+		private void EvaluateNeemotionStatus(Neemotion[] neemos)
 		{
-			foreach ( var need in needs )
+			foreach ( var need in neemos )
 			{
 				bool haschanged = need.EvaluateStatus();
 

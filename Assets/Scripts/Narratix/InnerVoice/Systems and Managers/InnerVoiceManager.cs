@@ -16,13 +16,13 @@ namespace YBC.Narratix.InnerVoice
 		private AudioSource audioSource;
 		private ItemPool pool;
 
-		public float laberlust = 0.1f;
+		public float minimumPauseSeconds = 0.1f;
 		public int initialPause = 5;
 		private float timeTillNext;
 		private float timeSinceLast;
 
 		public float debugTimeTillNext;
-		public float debugLaberLust;
+		public float debugPause;
 
 		// Start is called before the first frame update
 		void Start()
@@ -45,20 +45,21 @@ namespace YBC.Narratix.InnerVoice
 
 			if( timeTillNext < timeSinceLast )
 			{
-				if( pool.isEmpty() )
+				if ( pool.isEmpty() )
 				{
 					PopulateItemPool();
-					timeTillNext = 1 + pool.GetAverageWeight() / laberlust;
+					timeTillNext = minimumPauseSeconds / (0.1f + pool.GetAverageWeight());
+
 				}
-				else
+				else if ( !audioSource.isPlaying )
 				{
 					audioSource.clip = pool.PickNextClip();
 					audioSource.Play();
 					timeSinceLast = 0;
 
-					timeTillNext = 1f + pool.GetAverageWeight() / laberlust;
+					//timeTillNext = minimumPauseSeconds / (1f + pool.GetAverageWeight());
 
-					debugLaberLust = timeTillNext;
+					debugPause = timeTillNext;
 				}
 			}
 
