@@ -743,6 +743,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2036919500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &73699098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73699099}
+  m_Layer: 0
+  m_Name: focus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73699099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73699098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6012325070923926511}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74127171
 GameObject:
   m_ObjectHideFlags: 0
@@ -8110,6 +8140,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 740094313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1113303609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113303610}
+  m_Layer: 0
+  m_Name: pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113303610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113303609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8564}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6012325070923926511}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1136359721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16092,6 +16152,21 @@ PrefabInstance:
       propertyPath: neemotixAdapter
       value: 
       objectReference: {fileID: 4175357242950144692}
+    - target: {fileID: 7585047679752567408, guid: f05bc751023b79c40a61d19fa7e3d4d4,
+        type: 3}
+      propertyPath: minimumPauseSeconds
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585047679752567408, guid: f05bc751023b79c40a61d19fa7e3d4d4,
+        type: 3}
+      propertyPath: intervalRandomnes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585047679752567408, guid: f05bc751023b79c40a61d19fa7e3d4d4,
+        type: 3}
+      propertyPath: kickLeastImportant
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f05bc751023b79c40a61d19fa7e3d4d4, type: 3}
 --- !u!1001 &2136625233
@@ -20633,8 +20708,8 @@ MonoBehaviour:
   interactionString: <DEFAULT INTERACTION STRING>
   undockAfterHours: 0.1
   canInteractWithWhileHoldingObject: 1
-  myDockTransform: {fileID: 0}
-  myFocusTransform: {fileID: 0}
+  myDockTransform: {fileID: 1113303610}
+  myFocusTransform: {fileID: 73699099}
   dockedViewLimits: {x: 45, y: 45}
   smoothDock: 1
   dockHintText: Sit
@@ -21333,13 +21408,13 @@ MonoBehaviour:
   UnDockFinishedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 279881890}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24314,7 +24389,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.376
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -24493,7 +24568,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.809694, y: 1.0046198, z: 3.53003}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1113303610}
+  - {fileID: 73699099}
   m_Father: {fileID: 1221764971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35403,7 +35480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerGuiText: {fileID: 7487011823513524115}
   startTimeHours: 12
-  timeScale: 80
+  timeScale: 95
 --- !u!33 &8981159202198153639
 MeshFilter:
   m_ObjectHideFlags: 0
