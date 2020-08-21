@@ -17,7 +17,6 @@ public class GameObjectToggler : MonoBehaviour
     {
         if ( Input.GetKeyDown( hotKey ) )
         {
-            Debug.Log( "keypressed" );
             toggleObject.SetActive( !toggleObject.activeInHierarchy );
         }
     }
