@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using UnityEditorInternal;
 using UnityEngine;
 using YBC.Narratix;
 using YBC.Utils;
@@ -20,6 +22,14 @@ namespace YBC.Narratix.InnerVoice
 		public int initialPause = 5;
 		private float timeTillNext;
 		private float timeSinceLast;
+
+		[Space]
+		[Header( "Pool Options" )]
+
+		public bool kickLeastImportant = true;
+
+		[Space]
+		[Header( "Debug Stuff" )]
 
 		public float debugTimeTillNext;
 		public float debugPause;
@@ -90,21 +100,53 @@ namespace YBC.Narratix.InnerVoice
 					int which = r.RollZero( tmp.Length );
 					VoiceItem item = tmp[which];
 
-					// Roll Dice to choose if it should be said
-					bool sayit = r.HitMe( item.Weight );
-
-					if( sayit )
+					if( !kickLeastImportant )
 					{
+						// Roll Dice to choose if it should be said
+						bool sayit = r.HitMe( item.Weight );
+
+						if ( sayit )
+						{
+							pool.Add( item );
+						}
+					} else
+					{
+						// we kick the least important items later anyway, so might as well add all of them in here
 						pool.Add( item );
 					}
 				}
 			}
 
+			if( kickLeastImportant )
+			{
+				KickLeastImportantFromPool();
+			}
+
 			foreach ( var item in pool )
 			{
-				Debug.Log( item.Text );
+				Debug.Log( item.Weight +" - " + item.Text );
 			}
 		}
 
+
+
+		private void KickLeastImportantFromPool()
+		{
+			float averageWeight = pool.GetAverageWeight();
+			List<VoiceItem> toDelete = new List<VoiceItem>();
+
+			foreach ( var item in pool )
+			{
+				if ( item.Weight < averageWeight )
+				{
+					toDelete.Add( item );
+				}
+			}
+			foreach ( var deleteItem in toDelete )
+			{
+				Debug.Log( "DEL: " + deleteItem.Weight + " - " + deleteItem.Text );
+				pool.Remove( deleteItem );
+			}
+		}
 	} 
 }
