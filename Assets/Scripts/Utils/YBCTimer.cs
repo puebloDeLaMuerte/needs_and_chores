@@ -12,14 +12,13 @@ namespace YBC.Utils
 
 		public int timeScale = 40;
 
-		public static void SetTimeScale( float scale )
+		private static YBCTimer _instance;
+		internal static YBCTimer Instance { get => _instance; }
+
+		public void Awake()
 		{
-			//UnityEngine.Time.timeScale = scale;
-			//UnityEngine.Time.fixedDeltaTime = scale;
-
-			Debug.Log("The Time-Scale is: " );
+			_instance = this;
 		}
-
 
 		private float getYBCTime()
 		{
