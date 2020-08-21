@@ -19,6 +19,9 @@ namespace YBC.Narratix.InnerVoice
 		private ItemPool pool;
 
 		public float minimumPauseSeconds = 0.1f;
+		[Range( 0f, 1f )]
+		public float intervalRandomnes = 0.0f;
+		private float randomInterval = 0f;
 		public int initialPause = 5;
 		private float timeTillNext;
 		private float timeSinceLast;
@@ -53,12 +56,13 @@ namespace YBC.Narratix.InnerVoice
 		{
 			timeSinceLast += Time.deltaTime;
 
-			if( timeTillNext < timeSinceLast )
+			if( timeTillNext + randomInterval < timeSinceLast )
 			{
 				if ( pool.isEmpty() )
 				{
 					PopulateItemPool();
-					timeTillNext = minimumPauseSeconds / (0.1f + pool.GetAverageWeight());
+
+					SetTimeTillNext();
 
 				}
 				else if ( !audioSource.isPlaying )
@@ -68,6 +72,7 @@ namespace YBC.Narratix.InnerVoice
 					timeSinceLast = 0;
 
 					//timeTillNext = minimumPauseSeconds / (1f + pool.GetAverageWeight());
+					SetRandomInterval();
 
 					debugPause = timeTillNext;
 				}
@@ -77,6 +82,21 @@ namespace YBC.Narratix.InnerVoice
 			debugTimeTillNext = timeTillNext - timeSinceLast;
 
 		}
+
+
+		private void SetTimeTillNext()
+		{
+			timeTillNext = minimumPauseSeconds / (0.1f + pool.GetAverageWeight());
+		}
+
+		private void SetRandomInterval()
+		{	
+			YouBeRandom r = new YouBeRandom();
+			randomInterval = r.FloatZeroTo( intervalRandomnes * debugTimeTillNext );
+		}
+
+
+
 
 
 		/// <summary>

@@ -69,5 +69,13 @@ namespace YBC.Utils
 			}
 		}
 
+
+
+		public float FloatZeroTo(float to)
+		{
+			double f = r.NextDouble();
+			float ret = (float)f * to;
+			return ret;
+		}
 	}
 }

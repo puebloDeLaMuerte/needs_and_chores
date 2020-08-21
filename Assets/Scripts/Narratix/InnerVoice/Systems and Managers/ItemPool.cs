@@ -10,6 +10,7 @@ namespace YBC.Narratix.InnerVoice
 	public class ItemPool : List<VoiceItem>
 	{
 		private VoiceItem lastPlayed;
+		private float averageWeight;
 
 		public Boolean isEmpty()
 		{
@@ -22,16 +23,22 @@ namespace YBC.Narratix.InnerVoice
 			}
 		}
 
+
 		public float GetAverageWeight()
 		{
-			if ( this.Count <= 0 ) return 0;
+			return averageWeight;
+		}
+
+		private void CalculateAverageWeight()
+		{
+			if ( this.Count <= 0 ) averageWeight = 0f;
 
 			float u = 0f;
 			foreach ( VoiceItem item in this )
 			{
 				u += item.Weight;
 			}
-			return u / this.Count;
+			averageWeight = u / this.Count;
 		}
 
 
@@ -55,6 +62,14 @@ namespace YBC.Narratix.InnerVoice
 			lastPlayed = next;
 
 			return next.Clip;
+		}
+
+
+
+		public new void Add( VoiceItem i )
+		{
+			base.Add( i );
+			CalculateAverageWeight();
 		}
 	}
 }
