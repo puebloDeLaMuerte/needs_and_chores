@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System;
+using YBC.Utils;
 
 namespace Whilefun.FPEKit
 {
@@ -28,8 +29,8 @@ namespace Whilefun.FPEKit
 	{
 		[Header( "YBC specific stuff hacked into here..." )]
 		[SerializeField, Tooltip( "The player will be automatically undocked after x seconds. zero or negative values to disable." )]
-		private float undockAfterSeconds = -1;
-		private float secondsDocked = 0;
+		private float undockAfterHours = -1;
+		private float hoursDocked = 0;
 
 		[Space]
 
@@ -98,10 +99,10 @@ namespace Whilefun.FPEKit
 		{
 			if( occupied )
 			{
-				secondsDocked += Time.deltaTime;
+				hoursDocked += YBCTimer.Instance.GetDeltaHours();
 			}
 
-			if( undockAfterSeconds > 0 && secondsDocked > undockAfterSeconds )
+			if( undockAfterHours > 0 && hoursDocked > undockAfterHours )
 			{
 				FPEInteractionManagerScript.Instance.YBCundockFlag = true;
 			}
@@ -171,7 +172,7 @@ namespace Whilefun.FPEKit
 
 		public void unDock()
 		{
-			secondsDocked = 0f;
+			hoursDocked = 0f;
 
 			occupied = false;
 
