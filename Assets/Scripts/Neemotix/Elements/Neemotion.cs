@@ -1,5 +1,6 @@
 ﻿using NaughtyAttributes;
 using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,8 +36,9 @@ namespace YBC.Neemotix
 		[Space]
 		[Space]
 
-		private NeemotionStatus status;
 		public string statusString;
+		public NeemotionStatus Status { get => status; }
+		private NeemotionStatus status;
 
 		[BoxGroup("urgend")]
 		public Effect[] urgendZoneEffects;
@@ -51,11 +53,13 @@ namespace YBC.Neemotix
 
 		public Override[] urgencyOverrides;
 
-		public string NeemotionName;
+		public string neemotionName;
+		private int neemotionID;
 
 
 
 		private List<KeyValuePair<String, float>> myInfluencers = new List<KeyValuePair<string, float>>();
+
 
 		public void AddInfluencer(String name, float value)
 		{
@@ -66,7 +70,7 @@ namespace YBC.Neemotix
 		{
 			foreach ( KeyValuePair<String,float> item in myInfluencers )
 			{
-				Debug.Log(NeemotionName + ":  " + item.Key + ":  " + item.Value);
+				Debug.Log(neemotionName + ":  " + item.Key + ":  " + item.Value);
 			}
 		}
 
@@ -75,7 +79,8 @@ namespace YBC.Neemotix
 		/// </summary>
 		private void Awake()
 		{
-			this.NeemotionName = gameObject.name;
+			this.neemotionName = gameObject.name;
+			this.neemotionID = neemotionName.GetHashCode();
 			SetCurrentValue(startValue);
 			EvaluateStatus();
 			this.guiSlider.value = currentValue;
@@ -94,7 +99,7 @@ namespace YBC.Neemotix
 		{
 			foreach ( Effect effect in urgendZoneEffects )
 			{
-				effect.SetIssuerName(NeemotionName + ":urgent");
+				effect.SetIssuerName(neemotionName + ":urgent");
 
 				if( effect.changeAmountPerHour != 0 )
 				{
@@ -108,7 +113,7 @@ namespace YBC.Neemotix
 			}
 			foreach ( Effect effect in unsatisfiedEffects )
 			{
-				effect.SetIssuerName(NeemotionName + ":unsatisfied");
+				effect.SetIssuerName(neemotionName + ":unsatisfied");
 
 				if ( effect.changeAmountPerHour != 0 )
 				{
@@ -121,7 +126,7 @@ namespace YBC.Neemotix
 			}
 			foreach ( Effect effect in satisfiedEffects )
 			{
-				effect.SetIssuerName(NeemotionName + ":satisfied");
+				effect.SetIssuerName(neemotionName + ":satisfied");
 
 				if ( effect.changeAmountPerHour != 0 )
 				{
@@ -134,7 +139,7 @@ namespace YBC.Neemotix
 			}
 			foreach ( Effect effect in oversatisfiedEffects )
 			{
-				effect.SetIssuerName(NeemotionName + ":oversatisfied");
+				effect.SetIssuerName(neemotionName + ":oversatisfied");
 
 				if ( effect.changeAmountPerHour != 0 )
 				{
@@ -212,7 +217,7 @@ namespace YBC.Neemotix
 		/// <returns>true if status has changed, false if it didn't</returns>
 		public bool EvaluateStatus()
 		{
-			if ( isEmotion ) return false; // Don't do any Status-Stuff if you're just an Emotion. Your Slider will lerp it's color according to value in that case!
+			// if ( isEmotion ) return false; // Don't do any Status-Stuff if you're just an Emotion. Your Slider will lerp it's color according to value in that case!
 
 			NeemotionStatus tempstat = NeemotionStatus.Undefined;
 
@@ -234,7 +239,7 @@ namespace YBC.Neemotix
 			}
 			else
 			{
-				Debug.LogError("Neemotion could not determine it's status: " + NeemotionName + " current value: " + currentValue);
+				Debug.LogError("Neemotion could not determine it's status: " + neemotionName + " current value: " + currentValue);
 			}
 
 			if ( tempstat != status )
@@ -256,7 +261,7 @@ namespace YBC.Neemotix
 			this.status = newstat;
 			this.statusString = status.ToString();
 
-			Debug.Log("Status Change: " + NeemotionName + " --> " + newstat);
+			Debug.Log("Status Change: " + neemotionName + " --> " + newstat);
 
 			// update Slider Color.
 			switch ( newstat )
@@ -332,6 +337,16 @@ namespace YBC.Neemotix
 				default:
 					return null;
 			}
+		}
+
+
+		/// <summary>
+		/// The neemotionID is the HashCode of it's neemotionName, generated on Awake(). No guarantees if someone changes it afterwards, which is NOT intended!
+		/// </summary>
+		/// <returns></returns>
+		public int GetID()
+		{
+			return neemotionID;
 		}
 	} 
 }
