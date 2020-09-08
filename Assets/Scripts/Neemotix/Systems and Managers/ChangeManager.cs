@@ -20,9 +20,7 @@ namespace YBC.Neemotix
 
 		public float generalChangeFactor = 1f;
 
-		[Obsolete("No List of needs is needed, because all Effects know their Neemotions, and the list is never used by ChangeManager despite the debug methods (which are themselves deprecated)")]
 		private Neemotion[] needs;
-		[Obsolete("No List of emotions is needed, because all Effects know their Neemotions, and the list is never used by ChangeManager despite the debug methods (which are themselves deprecated)")]
 		private Neemotion[] emotions;
 
 		private List<Effect> effectsQueue = new List<Effect>();

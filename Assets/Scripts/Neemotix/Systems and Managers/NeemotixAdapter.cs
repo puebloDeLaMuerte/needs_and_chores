@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using YBC.Neemotix;
 
-public class NeemotixAdapter : MonoBehaviour
+public class NeemotixAdapter : MonoBehaviour, INeemotixAdapter
 {
 
 	private Neemotion[] neemotions;
@@ -12,10 +10,11 @@ public class NeemotixAdapter : MonoBehaviour
 	public void Awake()
 	{
 		PopulatetheArrays();
+		
 	}
 
 	/// <summary>
-	/// Populates the adapters neemotions[] with the neemotion that the changeManager knows. Emotions first, Needs second (in case you want to know for performance reasons)
+	/// Populates the adapters neemotions[] with the neemotion that the changeManager knows. Emotions first, Needs second (in case you want to know for performance reasons when looking them up later on)
 	/// </summary>
 	private void PopulatetheArrays()
 	{

@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
-using System.Data;
-using UnityEditorInternal;
+using System.Reflection;
 using UnityEngine;
-using YBC.Narratix;
+using YBC.Neemotix;
 using YBC.Utils;
+using YBC.Utils.Error;
 
 namespace YBC.Narratix.InnerVoice
 {
@@ -12,7 +13,10 @@ namespace YBC.Narratix.InnerVoice
 	{
 
 		private VoiceItemCollection audioCollection;
-		public NeemotixAdapter neemotixAdapter;
+
+		public GameObject neemotixAdapterObject;
+		private INeemotixAdapter neemotixAdapter;
+
 		private int[] neemotionList;
 		private YouBeRandom r = new YouBeRandom();
 		private AudioSource audioSource;
@@ -36,6 +40,33 @@ namespace YBC.Narratix.InnerVoice
 
 		public float debugTimeTillNext;
 		public float debugPause;
+
+		private void OnValidate()
+		{
+			
+			if( neemotixAdapterObject != null )
+			{
+
+				Component[] cpnts = neemotixAdapterObject.GetComponents(typeof(Component));
+
+				foreach ( var cpnt in cpnts )
+				{
+					try
+					{
+						neemotixAdapter = (INeemotixAdapter)cpnt;
+					}
+					catch ( System.Exception ) { }
+				}				
+			}
+			else
+			{
+				Debug.LogError( new YBCEditorInterfaceObjNotParseable().ToString() );
+			}
+			
+		}
+
+
+		
 
 		// Start is called before the first frame update
 		void Start()
@@ -98,12 +129,13 @@ namespace YBC.Narratix.InnerVoice
 
 
 
-
 		/// <summary>
 		/// Pupulates a fresh instance of itemPool. Querrys the Neemotions and picks Variants according to status. rolls Dice to determine if the variant get's pushed to the stack.
 		/// </summary>
 		private void PopulateItemPool()
 		{
+			if ( neemotionList == null ) return;
+
 			Debug.Log( "##### new innerVoice Stack #####" );
 			pool = new ItemPool();
 

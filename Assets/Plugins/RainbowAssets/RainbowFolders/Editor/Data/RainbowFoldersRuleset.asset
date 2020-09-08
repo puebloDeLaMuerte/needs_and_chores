@@ -338,20 +338,8 @@ MonoBehaviour:
     IsBackgroundRecursive: 0
     IsHidden: 0
   - Type: 1
-    Key: Assets/Scripts/Narratix
-    Ordinal: 27
-    Priority: 0
-    IconType: 0
-    SmallIcon: {fileID: 0}
-    LargeIcon: {fileID: 0}
-    IsIconRecursive: 0
-    BackgroundType: 30
-    BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 1
-    IsHidden: 0
-  - Type: 1
     Key: Assets/Scripts/Neemotix
-    Ordinal: 28
+    Ordinal: 27
     Priority: 0
     IconType: 0
     SmallIcon: {fileID: 0}
@@ -363,7 +351,7 @@ MonoBehaviour:
     IsHidden: 0
   - Type: 1
     Key: Assets/Scripts/Perceptix
-    Ordinal: 29
+    Ordinal: 28
     Priority: 0
     IconType: 0
     SmallIcon: {fileID: 0}
@@ -375,7 +363,7 @@ MonoBehaviour:
     IsHidden: 0
   - Type: 1
     Key: Assets/Assets
-    Ordinal: 30
+    Ordinal: 29
     Priority: 0
     IconType: 0
     SmallIcon: {fileID: 0}
@@ -387,7 +375,7 @@ MonoBehaviour:
     IsHidden: 0
   - Type: 1
     Key: Assets/Assets/Sounds
-    Ordinal: 31
+    Ordinal: 30
     Priority: 0
     IconType: 0
     SmallIcon: {fileID: 0}
@@ -396,4 +384,16 @@ MonoBehaviour:
     BackgroundType: 30
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 1
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/Scenes
+    Ordinal: 31
+    Priority: 0
+    IconType: 10
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 10
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
     IsHidden: 0

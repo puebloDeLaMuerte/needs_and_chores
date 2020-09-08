@@ -17,7 +17,13 @@ namespace YBC.Utils
 
 		public void Awake()
 		{
-			_instance = this;
+			if( _instance != null )
+			{
+				Debug.LogError( "You have multiple Instances of YBCTimer in your project. There can only be one!" );
+			} else
+			{
+				_instance = this;
+			}
 		}
 
 		private float getYBCTime()

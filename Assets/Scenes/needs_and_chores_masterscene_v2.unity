@@ -16233,6 +16233,11 @@ PrefabInstance:
       propertyPath: kickLeastImportant
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7585047679752567408, guid: f05bc751023b79c40a61d19fa7e3d4d4,
+        type: 3}
+      propertyPath: neemotixAdapterObject
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7585047679752567422, guid: f05bc751023b79c40a61d19fa7e3d4d4,
         type: 3}
       propertyPath: m_Layer
@@ -23260,7 +23265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c99a9c55511c040b1c9ac7f7d67411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neemotixAdapter: {fileID: 4175357242950144692}
+  neemotixAdapterObject: {fileID: 4175357242950144690}
   bloomPPV: {fileID: 7599166896288137714}
   chromaticAberrationPPV: {fileID: 7599166896293382836}
   colorAdjustmentsPPV: {fileID: 7599166896318711004}

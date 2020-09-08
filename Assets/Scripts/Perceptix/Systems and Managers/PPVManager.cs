@@ -6,13 +6,15 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 using YBC.Neemotix;
 using YBC.Perceptix.PPVData;
+using YBC.Utils.Error;
 
 namespace YBC.Perceptix
 {
 	public class PPVManager : MonoBehaviour
 	{
 
-		public NeemotixAdapter neemotixAdapter;
+		public GameObject neemotixAdapterObject;
+		private INeemotixAdapter neemotixAdapter;
 		private PPVDataObject ppvDataObject;
 
 		[Space]
@@ -82,22 +84,46 @@ namespace YBC.Perceptix
 		}
 
 
+		public void OnValidate()
+		{
+			if ( neemotixAdapterObject != null )
+			{
+
+				Component[] cpnts = neemotixAdapterObject.GetComponents( typeof( Component ) );
+
+				foreach ( var cpnt in cpnts )
+				{
+					try
+					{
+						neemotixAdapter = (INeemotixAdapter)cpnt;
+					}
+					catch ( System.Exception ) { }
+				}
+			}
+			else
+			{
+				Debug.LogError( new YBCEditorInterfaceObjNotParseable().ToString() );
+			}
+
+		}
+
+
 		/// <summary>
 		/// Throw Errors at Runtime if the PPVs are not connected!
 		/// </summary>
 		private void CheckPublicFields()
 		{
-			if ( bloomPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( chromaticAberrationPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( colorAdjustmentsPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( depthOfFieldPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( filmGrainPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( lensDistortionPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( motionBlurPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( splitToningPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( vignettePPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( smhPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
-			if ( channelMixerPPV == null ) throw new System.Exception("YBC.NotAssignedError - A public field has not been assigned in the editor. Things will break!");
+			if ( bloomPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( chromaticAberrationPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( colorAdjustmentsPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( depthOfFieldPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( filmGrainPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( lensDistortionPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( motionBlurPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( splitToningPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( vignettePPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( smhPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString()); 
+			if ( channelMixerPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
 		}
 
 
