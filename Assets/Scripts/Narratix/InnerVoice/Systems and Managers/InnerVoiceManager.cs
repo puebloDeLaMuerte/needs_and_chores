@@ -43,26 +43,31 @@ namespace YBC.Narratix.InnerVoice
 
 		private void OnValidate()
 		{
-			
-			if( neemotixAdapterObject != null )
+			bool success = false;
+			if ( neemotixAdapterObject != null )
 			{
 
-				Component[] cpnts = neemotixAdapterObject.GetComponents(typeof(Component));
+				Component[] cpnts = neemotixAdapterObject.GetComponents( typeof( Component ) );
 
 				foreach ( var cpnt in cpnts )
 				{
 					try
 					{
 						neemotixAdapter = (INeemotixAdapter)cpnt;
+						success = true;
 					}
 					catch ( System.Exception ) { }
-				}				
+				}
 			}
 			else
 			{
-				Debug.LogError( new YBCEditorInterfaceObjNotParseable().ToString() );
+				Debug.LogError( new YBCEditorNotAssignedError().ToString() );
+				return;
 			}
-			
+			if ( !success )
+			{
+				Debug.LogError( new YBCEditorInterfaceObjNotParseableError().ToString() );
+			}
 		}
 
 

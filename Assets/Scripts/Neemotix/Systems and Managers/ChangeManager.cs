@@ -8,13 +8,13 @@ namespace YBC.Neemotix
 {
 	class ChangeManager : NeemotixBase
 	{
-		public GameObject needsCollectionObject;
-		public GameObject emotionsCollectionObject;
+		public GameObject needsCollectionObject = null;
+		public GameObject emotionsCollectionObject = null;
 
 		[Space]
 
 		public InteractablesManager interactablesManager;
-		public YBCTimer ybcTimer;
+		//public YBCTimer ybcTimer;
 
 		[Space]
 
@@ -187,9 +187,9 @@ namespace YBC.Neemotix
 			if( effectHourlyAmount != 0)
 			{
 				float oldval = fx.neemotionAffected.currentValue;
-				float changeAmount = (effectHourlyAmount * ybcTimer.GetDeltaHours() * generalChangeFactor);
+				float changeAmount = (effectHourlyAmount * YBCTimer.Instance.GetDeltaHours() * generalChangeFactor);
 				fx.neemotionAffected.SetCurrentValue( oldval += changeAmount );
-				fx.IncrementAppliedHours(ybcTimer.GetDeltaHours());
+				fx.IncrementAppliedHours(YBCTimer.Instance.GetDeltaHours());
 			}
 		}
 
@@ -244,7 +244,7 @@ namespace YBC.Neemotix
 		{
 			foreach ( var need in needs )
 			{
-				float thisChangeAmount = need.changeAmountPerHour * generalChangeFactor * ybcTimer.GetDeltaHours();
+				float thisChangeAmount = need.changeAmountPerHour * generalChangeFactor * YBCTimer.Instance.GetDeltaHours();
 				float tempval = need.currentValue + thisChangeAmount;
 				need.SetCurrentValue(tempval);
 			}

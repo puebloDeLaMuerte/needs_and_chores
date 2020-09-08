@@ -64,7 +64,7 @@ namespace YBC.Perceptix
 		private void Awake()
 		{
 			CheckPublicFields();
-			ppvDataObject = new PPVDataObject();
+			ppvDataObject = ScriptableObject.CreateInstance<PPVDataObject>();
 
 			//colorAdjustments = colorAdjustmentsPPV.GetComponent<ColorAdjustments>();
 			//depthOfField = depthOfFieldPPV.GetComponent<DepthOfField>();
@@ -86,6 +86,7 @@ namespace YBC.Perceptix
 
 		public void OnValidate()
 		{
+			bool success = false;
 			if ( neemotixAdapterObject != null )
 			{
 
@@ -96,13 +97,19 @@ namespace YBC.Perceptix
 					try
 					{
 						neemotixAdapter = (INeemotixAdapter)cpnt;
+						success = true;
 					}
 					catch ( System.Exception ) { }
 				}
 			}
 			else
 			{
-				Debug.LogError( new YBCEditorInterfaceObjNotParseable().ToString() );
+				Debug.LogError( new YBCEditorNotAssignedError().ToString() );
+				return;
+			}
+			if( !success )
+			{
+				Debug.LogError( new YBCEditorInterfaceObjNotParseableError().ToString() );
 			}
 
 		}
@@ -113,17 +120,17 @@ namespace YBC.Perceptix
 		/// </summary>
 		private void CheckPublicFields()
 		{
-			if ( bloomPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( chromaticAberrationPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( colorAdjustmentsPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( depthOfFieldPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( filmGrainPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( lensDistortionPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( motionBlurPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( splitToningPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( vignettePPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
-			if ( smhPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString()); 
-			if ( channelMixerPPV == null ) Debug.LogError(new YBCEditorInterfaceObjNotParseable().ToString());
+			if ( bloomPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( chromaticAberrationPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( colorAdjustmentsPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( depthOfFieldPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( filmGrainPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( lensDistortionPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( motionBlurPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( splitToningPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( vignettePPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
+			if ( smhPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString()); 
+			if ( channelMixerPPV == null ) Debug.LogError(new YBCEditorNotAssignedError().ToString());
 		}
 
 

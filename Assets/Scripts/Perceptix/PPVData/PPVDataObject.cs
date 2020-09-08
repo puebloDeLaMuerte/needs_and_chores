@@ -45,7 +45,7 @@ namespace YBC.Perceptix.PPVData
 
 		// F R E U D E
 
-		public PPVDataAdapter freudeAdapter = new PPVDataAdapter()
+		private PPVDataAdapter freudeAdapter = new PPVDataAdapter()
 		{
 			bloomPPVdata = new PPVData()
 			{
@@ -81,7 +81,7 @@ namespace YBC.Perceptix.PPVData
 
 		// T R A U E R
 
-		public PPVDataAdapter trauerAdapter = new PPVDataAdapter()
+		private PPVDataAdapter trauerAdapter = new PPVDataAdapter()
 		{
 			channelMixerPPVdata = new PPVData()
 			{
@@ -96,7 +96,7 @@ namespace YBC.Perceptix.PPVData
 
 		/// A N G S T
 
-		public PPVDataAdapter angstAdapter = new PPVDataAdapter()
+		private PPVDataAdapter angstAdapter = new PPVDataAdapter()
 		{
 			colorAdjustmentsPPVdata = new PPVData()
 			{
@@ -134,7 +134,7 @@ namespace YBC.Perceptix.PPVData
 
 		//   S C H M E R Z
 
-		public PPVDataAdapter schmerzAdapter = new PPVDataAdapter()
+		private PPVDataAdapter schmerzAdapter = new PPVDataAdapter()
 		{
 			chromaticAberrationPPVdata = new PPVData()
 			{
@@ -214,7 +214,7 @@ namespace YBC.Perceptix.PPVData
 
 		// W U T
 
-		public PPVDataAdapter wutAdapter = new PPVDataAdapter()
+		private PPVDataAdapter wutAdapter = new PPVDataAdapter()
 		{
 			colorAdjustmentsPPVdata = new PPVData()
 			{
@@ -263,7 +263,7 @@ namespace YBC.Perceptix.PPVData
 
 		// E K E L
 
-		public PPVDataAdapter ekelAdapter = new PPVDataAdapter()
+		private PPVDataAdapter ekelAdapter = new PPVDataAdapter()
 		{
 			splitToningPPVdata = new PPVData()
 			{
@@ -288,7 +288,7 @@ namespace YBC.Perceptix.PPVData
 
 		// S T R E S S
 
-		public PPVDataAdapter stressAdapter = new PPVDataAdapter()
+		private PPVDataAdapter stressAdapter = new PPVDataAdapter()
 		{
 			motionBlurPPVdata = new PPVData()
 			{
@@ -303,7 +303,7 @@ namespace YBC.Perceptix.PPVData
 
 		//   G E S U N D H E I T
 
-		public PPVDataAdapter gesundheitAdapter = new PPVDataAdapter()
+		private PPVDataAdapter gesundheitAdapter = new PPVDataAdapter()
 		{
 			bloomPPVdata = new PPVData()
 			{

@@ -7,7 +7,7 @@ namespace YBC.Utils.Error
 	{
 		protected string errorText;
 
-		public string ToString()
+		public override string ToString()
 		{
 			return errorText;
 		}

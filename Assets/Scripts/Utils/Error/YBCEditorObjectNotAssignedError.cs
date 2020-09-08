@@ -3,9 +3,9 @@ using Unity.Collections.LowLevel.Unsafe;
 
 namespace YBC.Utils.Error
 {
-	public class YBCEditorInterfaceObjNotParseable : YBCErrorMessage
+	public class YBCEditorNotAssignedError : YBCErrorMessage
 	{
-		public YBCEditorInterfaceObjNotParseable()
+		public YBCEditorNotAssignedError()
 		{
 			errorText = "YBC.NotAssignedError - A public field has not been assigned in the editor.Things will break!";
 		}
