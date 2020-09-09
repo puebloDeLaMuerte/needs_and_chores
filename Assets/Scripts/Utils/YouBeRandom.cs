@@ -1,14 +1,32 @@
 ﻿using System;
+using UnityEngine;
+using YBC.Utils.Error;
 
 namespace YBC.Utils
 {
-	public class YouBeRandom
+	public class YouBeRandom : MonoBehaviour
 	{
-		private Random r;
+		private System.Random r;
+
+		private static YouBeRandom _instance;
+		internal static YouBeRandom Instance { get => _instance; }
 
 		public YouBeRandom()
 		{
-			r = new Random();
+			r = new System.Random();
+		}
+
+
+		public void Awake()
+		{
+			if ( _instance != null )
+			{
+				Debug.LogError( new YBCMultipleHighlanderClassesError(this.GetType()) );
+			}
+			else
+			{
+				_instance = this;
+			}
 		}
 
 

@@ -55,9 +55,8 @@ namespace YBC.Narratix.InnerVoice
 
 			int size = this.Count;
 
-			YouBeRandom r = new YouBeRandom();
 
-			int nextOrdinal = r.RollZero( size - 1 );
+			int nextOrdinal = YouBeRandom.Instance.RollZero( size - 1 );
 			next = this.ToArray()[nextOrdinal];
 			lastPlayed = next;
 

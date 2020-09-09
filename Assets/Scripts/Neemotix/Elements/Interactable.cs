@@ -6,7 +6,7 @@ namespace YBC.Neemotix
 {
 	class Interactable : MonoBehaviour
 	{
-		public Effect[] effects;
+		public Effect[] effects = null;
 
 		private string myInteractableObjectName;
 		private Transform myInteractableCollectionTransform;

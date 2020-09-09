@@ -1,7 +1,4 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using YBC.Neemotix;
 using YBC.Utils;
@@ -18,7 +15,7 @@ namespace YBC.Narratix.InnerVoice
 		private INeemotixAdapter neemotixAdapter;
 
 		private int[] neemotionList;
-		private YouBeRandom r = new YouBeRandom();
+
 		private AudioSource audioSource;
 		private ItemPool pool;
 
@@ -41,7 +38,17 @@ namespace YBC.Narratix.InnerVoice
 		public float debugTimeTillNext;
 		public float debugPause;
 
+
 		private void OnValidate()
+		{
+			ValidateAndAssignAdapter();
+
+		}
+
+		/// <summary>
+		/// Checks if a GameObject has been Assigned in the Editor and if it holds a Script of Type INeemotixAdapter. Assigns the local variable if applicable.
+		/// </summary>
+		private void ValidateAndAssignAdapter()
 		{
 			bool success = false;
 			if ( neemotixAdapterObject != null )
@@ -69,9 +76,6 @@ namespace YBC.Narratix.InnerVoice
 				Debug.LogError( new YBCEditorInterfaceObjNotParseableError().ToString() );
 			}
 		}
-
-
-		
 
 		// Start is called before the first frame update
 		void Start()
@@ -116,7 +120,6 @@ namespace YBC.Narratix.InnerVoice
 
 
 			debugTimeTillNext = timeTillNext - timeSinceLast;
-
 		}
 
 
@@ -127,8 +130,7 @@ namespace YBC.Narratix.InnerVoice
 
 		private void SetRandomInterval()
 		{	
-			YouBeRandom r = new YouBeRandom();
-			randomInterval = r.FloatZeroTo( intervalRandomnes * debugTimeTillNext );
+			randomInterval = YouBeRandom.Instance.FloatZeroTo( intervalRandomnes * debugTimeTillNext );
 		}
 
 
@@ -154,13 +156,13 @@ namespace YBC.Narratix.InnerVoice
 				if( tmp.Length > 0 )
 				{
 					// Roll Dice and pick one!
-					int which = r.RollZero( tmp.Length );
+					int which = YouBeRandom.Instance.RollZero( tmp.Length );
 					VoiceItem item = tmp[which];
 
 					if( !kickLeastImportant )
 					{
 						// Roll Dice to choose if it should be said
-						bool sayit = r.HitMe( item.Weight );
+						bool sayit = YouBeRandom.Instance.HitMe( item.Weight );
 
 						if ( sayit )
 						{

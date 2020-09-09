@@ -1,13 +1,12 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using NaughtyAttributes;
 
 namespace YBC.Utils
 {
 	class YBCTimer : MonoBehaviour
 	{
-		public Text timerGuiText;
+		public Text timerGuiText = null;
 		public float startTimeHours = 0;
 
 		public int timeScale = 40;
@@ -19,7 +18,7 @@ namespace YBC.Utils
 		{
 			if( _instance != null )
 			{
-				Debug.LogError( "You have multiple Instances of YBCTimer in your project. There can only be one!" );
+				Debug.LogError( "" );
 			} else
 			{
 				_instance = this;

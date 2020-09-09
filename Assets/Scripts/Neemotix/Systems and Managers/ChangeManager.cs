@@ -13,7 +13,7 @@ namespace YBC.Neemotix
 
 		[Space]
 
-		public InteractablesManager interactablesManager;
+		public InteractablesManager interactablesManager = null;
 		//public YBCTimer ybcTimer;
 
 		[Space]
