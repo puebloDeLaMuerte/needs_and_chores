@@ -11589,6 +11589,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1464696043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464696044}
+  - component: {fileID: 1464696045}
+  m_Layer: 31
+  m_Name: YBCRandom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464696044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464696043}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8182137639567275414}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464696045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464696043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c035a704e6749347a2775aba123734c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494933478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2fa0184a9bc290a49b247a6424d8fffc,
@@ -25981,6 +26024,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e6af22f47fcb341b2e567ccae9a2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundItemCollections:
+  - folderpath: InnerVoice/Neemotions
+    IVDataAdapterObject: {fileID: 4175357242950144690}
+  - folderpath: InnerVoice/IPIP120
+    IVDataAdapterObject: {fileID: 0}
   neemotixAdapterObject: {fileID: 4175357242950144690}
   minimumPauseSeconds: 0
   intervalRandomnes: 0
@@ -26094,7 +26142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7585047679446601679}
   m_Layer: 31
-  m_Name: Narratix
+  m_Name: Audix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26990,6 +27038,7 @@ Transform:
   - {fileID: 8975158771833584210}
   - {fileID: 4323582837321721777}
   - {fileID: 7585047679446601679}
+  - {fileID: 1464696044}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

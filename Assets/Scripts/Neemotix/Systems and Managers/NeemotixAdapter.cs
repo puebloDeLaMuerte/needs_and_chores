@@ -1,8 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using YBC;
 using YBC.Neemotix;
 
-public class NeemotixAdapter : MonoBehaviour, INeemotixAdapter
+public class NeemotixAdapter : MonoBehaviour, INeemotixAdapter, IInnerVoiceDataAdapter
 {
 
 	private Neemotion[] neemotions;
@@ -81,6 +82,34 @@ public class NeemotixAdapter : MonoBehaviour, INeemotixAdapter
 		foreach ( Neemotion n in neemotions )
 		{
 			returnarray[i] = n.GetID();
+			i++;
+		}
+
+		return returnarray;
+	}
+
+	public string getStringForSelectorID( int selectorID, int selectorDepth )
+	{
+		throw new NotImplementedException();
+	}
+
+	public float getFloatForSelectorID( int selectorID, int selectorDepth )
+	{
+		throw new NotImplementedException();
+	}
+
+	public int getIntForSelectorID( int selectorID, int selectorDepth )
+	{
+		throw new NotImplementedException();
+	}
+
+	public (int, string)[] getAllSelectors()
+	{
+		(int, string)[] returnarray = new (int, string)[neemotions.Length];
+		int i = 0;
+		foreach ( Neemotion n in neemotions )
+		{
+			returnarray[i] = (n.GetID(), n.neemotionName);
 			i++;
 		}
 
