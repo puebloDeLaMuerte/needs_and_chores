@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 namespace YBC.Audix
 {
@@ -13,11 +14,22 @@ namespace YBC.Audix
 		public char Variant { get => variant; }
 		protected char variant;
 
-		public Selector[] selectors;
+		public Selector[] Selectors { get => selectors; }
+		protected Selector[] selectors;
 
+		private int picked = 0;
 
 		public SoundItem() { }
 
+		public void IncrementPickCount()
+		{
+			picked++;
+		}
+
+		public int getPickedCount()
+		{
+			return picked;
+		}
 
 		public SoundItem(AudioClip clip, string text, char variant, Selector[] selectors )
 		{

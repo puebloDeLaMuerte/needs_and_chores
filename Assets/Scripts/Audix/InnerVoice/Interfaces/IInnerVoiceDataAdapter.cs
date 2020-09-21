@@ -1,6 +1,6 @@
 ﻿
 
-namespace YBC
+namespace YBC.Audix.InnerVoice
 {
 	public interface IInnerVoiceDataAdapter
 	{
@@ -32,6 +32,7 @@ namespace YBC
 		/// An Array of all Data-Items that can possibliy be querried through the adapter. Main purpose is for initialization of the SoundCollection.
 		/// </summary>
 		/// <returns>All (selectorID, selectorName) pairs that are available for querries through this adapter.</returns>
-		(int, string)[] getAllSelectors();
+		//TODO	implement a precalculated list to save time on each call...
+		(int, string)[] getAllSelectorIDs();
 	}
 }

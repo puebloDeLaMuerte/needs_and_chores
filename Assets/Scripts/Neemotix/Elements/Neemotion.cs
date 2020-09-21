@@ -223,19 +223,19 @@ namespace YBC.Neemotix
 
 			if ( currentValue <= urgendZoneMax )
 			{
-				tempstat = NeemotionStatus.Urgent;
+				tempstat = NeemotionStatus.vlow;
 			}
 			else if ( currentValue <= unsatisfiedZoneMax )
 			{
-				tempstat = NeemotionStatus.Unsatisfied;
+				tempstat = NeemotionStatus.low;
 			}
 			else if ( currentValue <= satisfiedZoneMax )
 			{
-				tempstat = NeemotionStatus.Satisfied;
+				tempstat = NeemotionStatus.med;
 			}
 			else if ( currentValue > satisfiedZoneMax )
 			{
-				tempstat = NeemotionStatus.Oversatisfied;
+				tempstat = NeemotionStatus.high;
 			}
 			else
 			{
@@ -269,19 +269,19 @@ namespace YBC.Neemotix
 				case NeemotionStatus.Undefined:
 					guiSlider.GetComponentInChildren<Image>().color = new Color(1, 1, 1);
 					break;
-				case NeemotionStatus.Urgent:
+				case NeemotionStatus.vlow:
 					guiSlider.GetComponentInChildren<Image>().color = urgendColor;
 					//PerformImmediateStatusEffets(urgendZoneEffects);
 					break;
-				case NeemotionStatus.Unsatisfied:
+				case NeemotionStatus.low:
 					guiSlider.GetComponentInChildren<Image>().color = unsatisfiedColor;
 					//PerformImmediateStatusEffets(unsatisfiedEffects);
 					break;
-				case NeemotionStatus.Satisfied:
+				case NeemotionStatus.med:
 					guiSlider.GetComponentInChildren<Image>().color = satisfiedColor;
 					//PerformImmediateStatusEffets(satisfiedEffects);
 					break;
-				case NeemotionStatus.Oversatisfied:
+				case NeemotionStatus.high:
 					guiSlider.GetComponentInChildren<Image>().color = oversatisfiedColor;
 					//PerformImmediateStatusEffets(oversatisfiedEffects);
 					break;
@@ -326,13 +326,13 @@ namespace YBC.Neemotix
 		{
 			switch ( status )
 			{
-				case NeemotionStatus.Urgent:
+				case NeemotionStatus.vlow:
 					return urgendZoneEffects;
-				case NeemotionStatus.Unsatisfied:
+				case NeemotionStatus.low:
 					return unsatisfiedEffects;
-				case NeemotionStatus.Satisfied:
+				case NeemotionStatus.med:
 					return satisfiedEffects;
-				case NeemotionStatus.Oversatisfied:
+				case NeemotionStatus.high:
 					return oversatisfiedEffects;
 				default:
 					return null;

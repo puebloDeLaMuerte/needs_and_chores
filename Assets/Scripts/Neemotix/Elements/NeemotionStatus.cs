@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum NeemotionStatus
 {
-	Undefined = 0,
-	Urgent = 1,
-	Unsatisfied = 2,
-	Satisfied = 3,
-	Oversatisfied = 4
+	Undefined = -1,
+	vlow = 0,
+	low = 1,
+	med = 2,
+	high = 3
 }

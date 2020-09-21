@@ -1,62 +1,89 @@
 ﻿
 
 using System;
+using UnityEditor.Experimental.GraphView;
 using YBC.Utils.Error;
 
 namespace YBC.Audix
 {
 	public class Selector
 	{
-		private int id;
-		private string name;
-		private CompareType compareType;
+		private int selectorID;
+		private string selectorName;
+		private SelectorCompareType compareType;
+		public readonly SelectorType selectorType;
 
 		private string selectValueString = null;
 		private int selectValueInt = int.MinValue;
 		private float selectValueFloat = float.MinValue;
 
-		public Selector( int id, string name, CompareType compareType, string selectValueString )
+		public Selector( int id, string name, SelectorCompareType compareType, string selectValueString )
 		{
-			this.id = id;
-			this.name = name;
+			this.selectorID = id;
+			this.selectorName = name;
 			this.compareType = compareType;
 			this.selectValueString = selectValueString;
+			this.selectorType = SelectorType.STRING;
 		}
 
-		public Selector( int id, string name, CompareType compareType, int selectValueInt )
+		public Selector( int id, string name, SelectorCompareType compareType, int selectValueInt )
 		{
-			this.id = id;
-			this.name = name;
+			this.selectorID = id;
+			this.selectorName = name;
 			this.compareType = compareType;
 			this.selectValueInt = selectValueInt;
+			this.selectorType = SelectorType.INT;
 		}
 
-		public Selector( int id, string name, CompareType compareType, float selectValueFloat )
+		public Selector( int id, string name, SelectorCompareType compareType, float selectValueFloat )
 		{
-			this.id = id;
-			this.name = name;
+			this.selectorID = id;
+			this.selectorName = name;
 			this.compareType = compareType;
 			this.selectValueFloat = selectValueFloat;
+			this.selectorType = SelectorType.FLOAT;
 		}
 
+
+		public int getSelectorID()
+		{
+			return selectorID;
+		}
+
+		public bool EvaluateID( int idQuery )
+		{
+			if ( selectorID == idQuery )
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public string getName()
+		{
+			return selectorName;
+		}
 
 		private bool Compare(int evaluationInt)
 		{
 			switch ( compareType )
 			{
-				case CompareType.EQUALS:
+				case SelectorCompareType.EQUALS:
 					if ( evaluationInt == selectValueInt ) return true;
 					else return false;
-				case CompareType.BIGGER_INCLUSIVE:
+				case SelectorCompareType.BIGGER_INCLUSIVE:
 					if ( evaluationInt >= selectValueInt ) return true;
 					else return false;
-				case CompareType.BIGGER:
+				case SelectorCompareType.BIGGER:
 					if ( evaluationInt > selectValueInt ) return true;
 					else return false;
-				case CompareType.SMALLER_INCLUSIVE:
+				case SelectorCompareType.SMALLER_INCLUSIVE:
 					if ( evaluationInt <= selectValueInt ) return true;
 					else return false;
-				case CompareType.SMALLER:
+				case SelectorCompareType.SMALLER:
 					if ( evaluationInt < selectValueInt ) return true;
 					else return false;
 				default:
@@ -68,19 +95,19 @@ namespace YBC.Audix
 		{
 			switch ( compareType )
 			{
-				case CompareType.EQUALS:
+				case SelectorCompareType.EQUALS:
 					if ( evaluationFloat == selectValueFloat ) return true;
 					else return false;
-				case CompareType.BIGGER_INCLUSIVE:
+				case SelectorCompareType.BIGGER_INCLUSIVE:
 					if ( evaluationFloat >= selectValueFloat ) return true;
 					else return false;
-				case CompareType.BIGGER:
+				case SelectorCompareType.BIGGER:
 					if ( evaluationFloat > selectValueFloat ) return true;
 					else return false;
-				case CompareType.SMALLER_INCLUSIVE:
+				case SelectorCompareType.SMALLER_INCLUSIVE:
 					if ( evaluationFloat <= selectValueFloat ) return true;
 					else return false;
-				case CompareType.SMALLER:
+				case SelectorCompareType.SMALLER:
 					if ( evaluationFloat < selectValueFloat ) return true;
 					else return false;
 				default:
@@ -117,6 +144,28 @@ namespace YBC.Audix
 			if ( selectValueFloat != float.MinValue ) return Compare( evaluationfloat );
 			else if ( selectValueInt != int.MinValue ) return Compare( (int)Math.Round( evaluationfloat, 0 ) );
 			else throw new YBCInvalidSelectorException( evaluationfloat );
+		}
+
+
+
+		public override string ToString()
+		{
+			string r = "Selector: " + this.selectorID + " - " + this.selectorName + ": " + this.compareType + " ";
+			switch ( this.selectorType )
+			{
+				case SelectorType.FLOAT:
+					r += selectValueFloat;
+					break;
+				case SelectorType.INT:
+					r += selectValueInt;
+					break;
+				case SelectorType.STRING:
+					r += selectValueString;
+					break;
+				default:
+					break;
+			}
+			return r;
 		}
 	}
 }

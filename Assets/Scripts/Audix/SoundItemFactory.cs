@@ -67,14 +67,14 @@ namespace YBC
 
 
 
-		private static SoundItem ParseInteractionIVitem( AudioClip inclip, string[] elements, char variant, string text )
+		private static InnerVoiceItem ParseInteractionIVitem( AudioClip inclip, string[] elements, char variant, string text )
 		{
 			throw new NotImplementedException();
 		}
 
 
 
-		private static SoundItem ParseNeemotionIVitem( AudioClip inclip, string[] elements, char variant, string text )
+		private static InnerVoiceItem ParseNeemotionIVitem( AudioClip inclip, string[] elements, char variant, string text )
 		{
 			Selector[] selects = new Selector[1];
 
@@ -96,14 +96,14 @@ namespace YBC
 				default: neemoStatusint = -1; break;
 			}
 
-			selects[0] = new Selector( selectorID, selectorName, CompareType.EQUALS, neemoStatusint);
+			selects[0] = new Selector( selectorID, selectorName, SelectorCompareType.EQUALS, neemoStatusint);
 
 			return new InnerVoiceItem( inclip, text, variant, selects, urgency, immediacy);
 		}
 
 
 
-		private static SoundItem ParseIPIP120IVitem( AudioClip inclip, string[] elements, char variant, string text )
+		private static InnerVoiceItem ParseIPIP120IVitem( AudioClip inclip, string[] elements, char variant, string text )
 		{
 
 			Selector[] selects = new Selector[2];
@@ -120,8 +120,8 @@ namespace YBC
 
 			(float, float) minMax = IPIPLookup.GetMinMaxSelectorValues( key, accuracy );
 			
-			selects[0] = new Selector( selectorID, selectorName, CompareType.BIGGER_INCLUSIVE , minMax.Item1);
-			selects[1] = new Selector( selectorID, selectorName, CompareType.SMALLER_INCLUSIVE, minMax.Item2 );
+			selects[0] = new Selector( selectorID, selectorName, SelectorCompareType.BIGGER_INCLUSIVE , minMax.Item1);
+			selects[1] = new Selector( selectorID, selectorName, SelectorCompareType.SMALLER_INCLUSIVE, minMax.Item2 );
 
 			return new InnerVoiceItem( inclip, text, variant, selects, urgency, immediacy );
 		}

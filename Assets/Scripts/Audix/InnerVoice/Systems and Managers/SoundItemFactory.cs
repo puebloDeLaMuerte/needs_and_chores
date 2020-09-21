@@ -96,7 +96,7 @@ namespace YBC.Audix
 				default: neemoStatusint = -1; break;
 			}
 
-			selects[0] = new Selector( selectorID, selectorName, CompareType.EQUALS, neemoStatusint);
+			selects[0] = new Selector( selectorID, selectorName, SelectorCompareType.EQUALS, neemoStatusint);
 
 			return new InnerVoiceItem( inclip, text, variant, selects, urgency, immediacy);
 		}
@@ -120,8 +120,8 @@ namespace YBC.Audix
 
 			(float, float) minMax = IPIPLookup.GetMinMaxSelectorValues( key, accuracy );
 			
-			selects[0] = new Selector( selectorID, selectorName, CompareType.BIGGER_INCLUSIVE , minMax.Item1);
-			selects[1] = new Selector( selectorID, selectorName, CompareType.SMALLER_INCLUSIVE, minMax.Item2 );
+			selects[0] = new Selector( selectorID, selectorName, SelectorCompareType.BIGGER_INCLUSIVE , minMax.Item1);
+			selects[1] = new Selector( selectorID, selectorName, SelectorCompareType.SMALLER_INCLUSIVE, minMax.Item2 );
 
 			return new InnerVoiceItem( inclip, text, variant, selects, urgency, immediacy );
 		}

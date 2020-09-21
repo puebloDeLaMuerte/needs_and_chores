@@ -21707,7 +21707,7 @@ GameObject:
   - component: {fileID: 4175357241522155066}
   - component: {fileID: 4175357241522155067}
   m_Layer: 31
-  m_Name: Unterhaltung
+  m_Name: entertainment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21763,7 +21763,7 @@ GameObject:
   - component: {fileID: 4175357241769230310}
   - component: {fileID: 4175357241769230311}
   m_Layer: 31
-  m_Name: Stress
+  m_Name: stress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21941,7 +21941,7 @@ GameObject:
   - component: {fileID: 4175357242011240832}
   - component: {fileID: 4175357242011240833}
   m_Layer: 31
-  m_Name: Freude
+  m_Name: joy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21986,7 +21986,7 @@ GameObject:
   - component: {fileID: 4175357242020530223}
   - component: {fileID: 4175357242020530220}
   m_Layer: 31
-  m_Name: Angst
+  m_Name: fear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22059,7 +22059,7 @@ GameObject:
   - component: {fileID: 4175357242076724828}
   - component: {fileID: 4175357242076724829}
   m_Layer: 31
-  m_Name: Ekel
+  m_Name: disgust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22136,7 +22136,7 @@ GameObject:
   - component: {fileID: 4175357242095455971}
   - component: {fileID: 4175357242095455968}
   m_Layer: 31
-  m_Name: SauberkeitOrdnung
+  m_Name: tidiness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22209,7 +22209,7 @@ GameObject:
   - component: {fileID: 4175357242097428084}
   - component: {fileID: 4175357242097428085}
   m_Layer: 31
-  m_Name: Wut
+  m_Name: anger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22226,7 +22226,7 @@ GameObject:
   - component: {fileID: 4175357242140013681}
   - component: {fileID: 4175357242140013686}
   m_Layer: 31
-  m_Name: Anerkennung
+  m_Name: recognition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22363,7 +22363,7 @@ GameObject:
   - component: {fileID: 4175357242255330848}
   - component: {fileID: 4175357242255330849}
   m_Layer: 31
-  m_Name: Gesundheit
+  m_Name: health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22380,7 +22380,7 @@ GameObject:
   - component: {fileID: 4175357242367675057}
   - component: {fileID: 4175357242367675062}
   m_Layer: 31
-  m_Name: KreativerAusdruck
+  m_Name: expression
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22479,7 +22479,7 @@ GameObject:
   - component: {fileID: 4175357242379182953}
   - component: {fileID: 4175357242379182958}
   m_Layer: 31
-  m_Name: Trauer
+  m_Name: sadness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22620,7 +22620,7 @@ GameObject:
   - component: {fileID: 4175357242504433088}
   - component: {fileID: 4175357242504433089}
   m_Layer: 31
-  m_Name: Koerperhygiene
+  m_Name: bodyhygiene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22713,7 +22713,7 @@ GameObject:
   - component: {fileID: 4175357242544227037}
   - component: {fileID: 4175357242544227026}
   m_Layer: 31
-  m_Name: Excrempty
+  m_Name: excrempty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22790,7 +22790,7 @@ GameObject:
   - component: {fileID: 4175357243102279049}
   - component: {fileID: 4175357243102279054}
   m_Layer: 31
-  m_Name: Schmerz
+  m_Name: pain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22931,7 +22931,7 @@ GameObject:
   - component: {fileID: 4175357243119011212}
   - component: {fileID: 4175357243119011213}
   m_Layer: 31
-  m_Name: Ausgeruhtheit
+  m_Name: rest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22948,7 +22948,7 @@ GameObject:
   - component: {fileID: 4175357243136870150}
   - component: {fileID: 4175357243136870151}
   m_Layer: 31
-  m_Name: Saettigung
+  m_Name: fullness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23114,7 +23114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4175357243420520078
 Transform:
   m_ObjectHideFlags: 0

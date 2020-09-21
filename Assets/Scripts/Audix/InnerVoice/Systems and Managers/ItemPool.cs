@@ -56,11 +56,10 @@ namespace YBC.Audix.InnerVoice
 
 			int size = this.Count;
 
-
 			int nextOrdinal = YouBeRandom.Instance.RollZero( size - 1 );
 			next = this.ToArray()[nextOrdinal];
 			lastPlayed = next;
-
+			next.IncrementPickCount();
 			return next.Clip;
 		}
 

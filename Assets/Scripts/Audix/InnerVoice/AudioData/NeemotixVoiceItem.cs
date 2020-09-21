@@ -44,16 +44,16 @@ namespace YBC.Audix.InnerVoice
 			switch ( s )
 			{
 				case "vlow":
-					stat = NeemotionStatus.Urgent;
+					stat = NeemotionStatus.vlow;
 					break;
 				case "low":
-					stat = NeemotionStatus.Unsatisfied;
+					stat = NeemotionStatus.low;
 					break;
 				case "med":
-					stat = NeemotionStatus.Satisfied;
+					stat = NeemotionStatus.med;
 					break;
 				case "high":
-					stat = NeemotionStatus.Oversatisfied;
+					stat = NeemotionStatus.high;
 					break;
 				default:
 					stat = NeemotionStatus.Undefined;

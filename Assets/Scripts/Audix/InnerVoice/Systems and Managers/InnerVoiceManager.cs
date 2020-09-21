@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Schema;
+using UnityEditor.Searcher;
 using UnityEngine;
 using YBC.Neemotix;
 using YBC.Utils;
@@ -9,7 +12,7 @@ namespace YBC.Audix.InnerVoice
 {
 	public class InnerVoiceManager : MonoBehaviour, IEditorInterfaceReceiver
 	{
-		public List<SoundItemCollection> soundItemCollections;
+		public List<InnerVoiceItemCollection> soundItemCollections;
 		//public SoundItemCollection audioCollection;
 
 		[Space]
@@ -88,8 +91,6 @@ namespace YBC.Audix.InnerVoice
 		void Start()
 		{
 
-			Debug.LogError( "MUAAAAAHAHAAAHAAAAAAAAAAA" );
-
 			timeTillNext = (float)initialPause;
 			pool = new ItemPool();
 
@@ -98,7 +99,7 @@ namespace YBC.Audix.InnerVoice
 			//audioCollection = new SoundItemCollection( neemotixAdapter.GetAllNemotionIDs() );
 			//neemotionList = neemotixAdapter.GetAllNemotionIDs();
 
-			foreach ( SoundItemCollection itemcollection in soundItemCollections )
+			foreach ( InnerVoiceItemCollection itemcollection in soundItemCollections )
 			{
 				itemcollection.Init();
 			}
@@ -139,7 +140,7 @@ namespace YBC.Audix.InnerVoice
 
 		private void SetTimeTillNext()
 		{
-			timeTillNext = minimumPauseSeconds / (0.1f + pool.GetAverageWeight());
+			timeTillNext = minimumPauseSeconds / ( 0.1f + pool.GetAverageWeight() );
 		}
 
 		private void SetRandomInterval()
@@ -153,7 +154,7 @@ namespace YBC.Audix.InnerVoice
 		{
 			pool = new ItemPool();
 
-			foreach ( SoundItemCollection collection in soundItemCollections )
+			foreach ( InnerVoiceItemCollection collection in soundItemCollections )
 			{
 				PopulateItemPool( ref pool, collection );
 			}
@@ -165,8 +166,71 @@ namespace YBC.Audix.InnerVoice
 		/// <summary>
 		/// Pupulates a fresh instance of itemPool. Querrys the Neemotions and picks Variants according to status. rolls Dice to determine if the variant get's pushed to the stack.
 		/// </summary>
-		private void PopulateItemPool( ref ItemPool pool, SoundItemCollection audioCollection )
+		private void PopulateItemPool( ref ItemPool pool, InnerVoiceItemCollection audioCollection )
 		{
+			IInnerVoiceDataAdapter dataAdapter = audioCollection.getDataAdapter();
+
+			foreach ( var ids in dataAdapter.getAllSelectorIDs() )
+			{
+				List<InnerVoiceItem> itemsForDataPoint = new List<InnerVoiceItem>();
+				
+				int id = ids.Item1;
+
+				foreach ( InnerVoiceItem item in audioCollection.GetItems() )
+				{
+
+					// For each collectoin:
+					// Get all IDs from it's DataAdapter and cycle through each item in the collection to find matching ids/value constellations.
+
+					if( item.Selectors[0].EvaluateID( id ) )
+					{
+
+						bool success = true;
+						int depth = 0;
+						foreach ( Selector sel in item.Selectors )
+						{
+							switch ( sel.selectorType )
+							{
+								case SelectorType.FLOAT:
+									float f = dataAdapter.getFloatForSelectorID( id, depth );
+									success = sel.Evaluate( f );
+									break;
+								case SelectorType.INT:
+									int i = dataAdapter.getIntForSelectorID( id, depth );
+									success = sel.Evaluate( i );
+									break;
+								case SelectorType.STRING:
+									success = sel.Evaluate( dataAdapter.getStringForSelectorID( id, depth ) );
+									break;
+								default:
+									break;
+							}
+						
+							if ( !success )
+							{
+								break;
+							}
+							depth++;
+						}
+						if ( success )
+						{
+							// put item on pool
+							itemsForDataPoint.Add( item );
+						}
+					}
+				}
+				// deal with variants here!
+
+				if( itemsForDataPoint.Count > 1 )
+				{
+					InnerVoiceItem pick = PickLeastPlayed( itemsForDataPoint );
+					pool.Add( pick );
+					Debug.Log( "pooling: " + pick.Selectors[0] + " - variant: " + pick.Variant);
+				}
+			}
+
+
+			/*
 			if ( neemotionList == null ) return;
 
 			Debug.Log( "##### new innerVoice Stack #####" );
@@ -211,6 +275,28 @@ namespace YBC.Audix.InnerVoice
 			{
 				Debug.Log( item.Urgency +" - " + item.Text );
 			}
+			*/
+		}
+
+
+		
+		private InnerVoiceItem PickLeastPlayed( List<InnerVoiceItem> itemList ) 
+		{
+			if ( itemList.Count == 1 ) return itemList[0];
+
+
+			InnerVoiceItem randomItem = itemList[ YouBeRandom.Instance.Roll(0, itemList.Count )];
+			InnerVoiceItem removeItem = itemList.Find( x => x.getPickedCount() > randomItem.getPickedCount() );
+
+			if( removeItem == null )
+			{
+				itemList.Remove( randomItem );
+			} else
+			{
+				itemList.Remove( removeItem );
+			}
+
+			return PickLeastPlayed(itemList);
 		}
 
 

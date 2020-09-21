@@ -2,7 +2,7 @@
 
 namespace YBC.Audix
 {
-	public enum CompareType
+	public enum SelectorCompareType
 	{
 		EQUALS,
 		BIGGER_INCLUSIVE,
