@@ -6881,6 +6881,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 99863778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &921639822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921639823}
+  - component: {fileID: 921639824}
+  m_Layer: 31
+  m_Name: ExAi
+  m_TagString: Feebles
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &921639823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921639822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8182137639567275414}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &921639824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921639822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09da07557cfbcb946a7a7a890fc712b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Feebles
 --- !u!1 &923927493 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: cebef3559f94a6440ac9c1782954dc32,
@@ -26028,11 +26072,11 @@ MonoBehaviour:
   - folderpath: InnerVoice/Neemotions
     IVDataAdapterObject: {fileID: 4175357242950144690}
   - folderpath: InnerVoice/IPIP120
-    IVDataAdapterObject: {fileID: 0}
+    IVDataAdapterObject: {fileID: 921639822}
   neemotixAdapterObject: {fileID: 4175357242950144690}
-  minimumPauseSeconds: 0
-  intervalRandomnes: 0
-  initialPause: 3
+  minimumPauseSeconds: 2.1
+  intervalRandomnes: 0.629
+  initialPause: 2
   kickLeastImportant: 1
   debugTimeTillNext: 0
   debugPause: 0
@@ -27039,6 +27083,7 @@ Transform:
   - {fileID: 4323582837321721777}
   - {fileID: 7585047679446601679}
   - {fileID: 1464696044}
+  - {fileID: 921639823}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

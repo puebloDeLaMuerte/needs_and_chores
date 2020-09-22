@@ -5,11 +5,10 @@ using System.Globalization;
 using System.Runtime.Remoting.Messaging;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using YBC.Audix;
 using YBC.Audix.InnerVoice;
 using YBC.Utils.Error;
 
-namespace YBC
+namespace YBC.Audix
 {
 
 	public static class SoundItemFactory
@@ -113,7 +112,7 @@ namespace YBC
 
 			float urgency, immediacy;
 			immediacy = IPIPLookup.GetImmediacy();
-			char key = selectorName[0];
+			char key = elements[3][0];
 			string accuracy = elements[4];
 			urgency = IPIPLookup.CalculateUrgency(key, accuracy);
 
@@ -126,6 +125,8 @@ namespace YBC
 			return new InnerVoiceItem( inclip, text, variant, selects, urgency, immediacy );
 		}
 	}
+
+
 
 
 	public static class IPIPLookup
@@ -157,40 +158,40 @@ namespace YBC
 			
 			switch ( facetStub )
 			{
-				case "A1": return "trust";
-				case "A2": return "compliance";
-				case "A3": return "altruism";
-				case "A4": return "straightforwardness";
-				case "A5": return "modesty";
-				case "A6": return "tender-mindedness";
+				case "A1": return "Trust";
+				case "A2": return "Compliance";
+				case "A3": return "Altruism";
+				case "A4": return "Straightforwardness";
+				case "A5": return "Modesty";
+				case "A6": return "Tender-Mindedness";
 
-				case "C1": return "competence";
-				case "C2": return "order";
-				case "C3": return "dutifulness";
-				case "C4": return "achievement-striving";
-				case "C5": return "self-discipline";
-				case "C6": return "deliberation";
+				case "C1": return "Competence";
+				case "C2": return "Order";
+				case "C3": return "Dutifulness";
+				case "C4": return "Achievement Striving";
+				case "C5": return "Self-Discipline";
+				case "C6": return "Deliberation";
 
-				case "E1": return "warmth";
-				case "E2": return "gregariousness";
-				case "E3": return "assertiveness";
-				case "E4": return "activity";
-				case "E5": return "excitement-seeking";
-				case "E6": return "positive-emotions";
+				case "E1": return "Warmth";
+				case "E2": return "Gregariousness";
+				case "E3": return "Assertiveness";
+				case "E4": return "Activity";
+				case "E5": return "Excitement Seeking";
+				case "E6": return "Positive Emotions";
 
-				case "N1": return "anxiety";
-				case "N2": return "hostility";
-				case "N3": return "deptression";
-				case "N4": return "self-consciousness";
-				case "N5": return "impulsiveness";
-				case "N6": return "vulnerability";
+				case "N1": return "Anxiety";
+				case "N2": return "Angry Hostility";
+				case "N3": return "Depression";
+				case "N4": return "Self-Consciousness";
+				case "N5": return "Impulsiveness";
+				case "N6": return "Vulnerability";
 
-				case "O1": return "fantasy";
-				case "O2": return "aesthetics";
-				case "O3": return "feelings";
-				case "O4": return "actions";
-				case "O5": return "ideas";
-				case "O6": return "values";
+				case "O1": return "Fantasy";
+				case "O2": return "Aesthetics";
+				case "O3": return "Feelings";
+				case "O4": return "Actions";
+				case "O5": return "Ideas";
+				case "O6": return "Values";
 
 				default: throw new YBCInvalidFacetStubException( facetStub );
 			}
@@ -216,7 +217,7 @@ namespace YBC
 		public static float CalculateUrgency(char key, string accuracy)
 		{
 
-			int accInt = GetValueRangeIdentifier( key, accuracy );
+			int accInt = GetValueZoneIdentifier( key, accuracy );
 
 			float returnFloat;
 
@@ -235,12 +236,12 @@ namespace YBC
 
 
 		/// <summary>
-		/// returns an int that signifies the value-range for a Key-Accuracy pair.
+		/// returns an int that signifies the value-zone for a Key-Accuracy pair.
 		/// </summary>
 		/// <param name="key">this IPIP-IVitems key</param>
 		/// <param name="accuracy">this IPIP-IVitems accuracy</param>
 		/// <returns>int: Key-Agnostic: '++' = 2, '+' = 1, '0' = 0, '-' = -1; '--' = -2</returns>
-		private static int GetValueRangeIdentifier( char key, string accuracy )
+		private static int GetValueZoneIdentifier( char key, string accuracy )
 		{
 			int accInt;
 			switch ( accuracy )
@@ -273,7 +274,7 @@ namespace YBC
 		/// <returns>(float, float) min and max values</returns>
 		public static (float, float) GetMinMaxSelectorValues( char key, string accuracy )
 		{
-			int accInt = GetValueRangeIdentifier( key, accuracy );
+			int accInt = GetValueZoneIdentifier( key, accuracy );
 
 			switch ( accInt )
 			{
