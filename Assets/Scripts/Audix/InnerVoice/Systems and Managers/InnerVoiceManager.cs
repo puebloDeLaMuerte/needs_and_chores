@@ -129,6 +129,11 @@ namespace YBC.Audix.InnerVoice
 					//timeTillNext = minimumPauseSeconds / (1f + pool.GetAverageWeight());
 					SetRandomInterval();
 
+					// TEMP:
+					SetTimeTillNext();
+
+
+
 					debugPause = timeTillNext;
 				}
 			}
@@ -224,58 +229,10 @@ namespace YBC.Audix.InnerVoice
 				if( itemsForDataPoint.Count > 1 )
 				{
 					InnerVoiceItem pick = PickLeastPlayed( itemsForDataPoint );
-					pool.Add( pick );
+					pool.AddItem( pick );
 					Debug.Log( "pooling: " + pick.Selectors[0] + " - variant: " + pick.Variant);
 				}
 			}
-
-
-			/*
-			if ( neemotionList == null ) return;
-
-			Debug.Log( "##### new innerVoice Stack #####" );
-			//pool = new ItemPool();
-
-			foreach ( int neemoID in neemotionList )
-			{
-				var neemoState = neemotixAdapter.GetNeemotionStateByID( neemoID );
-
-				// Get a List of VoiceItems fitting the Neemotion and it's state.
-				InnerVoiceItem[] tmp = (InnerVoiceItem[])audioCollection.GetItemsForNeemotion( neemoID, neemoState.Item2);
-
-				if( tmp.Length > 0 )
-				{
-					// Roll Dice and pick one!
-					int which = YouBeRandom.Instance.RollZero( tmp.Length );
-					InnerVoiceItem item = tmp[which];
-
-					if( !kickLeastImportant )
-					{
-						// Roll Dice to choose if it should be said
-						bool sayit = YouBeRandom.Instance.HitMe( item.Urgency );
-
-						if ( sayit )
-						{
-							pool.Add( item );
-						}
-					} else
-					{
-						// we kick the least important items later anyway, so might as well add all of them in here
-						pool.Add( item );
-					}
-				}
-			}
-
-			if( kickLeastImportant )
-			{
-				KickLeastImportantFromPool();
-			}
-
-			foreach ( var item in pool )
-			{
-				Debug.Log( item.Urgency +" - " + item.Text );
-			}
-			*/
 		}
 
 

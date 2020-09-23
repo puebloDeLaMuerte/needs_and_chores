@@ -35,7 +35,7 @@ namespace YBC.Audix.InnerVoice
 			if ( this.Count <= 0 ) averageWeight = 0f;
 
 			float u = 0f;
-			foreach ( NeemotixVoiceItem item in this )
+			foreach ( InnerVoiceItem item in this )
 			{
 				u += item.Urgency;
 			}
@@ -65,7 +65,7 @@ namespace YBC.Audix.InnerVoice
 
 
 		
-		public new void Add( NeemotixVoiceItem i )
+		public void AddItem( InnerVoiceItem i )
 		{
 			base.Add( i );
 			CalculateAverageWeight();

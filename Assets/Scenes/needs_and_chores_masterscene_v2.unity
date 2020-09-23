@@ -26072,9 +26072,9 @@ MonoBehaviour:
   - folderpath: InnerVoice/Neemotions
     IVDataAdapterObject: {fileID: 4175357242950144690}
   - folderpath: InnerVoice/IPIP120
-    IVDataAdapterObject: {fileID: 921639822}
+    IVDataAdapterObject: {fileID: 0}
   neemotixAdapterObject: {fileID: 4175357242950144690}
-  minimumPauseSeconds: 2.1
+  minimumPauseSeconds: 8.13
   intervalRandomnes: 0.629
   initialPause: 2
   kickLeastImportant: 1
