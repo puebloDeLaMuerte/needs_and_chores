@@ -81,7 +81,7 @@ namespace YBC.Audix
 			string selectorName = elements[3];
 
 			float urgency, immediacy;
-			immediacy = 0.5f;
+			immediacy = 0.6f;
 
 			urgency = float.Parse(elements[6], CultureInfo.InvariantCulture );
 
