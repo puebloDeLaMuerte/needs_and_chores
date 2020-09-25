@@ -10,18 +10,14 @@ using YBC.Utils.Error;
 
 namespace YBC.Audix.InnerVoice
 {
-	public class InnerVoiceManager : MonoBehaviour, IEditorInterfaceReceiver
+	public class InnerVoiceManager : MonoBehaviour
 	{
 		public List<InnerVoiceItemCollection> soundItemCollections;
 		//public SoundItemCollection audioCollection;
 
 		[Space]
 
-		public GameObject neemotixAdapterObject;
-		private INeemotixAdapter neemotixAdapter;
-		
-		[Obsolete]
-		private int[] neemotionList;
+
 
 		private AudioSource audioSource;
 		private ItemPool pool;
@@ -46,46 +42,6 @@ namespace YBC.Audix.InnerVoice
 		public float debugPause;
 
 
-		private void OnValidate()
-		{
-			ValidateAndAssignAdapter();
-		}
-
-		
-		/// <summary>
-		/// Checks if a GameObject has been Assigned in the Editor and if it holds a Script of Type INeemotixAdapter. Assigns the local variable if applicable.
-		/// </summary>
-		public bool ValidateAndAssignAdapter()
-		{
-			bool success = false;
-			if ( neemotixAdapterObject != null )
-			{
-
-				Component[] cpnts = neemotixAdapterObject.GetComponents( typeof( Component ) );
-
-				foreach ( var cpnt in cpnts )
-				{
-					try
-					{
-						neemotixAdapter = (INeemotixAdapter)cpnt;
-						success = true;
-					}
-					catch ( System.Exception ) { }
-				}
-			}
-			else
-			{
-				Debug.LogError( new YBCEditorNotAssignedError().ToString() );
-				return success;
-			}
-			if ( !success )
-			{
-				Debug.LogError( new YBCEditorInterfaceObjNotParseableError().ToString() );
-			}
-			return success;
-		}
-
-
 
 		// Start is called before the first frame update
 		void Start()
@@ -95,9 +51,6 @@ namespace YBC.Audix.InnerVoice
 			pool = new ItemPool();
 
 			audioSource = GetComponent<AudioSource>();
-
-			//audioCollection = new SoundItemCollection( neemotixAdapter.GetAllNemotionIDs() );
-			//neemotionList = neemotixAdapter.GetAllNemotionIDs();
 
 			foreach ( InnerVoiceItemCollection itemcollection in soundItemCollections )
 			{

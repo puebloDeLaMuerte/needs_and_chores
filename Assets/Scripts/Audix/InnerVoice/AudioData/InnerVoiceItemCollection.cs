@@ -17,44 +17,6 @@ namespace YBC.Audix.InnerVoice
 		public GameObject IVDataAdapterObject;
 		private IInnerVoiceDataAdapter ivDataAdapter;
 
-		/*
-		[Obsolete]
-		public SoundItemCollection( int[] neemotionIDs )
-		{
-			List<SoundItem> tempVoiceItems = new List<SoundItem>();
-
-			UnityEngine.Object[] clips = Resources.LoadAll("InnerVoice/Neemotions");
-
-			// create the VoiceItems and store in temporary List
-			foreach ( UnityEngine.Object o in clips )
-			{
-				String[] filenameElements = ((AudioClip)o).name.Split( '_' );
-				SoundItem item = new NeemotixVoiceItem( (AudioClip)o, filenameElements );
-				tempVoiceItems.Add( item );
-			}
-
-
-			// Group VoiceItems by NeemotionID
-			voiceItems = new Dictionary<int, SoundItem[]>();
-
-			foreach ( int id in neemotionIDs )
-			{
-				List<SoundItem> itemsForNeemotion = new List<SoundItem>();
-
-				foreach ( NeemotixVoiceItem item in tempVoiceItems )
-				{
-					if( item.RelatedNeemotionID == id )
-					{
-						itemsForNeemotion.Add( item );
-					}
-				}
-
-				voiceItems.Add( id, itemsForNeemotion.ToArray() );
-			}
-		}
-		*/
-
-
 
 
 		/// <summary>
@@ -153,51 +115,6 @@ namespace YBC.Audix.InnerVoice
 		{
 
 			return voiceItems.ToArray();
-		}
-
-
-		[Obsolete]
-		public SoundItem[] GetItemsForNeemotion(int neemotionID, NeemotionStatus status)
-		{
-			List<SoundItem> returnItems = new List<SoundItem>();
-
-			foreach( SoundItem tempItem in voiceItems )
-			{
-
-				///////// T E M P   O N L Y /////////
-				////						    ////					HERE BE DRAGONS!!!!!
-				//								 //
-
-				int statusInt;
-				switch ( status )
-				{
-					case NeemotionStatus.Undefined:
-						statusInt = -1;
-						break;
-					case NeemotionStatus.vlow:
-						statusInt = 0;
-						break;
-					case NeemotionStatus.low:
-						statusInt = 1;
-						break;                                                      /// we need a better solution for this
-					case NeemotionStatus.med:
-						statusInt = 2;                          //// one that dows the lookup no matter how
-						break;
-					case NeemotionStatus.high:
-						statusInt = 3;                  /// many Selectors are in the array1!!!!!!
-						break;
-					default:
-						statusInt = -1;
-						break;
-				}
-
-				//								 //
-				//////						//////
-
-				if ( tempItem.Selectors[0].Evaluate( statusInt ) ) returnItems.Add( tempItem );
-			}
-
-			return returnItems.ToArray();
 		}
 	}
 }

@@ -178,6 +178,7 @@ namespace YBC.Perceptix
 			PPVDataAdapter adapter;
 			
 			//TODO: find a way to loop through these!!!
+			//TODO: DO NOT HARDCODE VALUES!!!!!!
 
 			currentValue = neemotixAdapter.GetNeemotionStateByName( "joy" ).Item1;
 			adapter = ppvDataObject.GetAdapterByNeemotion(PerceptibleNeemotions.Freude);
