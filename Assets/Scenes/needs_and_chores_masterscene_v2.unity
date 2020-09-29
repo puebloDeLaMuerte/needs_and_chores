@@ -26072,11 +26072,16 @@ MonoBehaviour:
   - folderpath: InnerVoice/Neemotions
     IVDataAdapterObject: {fileID: 4175357242950144690}
   - folderpath: InnerVoice/IPIP120
-    IVDataAdapterObject: {fileID: 0}
-  neemotixAdapterObject: {fileID: 4175357242950144690}
-  minimumPauseSeconds: 8.13
+    IVDataAdapterObject: {fileID: 921639822}
+  minimumPauseSeconds: 2
   intervalRandomnes: 0.629
-  initialPause: 2
+  itemPools:
+  - urgencyThreshold: 1
+    cooldownRealtime: 20
+  - urgencyThreshold: 0.5
+    cooldownRealtime: 40
+  - urgencyThreshold: 0
+    cooldownRealtime: 120
   kickLeastImportant: 1
   debugTimeTillNext: 0
   debugPause: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.Remoting.Messaging;
+using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 
 namespace YBC.Audix
@@ -18,8 +19,9 @@ namespace YBC.Audix
 		protected Selector[] selectors;
 
 		private int picked = 0;
+		private  float cooldownMark = 0;
 
-		public SoundItem() { }
+		public SoundItem() {}
 
 		public void IncrementPickCount()
 		{
@@ -29,6 +31,24 @@ namespace YBC.Audix
 		public int getPickedCount()
 		{
 			return picked;
+		}
+
+
+		public void setcoolDownMark( float mark )
+		{
+			cooldownMark = mark;
+		}
+
+		public bool isCooldwonBlocked( float currentTime)
+		{
+			if( currentTime < cooldownMark )
+			{
+				return true;
+			} else
+			{
+				return false;
+			}
+			//return currentTime > cooldownMark ? true : false;
 		}
 
 		public SoundItem(AudioClip clip, string text, char variant, Selector[] selectors )

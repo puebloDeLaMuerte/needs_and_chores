@@ -5,13 +5,27 @@ using YBC.Audix.InnerVoice;
 using System;
 using YBC.Utils;
 using NaughtyAttributes;
+using Unity.Collections.LowLevel.Unsafe;
 
 namespace YBC.Audix.InnerVoice
 {
+	[Serializable]
 	public class ItemPool : List<InnerVoiceItem>
 	{
 		private InnerVoiceItem lastPlayed;
 		private float averageWeight;
+
+		public float urgencyThreshold = 0f;
+		public float cooldownRealtime = 0f;
+
+
+		public void Reset()
+		{
+			this.Clear();
+			lastPlayed = null;
+			averageWeight = 0f;
+		}
+
 
 		public Boolean isEmpty()
 		{
@@ -43,7 +57,7 @@ namespace YBC.Audix.InnerVoice
 		}
 
 
-		public AudioClip PickNextClip()
+		public AudioClip PickNextClip( bool random)
 		{
 			if( lastPlayed != null )
 			{
@@ -56,10 +70,16 @@ namespace YBC.Audix.InnerVoice
 
 			int size = this.Count;
 
-			int nextOrdinal = YouBeRandom.Instance.RollZero( size - 1 );
-			next = this.ToArray()[nextOrdinal];
+			int nextOrdinal = 0;
+			if ( random )
+			{
+				nextOrdinal = YouBeRandom.Instance.RollZero( size - 1 );
+			}
+
+			next = this[nextOrdinal];
 			lastPlayed = next;
 			next.IncrementPickCount();
+			next.setcoolDownMark( Time.time + cooldownRealtime );
 			return next.Clip;
 		}
 
@@ -69,6 +89,12 @@ namespace YBC.Audix.InnerVoice
 		{
 			base.Add( i );
 			CalculateAverageWeight();
+		}
+
+
+		public void PrintPool()
+		{
+
 		}
 	}
 }
