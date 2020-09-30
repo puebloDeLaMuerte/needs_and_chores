@@ -23,22 +23,40 @@ namespace YBC.Audix
 
 		public SoundItem() {}
 
+
+		/// <summary>
+		/// Should be called when an item is picked from a pool to be said/used/played.
+		/// </summary>
 		public void IncrementPickCount()
 		{
 			picked++;
 		}
 
+		/// <summary>
+		/// How many times has this SoundItem been picked for playing?
+		/// </summary>
+		/// <returns></returns>
 		public int getPickedCount()
 		{
 			return picked;
 		}
 
 
-		public void setcoolDownMark( float mark )
+		/// <summary>
+		/// Set a time until which this VoiceItem will be deemed "in cooldown" and should not be said.
+		/// </summary>
+		/// <param name="mark">the absolute time at which the item will leave cooldown (become available)</param>
+		public void setCooldownMark( float mark )
 		{
 			cooldownMark = mark;
 		}
 
+
+		/// <summary>
+		/// Determines wether the item is "in cooldown" at a given time.
+		/// </summary>
+		/// <param name="currentTime">the absolute time for which the cooldwon is checked</param>
+		/// <returns>true if the item is considered to be "in cooldown". false if not</returns>
 		public bool isCooldwonBlocked( float currentTime)
 		{
 			if( currentTime < cooldownMark )

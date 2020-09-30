@@ -152,11 +152,15 @@ namespace YBC.Audix.InnerVoice
 		}
 
 
+		/// <summary>
+		/// Go through every SoundItemCollection and evaluate each item against the Collections DataAdapter. Fill the pools.
+		/// </summary>
 		private void EvaluateCollections()
 		{
 
-			for ( int i = 0; i < itemPools.Count - 1; i++ )
+			for ( int i = 0; i < itemPools.Count; i++ )
 			{
+				UnityEngine.Debug.Log( "p: " + i );
 				itemPools[i].Reset();
 			}
 
@@ -232,6 +236,10 @@ namespace YBC.Audix.InnerVoice
 				}
 			}
 
+			for ( int i = 0; i < itemPools.Count; i++ )
+			{
+				itemPools[i].PrintPool( i );
+			}
 		}
 
 
@@ -262,6 +270,7 @@ namespace YBC.Audix.InnerVoice
 		/// <summary>
 		/// Pupulates a fresh instance of itemPool. Querrys the Neemotions and picks Variants according to status. rolls Dice to determine if the variant get's pushed to the stack.
 		/// </summary>
+		[Obsolete]
 		private void PopulateItemPool( ItemPool pool, InnerVoiceItemCollection audioCollection )
 		{
 			IInnerVoiceDataAdapter dataAdapter = audioCollection.getDataAdapter();
@@ -366,13 +375,19 @@ namespace YBC.Audix.InnerVoice
 				{
 					if( !item.isCooldwonBlocked(Time.time) )
 					{
-						pool.Add( item );
+						pool.AddItem( item );
 						return;
 					}
 				}
 			}
 		}
 		
+
+		/// <summary>
+		/// Reduces a List of Items down to one that has the least PickedCount. Involves random choosing, PickCount() is paramount though.
+		/// </summary>
+		/// <param name="itemList">inputList of InnerVoiceItems</param>
+		/// <returns>One Item with the lowest pickcount</returns>
 		private InnerVoiceItem PickLeastPlayed( List<InnerVoiceItem> itemList ) 
 		{
 			if ( itemList.Count == 1 ) return itemList[0];
@@ -393,7 +408,10 @@ namespace YBC.Audix.InnerVoice
 		}
 
 
-
+		/// <summary>
+		/// Removes Items from the pool whose Urgency is lower than the pools average Weight.
+		/// </summary>
+		/// <param name="pool"></param>
 		private void KickLeastImportantFromPool(ItemPool pool)
 		{
 			float averageWeight = pool.GetAverageWeight();

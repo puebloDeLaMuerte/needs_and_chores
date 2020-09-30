@@ -14,13 +14,12 @@ namespace YBC.Audix
 	public static class SoundItemFactory
 	{
 
-		//TODO: Make a new Factory one for each Type of SoundItem? (Wegen Dependency, weisst schon...)
 
 		/// <summary>
-		/// Parses the AudioClip.name property derived from the corresponding filename on disk. The filename holds all data relevant in this step. Just a parser, no other data-sources, comparison, correllation etc intended here!
+		/// Parses the AudioClip.name property derived from the corresponding filename on disk. The filename must hold all data relevant in this step. Just a parser, no other data-sources, comparison, correllation etc intended here! SoundItem type is automatically detected and the Corresponding Parsing method and return-Type chosen.
 		/// </summary>
-		/// <param name="inclip"></param>
-		/// <returns></returns>
+		/// <param name="inclip">The AudioClip to be parsed.</param>
+		/// <returns>A SoundItem of the proper Subclass</returns>
 		public static SoundItem TryParseClip(AudioClip inclip)
 		{
 			try
@@ -72,7 +71,14 @@ namespace YBC.Audix
 		}
 
 
-
+		/// <summary>
+		/// Parses the Type-Specific Selector part of the data and returns a InnerVoiceItem.
+		/// </summary>
+		/// <param name="inclip">The AudioSource to be associated with this VoiceItem</param>
+		/// <param name="elements">The complete string[] of Data derived from he filename</param>
+		/// <param name="variant">The variant must be delivered at call time.</param>
+		/// <param name="text">The text must be delivered at call time</param>
+		/// <returns></returns>
 		private static InnerVoiceItem ParseNeemotionIVitem( AudioClip inclip, string[] elements, char variant, string text )
 		{
 			Selector[] selects = new Selector[1];
@@ -101,7 +107,14 @@ namespace YBC.Audix
 		}
 
 
-
+		/// <summary>
+		/// Parses the Type-Specific Selector part of the data and returns a InnerVoiceItem.
+		/// </summary>
+		/// <param name="inclip">The AudioSource to be associated with this VoiceItem</param>
+		/// <param name="elements">The complete string[] of Data derived from he filename</param>
+		/// <param name="variant">The variant must be delivered at call time.</param>
+		/// <param name="text">The text must be delivered at call time</param>
+		/// <returns></returns>
 		private static InnerVoiceItem ParseIPIP120IVitem( AudioClip inclip, string[] elements, char variant, string text )
 		{
 
@@ -128,7 +141,9 @@ namespace YBC.Audix
 
 
 
-
+	/// <summary>
+	/// Convenience local class that provides IPIP specific information.
+	/// </summary>
 	public static class IPIPLookup
 	{
 

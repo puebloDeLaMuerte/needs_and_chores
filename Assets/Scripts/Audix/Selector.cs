@@ -45,6 +45,9 @@ namespace YBC.Audix
 		}
 
 
+		/// <summary>
+		/// The ID is the same for a Selector and it's corresponding Data-Point-ID in the IInnerVoiceDataAdapter.
+		/// </summary>
 		public int getSelectorID()
 		{
 			return selectorID;
@@ -62,10 +65,14 @@ namespace YBC.Audix
 			}
 		}
 
+		/// <summary>
+		/// Mostly for human-readability and debug printing. String representation, should be what the ID is a HashValue from (not guaranteed).
+		/// </summary>
 		public string getName()
 		{
 			return selectorName;
 		}
+
 
 		private bool Compare(int evaluationInt)
 		{
@@ -91,6 +98,7 @@ namespace YBC.Audix
 			}
 		}
 
+
 		private bool Compare( float evaluationFloat )
 		{
 			switch ( compareType )
@@ -115,7 +123,11 @@ namespace YBC.Audix
 			}
 		}
 
-
+		/// <summary>
+		/// Compares the stored select-Value against the given, according to this Selectors CompareType(EQUALS, BIGGER, BIGGER_INCLUSIVE etc)
+		/// </summary>
+		/// <param name="evaluationString">The value to check against this Selector</param>
+		/// <returns>true if conditions are met. defaults to false</returns>
 		public bool Evaluate(string evaluationString)
 		{
 			if ( selectValueString == null )
@@ -131,6 +143,13 @@ namespace YBC.Audix
 			}
 		}
 
+
+		/// <summary>
+		/// Compares the stored select-Value against the given, according to this Selectors CompareType(EQUALS, BIGGER, BIGGER_INCLUSIVE etc)
+		/// Will also compare the given int against a FloatSelector.
+		/// </summary>
+		/// <param name="evaluationint">The value to check against this Selector</param>
+		/// <returns>true if conditions are met. defaults to false</returns>
 		public bool Evaluate( int evaluationint )
 		{
 			if ( selectValueInt != int.MinValue ) return Compare( evaluationint );
@@ -139,6 +158,12 @@ namespace YBC.Audix
 		}
 
 
+		/// <summary>
+		/// Compares the stored select-Value against the given, according to this Selectors CompareType(EQUALS, BIGGER, BIGGER_INCLUSIVE etc)
+		/// Will also compare the given float against an intSelector. !! Rounding involved !!
+		/// </summary>
+		/// <param name="evaluationfloat">The value to check against this Selector</param>
+		/// <returns>true if conditions are met. defaults to false</returns>
 		public bool Evaluate( float evaluationfloat )
 		{
 			if ( selectValueFloat != float.MinValue ) return Compare( evaluationfloat );

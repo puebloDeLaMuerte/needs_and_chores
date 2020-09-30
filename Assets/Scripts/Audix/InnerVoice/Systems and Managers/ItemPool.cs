@@ -18,7 +18,9 @@ namespace YBC.Audix.InnerVoice
 		public float urgencyThreshold = 0f;
 		public float cooldownRealtime = 0f;
 
-
+		/// <summary>
+		/// Clears the internal List, resets lastPlayed and averageWeight. Makes pool ready for re-use .
+		/// </summary>
 		public void Reset()
 		{
 			this.Clear();
@@ -27,6 +29,10 @@ namespace YBC.Audix.InnerVoice
 		}
 
 
+		/// <summary>
+		/// are there any InnerVoiceItems in the pool?
+		/// </summary>
+		/// <returns></returns>
 		public Boolean isEmpty()
 		{
 			if( this.Count == 0 )
@@ -44,6 +50,10 @@ namespace YBC.Audix.InnerVoice
 			return averageWeight;
 		}
 
+
+		/// <summary>
+		/// This Pools current Average (Ua += Un)/n  of all item.Urgency values.
+		/// </summary>
 		private void CalculateAverageWeight()
 		{
 			if ( this.Count <= 0 ) averageWeight = 0f;
@@ -57,6 +67,11 @@ namespace YBC.Audix.InnerVoice
 		}
 
 
+		/// <summary>
+		/// If Pool not empty, pick a random Item to play next, increment its pickCount and set its cooldown
+		/// </summary>
+		/// <param name="random"></param>
+		/// <returns></returns>
 		public AudioClip PickNextClip( bool random)
 		{
 			if( lastPlayed != null )
@@ -67,7 +82,6 @@ namespace YBC.Audix.InnerVoice
 			if ( this.Count == 0 ) return null;
 			
 			InnerVoiceItem next = null;
-
 			int size = this.Count;
 
 			int nextOrdinal = 0;
@@ -79,22 +93,32 @@ namespace YBC.Audix.InnerVoice
 			next = this[nextOrdinal];
 			lastPlayed = next;
 			next.IncrementPickCount();
-			next.setcoolDownMark( Time.time + cooldownRealtime );
+			next.setCooldownMark( Time.time + cooldownRealtime );
 			return next.Clip;
 		}
 
 
-		
+		/// <summary>
+		/// Adds an Item to the internal List<InnerVoiceItem>. Calculates the pools new averageWeight.
+		/// </summary>
+		/// <param name="i"></param>
 		public void AddItem( InnerVoiceItem i )
 		{
 			base.Add( i );
 			CalculateAverageWeight();
 		}
 
-
-		public void PrintPool()
+		/// <summary>
+		/// DEBUG: Printall items currently in this pool
+		/// </summary>
+		/// <param name="poolnr"></param>
+		public void PrintPool(int poolnr)
 		{
-
+			Debug.Log( "printing pool nr: " + poolnr );
+			foreach ( InnerVoiceItem item in this )
+			{
+				Debug.Log( "pool " + poolnr + ": " + item.Text + " u: " + item.Urgency );
+			}
 		}
 	}
 }

@@ -96,6 +96,7 @@ namespace YBC.Audix.InnerVoice
 
 
 
+		/// <returns>The InnerVoiceDataAdapter associated with this collection</returns>
 		public IInnerVoiceDataAdapter getDataAdapter()
 		{
 			return ivDataAdapter;
@@ -111,9 +112,9 @@ namespace YBC.Audix.InnerVoice
 			}
 		}
 
+		/// <returns>SoundItem[] of all InnerVoiceItems stored in this collection</returns>
 		public SoundItem[] GetItems()
 		{
-
 			return voiceItems.ToArray();
 		}
 	}

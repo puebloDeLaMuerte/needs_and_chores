@@ -22,12 +22,12 @@ namespace YBC.Personalix
 
 			InitFacetNameLookupTable();
 
-			Debug.Log( "value for: " + aiCharacter.CharSingleFacetTool("Achievement Striving") );
-			Debug.Log( "value for fun: " + aiCharacter.CharSingleFacetTool( "placeholder" ) );
 			PrintAllFacets();
 		}
 
-
+		/// <summary>
+		/// Set up the lookup table with hashed Facet-Names from the strings array returned by ExAi.CharFacetsTool.
+		/// </summary>
 		private void InitFacetNameLookupTable()
 		{
 			facetNameLookup = new Dictionary<int, string>();
@@ -42,7 +42,9 @@ namespace YBC.Personalix
 			}
 		}
 
-
+		/// <summary>
+		/// DEBUG: Print all character names known to ExAi.
+		/// </summary>
 		public void PrintAllCharacters()
 		{
 			Debug.Log( "### All character names known to ExAi ###" );
@@ -55,6 +57,9 @@ namespace YBC.Personalix
 				Debug.Log( allCharNames[i] );
 			}
 		}
+		/// <summary>
+		/// DEBUG: print all Facets and their values for this character
+		/// </summary>
 		public void PrintAllFacets()
 		{
 			Debug.Log( "### Character-Facet Info for: " + characterName + " ###" );
@@ -78,6 +83,10 @@ namespace YBC.Personalix
 
 		// IInnerVoiceDataAdapter Methods:
 
+		/// <summary>
+		/// Tuple-Array for ExAi Data Values
+		/// </summary>
+		/// <returns>(facet-Integer-ID, facet-name)</returns>
 		public (int, string)[] getAllSelectorIDs()
 		{
 			(int, string)[] returnarray = new (int, string)[facetNameLookup.Count];
@@ -91,9 +100,15 @@ namespace YBC.Personalix
 			return returnarray;
 		}
 
+		/// <summary>
+		/// Looks up this Characters Value for a Single Faced corresponding to the int ID given.
+		/// </summary>
+		/// <param name="selectorID">The Integer-ID of the facet to look up (Compared against internal Dicitonary)</param>
+		/// <param name="selectorDepth">not used here</param>
+		/// <returns>a float value (0-100) for the facet specified. Defaults to -1f on failure</returns>
 		public float getFloatForSelectorID( int selectorID, int selectorDepth )
 		{
-			float f;
+			float f = -1f;
 			string s;
 
 			facetNameLookup.TryGetValue( selectorID, out s  );
@@ -102,11 +117,18 @@ namespace YBC.Personalix
 			return f;
 		}
 
+
+		/// <summary>
+		/// Integers not supported for ExAi. Will throw an Exception.
+		/// </summary>
 		public int getIntForSelectorID( int selectorID, int selectorDepth )
 		{
 			throw new NotImplementedException();
 		}
 
+		/// <summary>
+		/// Strings not supported for ExAi. Will throw an Exception.
+		/// </summary>
 		public string getStringForSelectorID( int selectorID, int selectorDepth )
 		{
 			throw new NotImplementedException();
